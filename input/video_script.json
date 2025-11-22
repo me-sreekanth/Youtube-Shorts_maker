@@ -1,0 +1,79 @@
+{
+  "title": "The Matrix Explained in 60 Seconds",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "What if your entire life was just a simulation?",
+      "subtitle": "What if your life was a simulation?",
+      "image_prompt": "digital matrix code raining down, green neon cyberpunk theme, dramatic lighting, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 2,
+      "narration": "In The Matrix, humans live inside a computer program created by machines.",
+      "subtitle": "Humans trapped inside a computer program.",
+      "image_prompt": "futuristic pods with humans connected by cables, dystopian sci-fi, cinematic",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Neo, a hacker, senses something is wrong with reality.",
+      "subtitle": "Neo senses reality is broken.",
+      "image_prompt": "young man at computer, green monitor glow, glitch effects",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "He meets Morpheus, who offers him a choice.",
+      "subtitle": "A choice that changes everything.",
+      "image_prompt": "Morpheus holding red pill and blue pill, cyberpunk sunglasses reflection",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Take the blue pill and stay asleep… or take the red pill and learn the truth.",
+      "subtitle": "Red pill = truth. Blue pill = illusion.",
+      "image_prompt": "red pill floating in dark void, neon glow",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Neo chooses the truth—and wakes up in a ruined future controlled by machines.",
+      "subtitle": "The real world is destroyed.",
+      "image_prompt": "post-apocalyptic landscape, giant machines harvesting humans, dark realism",
+      "duration": 5
+    },
+    {
+      "scene_number": 7,
+      "narration": "Inside the Matrix, agents can bend the rules of the simulation.",
+      "subtitle": "Agents bend the simulation.",
+      "image_prompt": "Agent Smith style figure with glitch effect, digital distortion",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "But Neo learns he can break them.",
+      "subtitle": "Neo breaks the rules.",
+      "image_prompt": "Neo dodging bullets in slow motion, cyberpunk action scene",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "He discovers he is The One—the only person who can rewrite the Matrix.",
+      "subtitle": "He is The One.",
+      "image_prompt": "Neo glowing with digital energy, matrix code swirling",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "In the end, Neo becomes humanity's hope… and shows the world what's truly possible.",
+      "subtitle": "Wake up. See the truth.",
+      "image_prompt": "Neo flying upward through green matrix code, heroic frame",
+      "duration": 4
+    }
+  ],
+  "total_duration": 45
+}
+

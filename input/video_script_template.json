@@ -1,0 +1,22 @@
+{
+  "title": "Your Video Title",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Your hook narration text here",
+      "subtitle": "Your subtitle text here",
+      "image_prompt": "detailed image generation prompt, cinematic, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 2,
+      "narration": "Scene 2 narration",
+      "subtitle": "Scene 2 subtitle",
+      "image_prompt": "image prompt for scene 2",
+      "duration": 4
+    }
+  ],
+  "total_duration": 45
+}
+
