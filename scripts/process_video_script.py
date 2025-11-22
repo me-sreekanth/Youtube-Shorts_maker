@@ -511,21 +511,15 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                         # Last word in scene - end at scene end (which now includes last word)
                         segment_end = scene_end
                     
-                    # Show only 3 words: current word, previous word (if exists), next word (if exists)
-                    # BUT only from words_in_scene (current scene only)
-                    # For the last word in scene, don't show a "next" word even if it exists
-                    # Calculate window: [max(0, i-1), min(len(words_in_scene), i+2)]
-                    # BUT if we're at the last word, only show up to the last word (don't try to show next)
-                    window_start = max(0, i - 1)
-                    if i == len(words_in_scene) - 1:
-                        # Last word in scene - only show words up to and including this word
-                        window_end = len(words_in_scene)  # Don't try to show next word
-                    else:
-                        window_end = min(len(words_in_scene), i + max_words - 1)  # Never go beyond current scene's words
+                    # Show max_words words in non-overlapping sets to avoid repetition
+                    # Group words into sets of max_words, and show only the set containing the current word
+                    # This ensures no word is shown twice
+                    set_start = (i // max_words) * max_words  # Start of the set containing word i
+                    set_end = min(len(words_in_scene), set_start + max_words)  # End of the set
                     
-                    # Build the subtitle text with only words from current scene
+                    # Build the subtitle text with only words from the current set
                     text_parts = []
-                    for j in range(window_start, window_end):
+                    for j in range(set_start, set_end):
                         w, ws, we = words_in_scene[j]
                         # Capitalize the word
                         w_upper = w.upper()
@@ -535,7 +529,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                             bold_tag = "\\b900" if highlight["bold"] else "\\b0"
                             text_parts.append(f"{{\\1c{highlight_text_color}\\3c{highlight_outline_color}\\bord{highlight['border_thickness']}\\shad0\\blur0{bold_tag}\\fs{highlight['font_size']}\\fsp{highlight['font_spacing']}}}{w_upper}")
                         else:
-                            # Other words - normal styling
+                            # Other words in the set - normal styling
                             bold_tag = "\\b900" if normal["bold"] else "\\b0"
                             text_parts.append(f"{{\\1c{normal_text_color}\\3c{normal_outline_color}\\4c{normal_outline_color}\\bord{normal['border_thickness']}\\shad0\\blur0{bold_tag}\\fs{normal['font_size']}\\fsp{normal['font_spacing']}}}{w_upper}")
                     

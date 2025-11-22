@@ -46,6 +46,36 @@
       "subtitle": "The real world is destroyed.",
       "image_prompt": "post-apocalyptic landscape, giant machines harvesting humans, dark realism",
       "duration": 5
+    },
+    {
+      "scene_number": 7,
+      "narration": "Inside the Matrix, agents can bend the rules of the simulation.",
+      "subtitle": "Agents bend the simulation.",
+      "image_prompt": "Agent Smith style figure with glitch effect, digital distortion",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "But Neo learns he can break them.",
+      "subtitle": "Neo breaks the rules.",
+      "image_prompt": "Neo dodging bullets in slow motion, cyberpunk action scene",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "He discovers he is The One—the only person who can rewrite the Matrix.",
+      "subtitle": "He is The One.",
+      "image_prompt": "Neo glowing with digital energy, matrix code swirling",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "In the end, Neo becomes humanity's hope… and shows the world what's truly possible.",
+      "subtitle": "Wake up. See the truth.",
+      "image_prompt": "Neo flying upward through green matrix code, heroic frame",
+      "duration": 3,
+      "effect": "zoom_out"
     }
   ],
   "total_duration": 45
