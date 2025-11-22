@@ -13,19 +13,94 @@ CLIPS_DIR = "output/video_clips"
 JOINED_VIDEO = os.path.join(CLIPS_DIR, "joined_video.mp4")
 
 def load_video_script():
-    """Load the video script JSON file."""
+    """Load the video script JSON file and automatically ensure promo scene is at the end."""
     if not os.path.exists(SCRIPT_FILE):
         raise FileNotFoundError(f"Video script not found: {SCRIPT_FILE}")
     
     with open(SCRIPT_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        script_data = json.load(f)
+    
+    # Automatically ensure promo scene is at the end with correct settings
+    scenes = script_data.get("scenes", [])
+    promo_image_path = "input/channel-promo.png"
+    promo_narration = "Anyway, Subscribe for more"
+    
+    # Remove any existing promo scenes (check by narration text)
+    scenes = [s for s in scenes if s.get("narration", "").lower() != promo_narration.lower()]
+    
+    # Always add promo scene at the end with correct settings
+    promo_scene = {
+        "scene_number": len(scenes) + 1,
+        "scene_type": "promo",
+        "narration": promo_narration,
+        "subtitle": "Subscribe for more",
+        "image_prompt": promo_image_path,  # Use path to indicate it's a local file
+        "duration": 4,
+        "effect": "zoom_in"
+    }
+    scenes.append(promo_scene)
+    script_data["scenes"] = scenes
+    # Update total duration
+    script_data["total_duration"] = sum(s.get("duration", 4) for s in scenes)
+    
+    return script_data
 
-def create_clip(image_path: str, duration: float, out_path: str):
-    """Create a video clip from an image with specified duration."""
+def get_animation_filter(effect_type: str, duration: float, width: int = 1080, height: int = 1920):
+    """Generate FFmpeg filter for different animation effects optimized for shorts."""
+    base_scale = f"scale={width}:{height}"
+    fps = 30
+    total_frames = int(duration * fps)
+    
+    # Calculate zoom parameters
+    zoom_end = 1.4
+    
+    effects = {
+        # Zoom effects
+        "zoom_in": f"scale={int(width*zoom_end)}:{int(height*zoom_end)},zoompan=z='min(zoom+0.0018,{zoom_end})':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        "zoom_out": f"scale={int(width*zoom_end)}:{int(height*zoom_end)},zoompan=z='if(lte(zoom,1.0),1.0,max(zoom-0.0018,1.0))':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}:zoom={zoom_end}",
+        "ken_burns_in": f"scale={int(width*1.4)}:{int(height*1.4)},zoompan=z='min(zoom+0.0012,1.4)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        "ken_burns_out": f"scale={int(width*1.4)}:{int(height*1.4)},zoompan=z='if(lte(zoom,1.0),1.0,max(zoom-0.0012,1.0))':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}:zoom=1.4",
+        
+        # Pan effects
+        "pan_left": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*t/{duration}, 0)':0",
+        "pan_right": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*(1-t/{duration}), 0)':0",
+        "pan_up": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
+        "pan_down": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*(1-t/{duration}), 0)'",
+        
+        # Dynamic zoom effects - use simpler pulse effect instead of complex zoompan
+        "zoom_center": f"scale={int(width*1.3)}:{int(height*1.3)},zoompan=z='min(zoom+0.0008,1.3)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        "zoom_rapid": f"scale={int(width*1.6)}:{int(height*1.6)},zoompan=z='min(zoom+0.0025,1.6)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        
+        # Parallax-like effects
+        "parallax_up": f"scale={int(width*1.4)}:{int(height*1.4)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*0.3*sin(PI*t/{duration}), 0)'",
+        "parallax_down": f"scale={int(width*1.4)}:{int(height*1.4)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*(1-0.3*sin(PI*t/{duration})), 0)'",
+        
+        # Movement effects
+        "drift_left": f"scale={int(width*1.2)}:{int(height*1.2)},crop={width}:{height}:'if(gte(t,0), 20*sin(2*PI*t/{duration}), 0)':0",
+        "drift_right": f"scale={int(width*1.2)}:{int(height*1.2)},crop={width}:{height}:'if(gte(t,0), -20*sin(2*PI*t/{duration}), 0)':0",
+        "float_up": f"scale={int(width*1.2)}:{int(height*1.2)},crop={width}:{height}:0:'if(gte(t,0), 15*sin(2*PI*t/{duration}), 0)'",
+        
+        # Pulse and breathing
+        "pulse": f"{base_scale},scale='iw*(1+0.04*sin(2*PI*t/{duration}))':'ih*(1+0.04*sin(2*PI*t/{duration}))',crop={width}:{height}",
+        "breathe": f"{base_scale},scale='iw*(1+0.02*sin(4*PI*t/{duration}))':'ih*(1+0.02*sin(4*PI*t/{duration}))',crop={width}:{height}",
+        
+        # Diagonal movements
+        "diagonal_tl_br": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*t/{duration}, 0)':'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
+        "diagonal_tr_bl": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*(1-t/{duration}), 0)':'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
+        
+        # Static
+        "static": base_scale
+    }
+    
+    return effects.get(effect_type, base_scale)
+
+def create_clip(image_path: str, duration: float, out_path: str, effect: str = "ken_burns_in"):
+    """Create a video clip from an image with specified duration and animation effect."""
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     
-    # Simple scale (zoom effects can be added later if needed)
-    vf = "scale=1080:1920,format=yuv420p"
+    # Get animation filter
+    vf = get_animation_filter(effect, duration)
+    vf += ",format=yuv420p"
     
     cmd = [
         "ffmpeg", "-y",
@@ -54,24 +129,53 @@ def main():
     
     print(f"🎬 Creating {len(scenes)} clips from images...")
     clip_files = []
+    clip_scene_map = []  # Map clip index to scene index
+    
+    # Engaging effects optimized for shorts format
+    available_effects = [
+        "zoom_in", "zoom_out", "ken_burns_in", "ken_burns_out",
+        "pan_left", "pan_right", "pan_up", "pan_down",
+        "zoom_center", "zoom_rapid",
+        "parallax_up", "parallax_down",
+        "drift_left", "drift_right", "float_up",
+        "pulse", "breathe",
+        "diagonal_tl_br", "diagonal_tr_bl"
+    ]
     
     for idx, scene in enumerate(scenes, start=1):
         duration = scene.get("duration", 4)
         img_path = os.path.join(IMAGE_DIR, f"img_{idx}.jpg")
+        
+        # Get effect from scene, or auto-assign engaging effect
+        effect = scene.get("effect")
+        if not effect or effect not in available_effects:
+            # Auto-assign effect based on scene number for maximum variety
+            # Mix zoom, pan, and dynamic effects for engaging shorts
+            effect = available_effects[(idx - 1) % len(available_effects)]
         
         if not os.path.exists(img_path):
             print(f"⚠️  Missing {img_path}, skipping scene {idx}")
             continue
         
         clip_path = os.path.join(CLIPS_DIR, f"clip_{idx}.mp4")
-        print(f"  -> Clip {idx}: {duration}s from {img_path}")
+        print(f"  -> Clip {idx}: {duration}s from {img_path} [Effect: {effect}]")
         
         try:
-            create_clip(img_path, duration, clip_path)
+            create_clip(img_path, duration, clip_path, effect)
             clip_files.append(clip_path)
+            clip_scene_map.append(idx - 1)  # Store scene index (0-based)
         except Exception as e:
-            print(f"  ❌ Failed to create clip {idx}: {e}")
-            continue
+            print(f"  ❌ Failed to create clip {idx} with effect '{effect}': {e}")
+            # Try with a simpler, more reliable effect as fallback
+            print(f"  🔄 Retrying with fallback effect 'ken_burns_in'...")
+            try:
+                create_clip(img_path, duration, clip_path, "ken_burns_in")
+                clip_files.append(clip_path)
+                clip_scene_map.append(idx - 1)  # Store scene index
+                print(f"  ✅ Clip {idx} created successfully with fallback effect")
+            except Exception as e2:
+                print(f"  ❌ Fallback also failed: {e2}")
+                continue
     
     if not clip_files:
         print("❌ No clips created")
@@ -93,12 +197,18 @@ def main():
     
     for i, clip_path in enumerate(clip_files):
         faded_path = os.path.join(CLIPS_DIR, f"faded_clip_{i+1}.mp4")
-        scene = scenes[i]
+        # Use the scene map to get the correct scene
+        scene_idx = clip_scene_map[i]
+        scene = scenes[scene_idx]
         duration = scene.get("duration", 4)
         
+        # Only apply fade_in if not the first clip
         fade_in = f"fade=t=in:st=0:d={transition_duration}" if i > 0 else ""
+        # Only apply fade_out if not the last clip (preserve full duration of last scene)
+        # For the last clip, don't apply fade_out to preserve full duration
+        is_last_clip = (i == len(clip_files) - 1)
         fade_out_start = max(0, duration - transition_duration)
-        fade_out = f"fade=t=out:st={fade_out_start}:d={transition_duration}" if i < len(clip_files) - 1 else ""
+        fade_out = f"fade=t=out:st={fade_out_start}:d={transition_duration}" if not is_last_clip else ""
         
         filters = []
         if fade_in:
@@ -108,19 +218,37 @@ def main():
         
         if filters:
             vf = ",".join(filters)
-            cmd = [
-                "ffmpeg", "-y",
-                "-i", clip_path,
-                "-vf", vf,
-                "-c:v", "libx264",
-                "-an",
-                "-r", "30",
-                faded_path
-            ]
+            # For last clip, ensure full duration without fade cutting it
+            if is_last_clip:
+                # Last clip: no fade_out, preserve full duration
+                cmd = [
+                    "ffmpeg", "-y",
+                    "-i", clip_path,
+                    "-vf", vf if fade_in else "null",  # Only apply fade_in if present
+                    "-c:v", "libx264",
+                    "-t", f"{duration:.3f}",  # Full duration
+                    "-an",
+                    "-r", "30",
+                    faded_path
+                ]
+            else:
+                # Not last clip: can have fade_out
+                cmd = [
+                    "ffmpeg", "-y",
+                    "-i", clip_path,
+                    "-vf", vf,
+                    "-c:v", "libx264",
+                    "-t", f"{duration:.3f}",  # Full duration
+                    "-an",
+                    "-r", "30",
+                    faded_path
+                ]
         else:
+            # No filters (first clip with no fades, or last clip with no fades)
             cmd = [
                 "ffmpeg", "-y",
                 "-i", clip_path,
+                "-t", f"{duration:.3f}",  # Explicitly set duration
                 "-c:v", "copy",
                 "-an",
                 faded_path

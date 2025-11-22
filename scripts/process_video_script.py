@@ -94,12 +94,37 @@ def get_bold_value(bold):
     return 1 if bold else 0
 
 def load_video_script():
-    """Load the video script JSON file."""
+    """Load the video script JSON file and automatically ensure promo scene is at the end."""
     if not os.path.exists(SCRIPT_FILE):
         raise FileNotFoundError(f"Video script not found: {SCRIPT_FILE}")
     
     with open(SCRIPT_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+        script_data = json.load(f)
+    
+    # Automatically ensure promo scene is at the end with correct settings
+    scenes = script_data.get("scenes", [])
+    promo_image_path = "input/channel-promo.png"
+    promo_narration = "Anyway, Subscribe for more"
+    
+    # Remove any existing promo scenes (check by narration text)
+    scenes = [s for s in scenes if s.get("narration", "").lower() != promo_narration.lower()]
+    
+    # Always add promo scene at the end with correct settings
+    promo_scene = {
+        "scene_number": len(scenes) + 1,
+        "scene_type": "promo",
+        "narration": promo_narration,
+        "subtitle": "Subscribe for more",
+        "image_prompt": promo_image_path,  # Use path to indicate it's a local file
+        "duration": 4,
+        "effect": "zoom_in"
+    }
+    scenes.append(promo_scene)
+    script_data["scenes"] = scenes
+    # Update total duration
+    script_data["total_duration"] = sum(s.get("duration", 4) for s in scenes)
+    
+    return script_data
 
 def generate_audio_for_scenes(scenes):
     """Generate TTS audio for each scene and concatenate."""
@@ -166,6 +191,7 @@ def generate_images_for_scenes(scenes):
     """Generate images for each scene."""
     # Import generate_images module
     import importlib.util
+    import shutil
     img_path = os.path.join(os.path.dirname(__file__), "generate_images.py")
     spec = importlib.util.spec_from_file_location("generate_images", img_path)
     img_module = importlib.util.module_from_spec(spec)
@@ -176,24 +202,58 @@ def generate_images_for_scenes(scenes):
     os.makedirs(IMAGE_DIR, exist_ok=True)
     
     image_files = []
+    promo_image_path = "input/channel-promo.png"
     
     for i, scene in enumerate(scenes, 1):
         prompt = scene["image_prompt"]
         print(f"   🖼️  Scene {i}: {prompt[:60]}...")
         
         image_file = os.path.join(IMAGE_DIR, f"img_{i}.jpg")
-        try:
-            path = generate_image(prompt, f"img_{i}.jpg")
-            if path:
-                image_files.append(path)
-                print(f"      ✅ Saved {path}")
-            else:
-                print(f"      ⚠️  Failed to generate image for scene {i}, will skip")
-                # Don't raise - continue with other images
-        except Exception as e:
-            print(f"      ⚠️  Error generating image for scene {i}: {e}")
-            print(f"      Continuing with other images...")
-            # Don't raise - continue processing
+        
+        # Check if this is the promo scene (uses local image file)
+        # Check if prompt is the promo image path or if it's a file path that exists
+        is_promo_scene = (prompt == promo_image_path or 
+                         prompt.endswith("channel-promo.png") or
+                         (os.path.exists(prompt) and prompt.endswith((".png", ".jpg", ".jpeg"))))
+        
+        if is_promo_scene:
+            # Use the actual file path (could be relative or absolute)
+            source_image = promo_image_path if os.path.exists(promo_image_path) else prompt
+            
+            # Copy and process the promo image instead of generating
+            try:
+                if os.path.exists(source_image):
+                    # Convert PNG to JPG and resize to 1080x1920 if needed
+                    # Use FFmpeg to convert and ensure correct dimensions
+                    cmd = [
+                        "ffmpeg", "-y",
+                        "-i", source_image,
+                        "-vf", "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2",
+                        "-q:v", "2",  # High quality
+                        image_file
+                    ]
+                    subprocess.run(cmd, check=True, capture_output=True)
+                    image_files.append(image_file)
+                    print(f"      ✅ Copied and processed promo image: {image_file}")
+                else:
+                    print(f"      ⚠️  Promo image not found at {source_image}, skipping scene {i}")
+            except Exception as e:
+                print(f"      ⚠️  Error processing promo image for scene {i}: {e}")
+                print(f"      Continuing with other images...")
+        else:
+            # Generate image using API
+            try:
+                path = generate_image(prompt, f"img_{i}.jpg")
+                if path:
+                    image_files.append(path)
+                    print(f"      ✅ Saved {path}")
+                else:
+                    print(f"      ⚠️  Failed to generate image for scene {i}, will skip")
+                    # Don't raise - continue with other images
+            except Exception as e:
+                print(f"      ⚠️  Error generating image for scene {i}: {e}")
+                print(f"      Continuing with other images...")
+                # Don't raise - continue processing
     
     return image_files
 
@@ -331,6 +391,14 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             duration = scenes[i].get("duration", 4) if i < len(scenes) else 4
             scene_boundaries.append((current_time, current_time + duration))
             current_time += duration
+        
+        # For the last scene, extend boundary to include all remaining words if we have word timings
+        if word_timings and len(word_timings) > 0 and len(scene_boundaries) > 0:
+            last_word_end = word_timings[-1][2]  # End time of the very last word
+            last_scene_start, last_scene_end = scene_boundaries[-1]
+            # Extend last scene to include the last word
+            if last_word_end > last_scene_end:
+                scene_boundaries[-1] = (last_scene_start, last_word_end)
     elif word_timings and len(word_timings) > 0:
         # Use word timings to determine scene boundaries
         # Match words to scenes by counting words per scene narration
@@ -394,28 +462,45 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             words_in_scene = []
             # scene_start and scene_end are already set from scene_boundaries above
             
-            # Collect words that fall strictly within this scene (not from next scene)
-            # Only include words that start AND end within the scene boundaries
-            # Use strict inequality to prevent boundary overlap
+            # Collect words that belong to this scene
+            # For the last scene, be more lenient to include all words
+            is_last_scene = (idx == len(scenes))
+            
             while word_index < len(word_timings):
                 word, word_start, word_end = word_timings[word_index]
-                # Only include words that:
-                # 1. Start at or after scene_start
-                # 2. Start strictly before scene_end (not equal to or after)
-                # 3. End strictly before or at scene_end
-                if word_start >= scene_start and word_start < scene_end and word_end <= scene_end:
-                    words_in_scene.append((word, word_start, word_end))
-                    word_index += 1
-                elif word_start >= scene_end:
-                    # This word belongs to the next scene (starts at or after scene_end), stop collecting
-                    break
+                
+                if is_last_scene:
+                    # For the last scene, include all words that start within the scene
+                    # This ensures we capture all remaining words
+                    if word_start >= scene_start:
+                        words_in_scene.append((word, word_start, word_end))
+                        word_index += 1
+                    else:
+                        # Word is before scene start, skip it
+                        word_index += 1
                 else:
-                    # Word is before scene start or extends beyond scene end, skip it
-                    word_index += 1
+                    # For non-last scenes, use strict boundaries to prevent overlap
+                    # Only include words that:
+                    # 1. Start at or after scene_start
+                    # 2. Start strictly before scene_end (not equal to or after)
+                    if word_start >= scene_start and word_start < scene_end:
+                        words_in_scene.append((word, word_start, word_end))
+                        word_index += 1
+                    elif word_start >= scene_end:
+                        # This word belongs to the next scene, stop collecting
+                        break
+                    else:
+                        # Word is before scene start, skip it
+                        word_index += 1
             
             # Create word-level highlighted subtitle with karaoke effect
             # Show only 3 words at a time, sliding window - ONLY from current scene
             if words_in_scene:
+                # For the last scene, extend scene_end to include the last word's end time
+                if is_last_scene and words_in_scene:
+                    last_word_end_time = words_in_scene[-1][2]  # Get end time of last word
+                    scene_end = max(scene_end, last_word_end_time)  # Extend scene to include last word
+                
                 # Create non-overlapping segments, one for each word
                 for i, (word, word_start, word_end) in enumerate(words_in_scene):
                     # Determine segment end time (next word start or scene end)
@@ -423,7 +508,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                     if i < len(words_in_scene) - 1:
                         segment_end = min(words_in_scene[i + 1][1], scene_end)  # Next word start, but not beyond scene
                     else:
-                        # Last word in scene - end at scene end, no overlap
+                        # Last word in scene - end at scene end (which now includes last word)
                         segment_end = scene_end
                     
                     # Show only 3 words: current word, previous word (if exists), next word (if exists)

@@ -41,5 +41,26 @@
     "_comment": "Display settings for subtitles",
     "max_words": 4,
     "word_separator": " "
+  },
+  
+  "watermark": {
+    "_comment": "Watermark settings - controls the watermark overlay on the video",
+    "enabled": true,
+    "file": "input/watermark.png",
+    "position": {
+      "_comment": "Position: 'top-left', 'top-right', 'bottom-left', 'bottom-right'",
+      "location": "top-left",
+      "margin_x": 100,
+      "margin_y": 100
+    },
+    "size": {
+      "_comment": "Size: 'auto' (maintain aspect ratio), or specify width in pixels (height will scale proportionally)",
+      "width": 200,
+      "mode": "auto"
+    },
+    "opacity": {
+      "_comment": "Opacity: 0.0 (fully transparent) to 1.0 (fully opaque). 0.5 = half transparent",
+      "value": 0.5
+    }
   }
 }
