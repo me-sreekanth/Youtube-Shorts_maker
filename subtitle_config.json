@@ -1,0 +1,45 @@
+{
+  "_comment": "Subtitle Configuration File - Edit these values to customize subtitle appearance",
+  "_note": "Color format: #RRGGBB (hexadecimal). Transparency: 0-255 (0=fully transparent, 255=fully opaque)",
+  
+  "font": {
+    "name": "Game of Thrones",
+    "file": "Game of Thrones.ttf"
+  },
+  
+  "highlighted_word": {
+    "_comment": "Styling for the currently spoken word (highlighted word)",
+    "font_size": 48,
+    "text_color": "#FFFF00",
+    "background_color": "#000000",
+    "background_transparency": 176,
+    "outline_color": "#000000",
+    "border_thickness": 12,
+    "font_spacing": 6,
+    "bold": true
+  },
+  
+  "normal_word": {
+    "_comment": "Styling for other words (not currently being spoken)",
+    "font_size": 36,
+    "text_color": "#FFFFFF",
+    "outline_color": "#000000",
+    "border_thickness": 4,
+    "font_spacing": 6,
+    "bold": true
+  },
+  
+  "positioning": {
+    "_comment": "Alignment: 1=left, 2=center, 3=right, 4=top-left, 5=top-center, 6=top-right, 7=bottom-left, 8=bottom-center, 9=bottom-right. margin_vertical: higher value = higher up on screen",
+    "alignment": 2,
+    "margin_left": 40,
+    "margin_right": 40,
+    "margin_vertical": 500
+  },
+  
+  "display": {
+    "_comment": "Display settings for subtitles",
+    "max_words": 4,
+    "word_separator": " "
+  }
+}
