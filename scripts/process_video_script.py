@@ -63,9 +63,11 @@ def get_default_config():
         }
     }
 
-def hex_to_ass_color(hex_color, alpha=255):
+def hex_to_ass_color(hex_color, alpha=0):
     """Convert hex color (#RRGGBB) to ASS format for style definitions (&HAABBGGRR).
     ASS uses BGR format with alpha channel for style definitions.
+    Note: For ASS, alpha is inverted: 0x00 = opaque, 0xFF = transparent.
+    Parameter alpha: Standard alpha where 0 = fully opaque, 255 = fully transparent
     """
     hex_color = hex_color.lstrip('#')
     if len(hex_color) == 6:
@@ -73,8 +75,13 @@ def hex_to_ass_color(hex_color, alpha=255):
         g = int(hex_color[2:4], 16)
         b = int(hex_color[4:6], 16)
         # ASS style format: &HAABBGGRR (Alpha, Blue, Green, Red)
-        return f"&H{alpha:02X}{b:02X}{g:02X}{r:02X}"
-    return "&H00FFFFFF"  # Default to white
+        # Alpha is inverted: 0x00 = opaque, 0xFF = transparent
+        # Standard alpha: 0 = opaque, 255 = transparent
+        # ASS alpha: 0x00 = opaque, 0xFF = transparent
+        # So we use alpha directly: 0 -> 0x00 (opaque), 255 -> 0xFF (transparent)
+        ass_alpha = alpha  # Direct mapping works: 0=opaque, 255=transparent
+        return f"&H{ass_alpha:02X}{b:02X}{g:02X}{r:02X}"
+    return "&H00FFFFFF"  # Default to white (opaque: alpha=0x00)
 
 def hex_to_ass_inline_color(hex_color):
     """Convert hex color (#RRGGBB) to ASS inline tag format (&HBBGGRR&).
@@ -89,8 +96,10 @@ def hex_to_ass_inline_color(hex_color):
         return f"&H{b:02X}{g:02X}{r:02X}&"
     return "&HFFFFFF&"  # Default to white
 
-def get_bold_value(bold):
-    """Convert boolean to ASS bold value."""
+def get_bold_value(bold, font_weight=None):
+    """Convert boolean to ASS bold value. If font_weight is provided, use it for inline tags."""
+    if font_weight is not None:
+        return font_weight
     return 1 if bold else 0
 
 def load_video_script():
@@ -328,38 +337,73 @@ def create_styled_ass_subtitles(scenes, word_timings, ass_file, scene_audio_file
     # Load configuration
     config = load_subtitle_config()
     font_name = config["font"]["name"]
-    highlight = config["highlighted_word"]
-    normal = config["normal_word"]
+    style_config = config.get("style", {})
     pos = config["positioning"]
     display = config["display"]
     
-    # Convert colors to ASS format (for style definitions)
-    highlight_text_color_style = hex_to_ass_color(highlight["text_color"])
-    highlight_bg_color = hex_to_ass_color(highlight["background_color"], highlight["background_transparency"])
-    highlight_outline_color_style = hex_to_ass_color(highlight["outline_color"])
-    normal_text_color_style = hex_to_ass_color(normal["text_color"])
-    normal_outline_color_style = hex_to_ass_color(normal["outline_color"])
+    # Load style settings
+    font_size = style_config.get("font_size", 72)
+    primary_color = style_config.get("primary_color", "#FFFFFF")
+    secondary_color = style_config.get("secondary_color", "#00FF00")
+    outline_color = style_config.get("outline_color", "#000000")
+    outline_thickness = style_config.get("outline_thickness", 5)
+    shadow = style_config.get("shadow", 0)
+    bold = style_config.get("bold", True)
     
-    # Convert colors to ASS inline tag format (for inline tags)
-    highlight_text_color = hex_to_ass_inline_color(highlight["text_color"])
-    highlight_outline_color = hex_to_ass_inline_color(highlight["outline_color"])
-    normal_text_color = hex_to_ass_inline_color(normal["text_color"])
-    normal_outline_color = hex_to_ass_inline_color(normal["outline_color"])
+    # Add padding inside the black background by increasing outline thickness
+    # The outline value in BorderStyle=3 controls the padding inside the box
+    background_padding = 20  # Padding in pixels inside the black background box
+    border_style = style_config.get("border_style", 1)
+    
+    # Load subtitle background settings (separate from style)
+    subtitle_bg = config.get("subtitle_background", {})
+    bg_enabled = subtitle_bg.get("enabled", True)
+    bg_color = subtitle_bg.get("color", "#000000") if bg_enabled else "#000000"
+    bg_transparency = subtitle_bg.get("transparency", 255) if bg_enabled else 0
+    
+    # Load line spacing and transition settings
+    line_spacing = display.get("line_spacing", 10)  # Line spacing in pixels
+    transitions = config.get("transitions", {})
+    fade_enabled = transitions.get("fade_enabled", True)
+    fade_in_ms = transitions.get("fade_in_duration", 200)
+    fade_out_ms = transitions.get("fade_out_duration", 200)
+    
+    # Convert colors to ASS format (for style definitions)
+    # Note: ASS alpha is inverted: 0x00 = opaque, 0xFF = transparent
+    # For primary/secondary/outline, we want fully opaque (alpha=0x00 in ASS = 0x00)
+    primary_color_style = hex_to_ass_color(primary_color, alpha=0)  # Fully opaque (0x00 in ASS)
+    secondary_color_style = hex_to_ass_color(secondary_color, alpha=0)  # Fully opaque (0x00 in ASS)
+    outline_color_style = hex_to_ass_color(outline_color, alpha=0)  # Fully opaque (0x00 in ASS)
+    # Background transparency: In ASS, BackColour alpha is inverted
+    # bg_transparency: 0 = transparent, 255 = fully opaque
+    # ASS alpha: 0x00 = opaque, 0xFF = transparent
+    # So if bg_transparency=255 (opaque), we want 0x00 in ASS
+    # If bg_transparency=0 (transparent), we want 0xFF in ASS
+    # Convert: ass_alpha = 255 - bg_transparency
+    bg_alpha = (255 - bg_transparency) if bg_enabled else 255  # 255 = transparent if disabled
+    bg_color_style = hex_to_ass_color(bg_color, alpha=bg_alpha)
+    
+    # Bold value: -1 for bold, 0 for not bold
+    bold_value = -1 if bold else 0
     
     # ASS file header with styles - using proper format matching standard
+    # Note: Spacing field is for character spacing, not line spacing
+    # Line spacing will be handled via inline tags
     ass_content = f"""[Script Info]
+; Generated for vertical/shorts style captions
 Title: YouTube Shorts Subtitles
 ScriptType: v4.00+
-WrapStyle: 0
 PlayResX: 1080
 PlayResY: 1920
 ScaledBorderAndShadow: yes
-Collisions: Normal
+WrapStyle: 1
 
 [V4+ Styles]
-Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
-Style: Highlight,{font_name},{normal["font_size"]},{highlight_text_color_style},&H000000FF,{highlight_outline_color_style},{highlight_bg_color},{get_bold_value(highlight["bold"])},0,0,0,100,100,0,0,3,{highlight["border_thickness"]},0,{pos["alignment"]},{pos["margin_left"]},{pos["margin_right"]},{pos["margin_vertical"]},1
-Style: Normal,{font_name},{normal["font_size"]},{normal_text_color_style},&H000000FF,{normal_outline_color_style},&H80000000,{get_bold_value(normal["bold"])},0,0,0,100,100,0,0,1,{normal["border_thickness"]},{normal["border_thickness"]},{pos["alignment"]},{pos["margin_left"]},{pos["margin_right"]},{pos["margin_vertical"]},1
+; PrimaryColour  = base text (white)
+; SecondaryColour = karaoke highlight (green)
+; OutlineColour  = black border
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: MATRIX_CAPTION,{font_name},{font_size},{primary_color_style},{secondary_color_style},{outline_color_style},{bg_color_style},{bold_value},0,0,0,100,100,0,0,3,{background_padding},{shadow},{pos["alignment"]},{pos["margin_left"]},{pos["margin_right"]},{pos["margin_vertical"]},0
 
 [Events]
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
@@ -436,35 +480,52 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             scene_boundaries.append((current_time, current_time + duration))
             current_time += duration
     
-    # Load config for inline styling
-    config = load_subtitle_config()
-    highlight = config["highlighted_word"]
-    normal = config["normal_word"]
+    # Load config for display settings
     display = config["display"]
     max_words = display["max_words"]
     word_separator = display["word_separator"]
+    num_lines = display.get("lines", 1)  # Number of lines (1 or 2)
+    # line_spacing already loaded above
     
-    # Convert colors for inline tags (must use inline format with 6 hex digits + &)
-    highlight_text_color = hex_to_ass_inline_color(highlight["text_color"])
-    highlight_outline_color = hex_to_ass_inline_color(highlight["outline_color"])
-    normal_text_color = hex_to_ass_inline_color(normal["text_color"])
-    normal_outline_color = hex_to_ass_inline_color(normal["outline_color"])
+    # Helper function to add fade transition to text
+    def add_fade_transition(text):
+        """Add fade transition to subtitle text if enabled."""
+        if fade_enabled:
+            return f"{{\\fad({fade_in_ms},{fade_out_ms})}}{text}"
+        return text
+    
+    # Helper function to convert seconds to centiseconds for \k tags
+    def seconds_to_centiseconds(seconds):
+        """Convert seconds to centiseconds for karaoke \k tags."""
+        return int(round(seconds * 100))
     
     word_index = 0
     
     for idx, scene in enumerate(scenes, 1):
         # Use calculated scene boundaries from actual word timings
-        scene_start, scene_end = scene_boundaries[idx - 1]
+        # CRITICAL: Store original boundaries and use them strictly for non-last scenes
+        original_scene_start, original_scene_end = scene_boundaries[idx - 1]
+        scene_start = original_scene_start
+        scene_end = original_scene_end
         subtitle_text = scene['subtitle']
+        
+        # Get next scene's start time to ensure strict boundaries (prevent overlap)
+        next_scene_start = scene_boundaries[idx][0] if idx < len(scene_boundaries) else float('inf')
         
         # If we have word timings, create word-level highlighting
         if word_timings and word_index < len(word_timings):
             words_in_scene = []
-            # scene_start and scene_end are already set from scene_boundaries above
             
-            # Collect words that belong to this scene
+            # Collect words that belong STRICTLY to this scene only
             # For the last scene, be more lenient to include all words
             is_last_scene = (idx == len(scenes))
+            
+            # Debug: Print scene boundaries for troubleshooting
+            # print(f"Scene {idx}: {scene_start:.2f}s - {scene_end:.2f}s")
+            
+            # Collect words that belong STRICTLY to this scene only
+            # Use a small buffer (0.05s) to account for timing precision, but be very strict
+            boundary_buffer = 0.05  # Small buffer for timing precision
             
             while word_index < len(word_timings):
                 word, word_start, word_end = word_timings[word_index]
@@ -472,117 +533,126 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                 if is_last_scene:
                     # For the last scene, include all words that start within the scene
                     # This ensures we capture all remaining words
-                    if word_start >= scene_start:
+                    if word_start >= scene_start - boundary_buffer:
                         words_in_scene.append((word, word_start, word_end))
                         word_index += 1
                     else:
                         # Word is before scene start, skip it
                         word_index += 1
                 else:
-                    # For non-last scenes, use strict boundaries to prevent overlap
-                    # Only include words that:
-                    # 1. Start at or after scene_start
-                    # 2. Start strictly before scene_end (not equal to or after)
-                    if word_start >= scene_start and word_start < scene_end:
+                    # For non-last scenes, use VERY STRICT boundaries to prevent any overlap
+                    # Only include words that are COMPLETELY within the scene boundaries
+                    # Word must:
+                    # 1. Start at or after scene_start (with small buffer for precision)
+                    # 2. Start strictly before scene_end (no buffer - must be before)
+                    # 3. End strictly before scene_end (no buffer - must end before next scene starts)
+                    # CRITICAL: Also check if next scene exists and ensure we don't include its words
+                    next_scene_start = scene_boundaries[idx][0] if idx < len(scene_boundaries) else float('inf')
+                    word_starts_in_scene = word_start >= (scene_start - boundary_buffer) and word_start < scene_end
+                    word_ends_in_scene = word_end <= scene_end
+                    word_before_next_scene = word_end <= next_scene_start
+                    
+                    if word_starts_in_scene and word_ends_in_scene and word_before_next_scene:
+                        # Word is completely within this scene and doesn't overlap with next scene
                         words_in_scene.append((word, word_start, word_end))
                         word_index += 1
-                    elif word_start >= scene_end:
-                        # This word belongs to the next scene, stop collecting
+                    elif word_start >= scene_end or word_start >= next_scene_start:
+                        # This word starts at or after the next scene, stop collecting immediately
                         break
                     else:
-                        # Word is before scene start, skip it
+                        # Word is before scene start or extends beyond scene end, skip it
                         word_index += 1
             
-            # Create word-level highlighted subtitle with karaoke effect
-            # Show only 3 words at a time, sliding window - ONLY from current scene
+            # Create word-by-word subtitles showing max 3 words, highlighting only the current word
             if words_in_scene:
-                # For the last scene, extend scene_end to include the last word's end time
+                # For the last scene ONLY, extend scene_end to include the last word's end time
                 if is_last_scene and words_in_scene:
                     last_word_end_time = words_in_scene[-1][2]  # Get end time of last word
                     scene_end = max(scene_end, last_word_end_time)  # Extend scene to include last word
                 
-                # Create non-overlapping segments, one for each word
-                for i, (word, word_start, word_end) in enumerate(words_in_scene):
-                    # Determine segment end time (next word start or scene end)
-                    # NEVER exceed the scene end time
-                    if i < len(words_in_scene) - 1:
-                        segment_end = min(words_in_scene[i + 1][1], scene_end)  # Next word start, but not beyond scene
-                    else:
-                        # Last word in scene - end at scene end (which now includes last word)
-                        segment_end = scene_end
+                # Create dialogue entries for each word, showing a sliding window of up to max_words (3)
+                for i, (current_word, word_start, word_end) in enumerate(words_in_scene):
+                    # Determine which words to show (sliding window around current word)
+                    # Show previous word(s), current word, and next word(s) - up to max_words total
+                    # If fewer words available, show what we have
+                    start_idx = max(0, i - (max_words - 1) // 2)  # Start from word before current (if possible)
+                    # Calculate how many words we can show (up to max_words)
+                    available_words = len(words_in_scene) - start_idx
+                    words_to_show_count = min(max_words, available_words)
                     
-                    # Show max_words words in non-overlapping sets to avoid repetition
-                    # Group words into sets of max_words, and show only the set containing the current word
-                    # This ensures no word is shown twice
-                    set_start = (i // max_words) * max_words  # Start of the set containing word i
-                    set_end = min(len(words_in_scene), set_start + max_words)  # End of the set
+                    # If we don't have enough words at the end, adjust start_idx to show what we can
+                    if available_words < max_words and start_idx > 0:
+                        # Try to show more words by moving start_idx back
+                        start_idx = max(0, len(words_in_scene) - words_to_show_count)
                     
-                    # Build the subtitle text with only words from the current set
+                    # Show the words we have (can be 1, 2, or 3 words)
+                    words_to_show = words_in_scene[start_idx:start_idx + words_to_show_count]
+                    
+                    # Build text with inline styling - highlight only the current word
+                    # Convert colors to inline format
+                    primary_color_inline = hex_to_ass_inline_color(primary_color)
+                    secondary_color_inline = hex_to_ass_inline_color(secondary_color)
+                    outline_color_inline = hex_to_ass_inline_color(outline_color)
+                    
                     text_parts = []
-                    for j in range(set_start, set_end):
-                        w, ws, we = words_in_scene[j]
-                        # Capitalize the word
+                    for j, (w, ws, we) in enumerate(words_to_show):
                         w_upper = w.upper()
-                        if j == i:
-                            # Current word being spoken - highlighted with background
-                            # Use config values for styling
-                            bold_tag = "\\b900" if highlight["bold"] else "\\b0"
-                            text_parts.append(f"{{\\1c{highlight_text_color}\\3c{highlight_outline_color}\\bord{highlight['border_thickness']}\\shad0\\blur0{bold_tag}\\fs{highlight['font_size']}\\fsp{highlight['font_spacing']}}}{w_upper}")
+                        word_idx_in_scene = start_idx + j
+                        
+                        if word_idx_in_scene == i:
+                            # Current word being spoken - green text color, same font size
+                            # Use \1c for green text (secondary color)
+                            # \fsp for spacing between words
+                            word_spacing = 20  # Increased spacing between words
+                            # Green text color for highlighted word, same font size as others
+                            text_parts.append(f"{{\\1c{secondary_color_inline}\\fsp{word_spacing}}}{w_upper}{{\\r}}")
                         else:
-                            # Other words in the set - normal styling
-                            bold_tag = "\\b900" if normal["bold"] else "\\b0"
-                            text_parts.append(f"{{\\1c{normal_text_color}\\3c{normal_outline_color}\\4c{normal_outline_color}\\bord{normal['border_thickness']}\\shad0\\blur0{bold_tag}\\fs{normal['font_size']}\\fsp{normal['font_spacing']}}}{w_upper}")
+                            # Other words - use PrimaryColour (white) text
+                            # Use \1c for PrimaryColour, \fsp for spacing
+                            word_spacing = 20  # Increased spacing between words
+                            text_parts.append(f"{{\\1c{primary_color_inline}\\fsp{word_spacing}}}{w_upper}{{\\r}}")
                     
-                    # Join with configured separator between all words
+                    # Join words with separator - ensure single line, no wrapping
+                    # Use larger separator for more visual space between words
                     full_text = word_separator.join(text_parts)
+                    # Add \q0 to prevent wrapping (0 = no wrapping)
+                    full_text = f"{{\\q0}}{full_text}"
                     
-                    # Create dialogue entry for this segment (non-overlapping)
-                    # Use alignment 2 (bottom center) - no need for \pos, alignment handles it
-                    # Ensure segment_end never exceeds scene_end - use scene_end as hard limit
-                    # For the last word, end exactly at scene_end to prevent any overlap
-                    if i == len(words_in_scene) - 1:
-                        # Last word in scene - end exactly at scene boundary, no extension
-                        final_segment_end = scene_end
-                    else:
-                        final_segment_end = min(segment_end, scene_end)
+                    # Determine timing for this dialogue entry
+                    # Show from start of current word to end of current word
+                    dialogue_start = word_start  # Start when current word starts
+                    dialogue_end = word_end      # End when current word ends
                     
-                    ass_content += f"Dialogue: 0,{seconds_to_ass_time(word_start)},{seconds_to_ass_time(final_segment_end)},Highlight,,0,0,0,,{full_text}\n"
+                    # Ensure timing doesn't exceed scene boundaries
+                    dialogue_start = max(dialogue_start, scene_start)
+                    dialogue_end = min(dialogue_end, scene_end)
+                    
+                    # Add fade transition
+                    full_text_with_fade = add_fade_transition(full_text)
+                    ass_content += f"Dialogue: 0,{seconds_to_ass_time(dialogue_start)},{seconds_to_ass_time(dialogue_end)},MATRIX_CAPTION,,0,0,0,,{full_text_with_fade}\n"
             else:
-                # Fallback to simple subtitle
-                # Limit to max_words and position at bottom center, capitalize
+                # Fallback to simple subtitle (no word timings)
+                # Limit to max_words for single line, capitalize
                 words = subtitle_text.split()
-                if len(words) > max_words:
-                    display_text = word_separator.join([w.upper() for w in words[:max_words]])
-                else:
-                    display_text = word_separator.join([w.upper() for w in words])
-                ass_content += f"Dialogue: 0,{seconds_to_ass_time(scene_start)},{seconds_to_ass_time(scene_end)},Normal,,0,0,0,,{display_text}\n"
+                display_words = words[:max_words] if len(words) > max_words else words
+                
+                # Single line
+                display_text = word_separator.join([w.upper() for w in display_words])
+                
+                # Add fade transition to subtitle text
+                display_text_with_fade = add_fade_transition(display_text)
+                ass_content += f"Dialogue: 0,{seconds_to_ass_time(scene_start)},{seconds_to_ass_time(scene_end)},MATRIX_CAPTION,,0,0,0,,{display_text_with_fade}\n"
         else:
-            # No word timings, use simple subtitle with style
-            # Create a styled version with background box effect
-            # Split into words and show max max_words
+            # No word timings, use simple subtitle
+            # Single line - limit to max_words
             words = subtitle_text.split()
-            if len(words) > max_words:
-                # Show first max_words words
-                display_words = word_separator.join(words[:max_words])
-            else:
-                display_words = subtitle_text
+            display_words = words[:max_words] if len(words) > max_words else words
             
-            # First word gets background with white text, rest white, all capitalized
-            words_list = display_words.split()
-            if len(words_list) > 0:
-                styled_parts = []
-                # First word: highlighted with background
-                bold_tag = "\\b900" if highlight["bold"] else "\\b0"
-                styled_parts.append(f"{{\\1c{highlight_text_color}\\3c{highlight_outline_color}\\bord{highlight['border_thickness']}\\shad0\\blur0{bold_tag}\\fs{highlight['font_size']}\\fsp{highlight['font_spacing']}}}{words_list[0].upper()}")
-                for word in words_list[1:]:
-                    # Other words: normal styling
-                    bold_tag = "\\b900" if normal["bold"] else "\\b0"
-                    styled_parts.append(f"{word_separator}{{\\1c{normal_text_color}\\3c{normal_outline_color}\\4c{normal_outline_color}\\bord{normal['border_thickness']}\\shad0\\blur0{bold_tag}\\fs{normal['font_size']}\\fsp{normal['font_spacing']}}}{word.upper()}")
-                styled_text = "".join(styled_parts)
-            else:
-                bold_tag = "\\b900" if highlight["bold"] else "\\b0"
-                styled_text = f"{{\\1c{highlight_text_color}\\3c{highlight_outline_color}\\bord{highlight['border_thickness']}\\shad0\\blur0{bold_tag}\\fs{highlight['font_size']}\\fsp{highlight['font_spacing']}}}{display_words.upper()}"
-            ass_content += f"Dialogue: 0,{seconds_to_ass_time(scene_start)},{seconds_to_ass_time(scene_end)},Highlight,,0,0,0,,{styled_text}\n"
+            # Create simple text (no karaoke since we don't have word timings)
+            styled_text = word_separator.join([w.upper() for w in display_words])
+            
+            styled_text_with_fade = add_fade_transition(styled_text)
+            ass_content += f"Dialogue: 0,{seconds_to_ass_time(scene_start)},{seconds_to_ass_time(scene_end)},MATRIX_CAPTION,,0,0,0,,{styled_text_with_fade}\n"
     
     with open(ass_file, "w", encoding="utf-8") as f:
         f.write(ass_content)

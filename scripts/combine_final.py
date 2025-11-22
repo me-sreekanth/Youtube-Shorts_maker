@@ -63,9 +63,9 @@ def mux_video():
     else:
         # Default config
         config = {
-            "font": {"name": "Game of Thrones", "file": "Game of Thrones.ttf"},
-            "normal_word": {"font_size": 36},
-            "positioning": {"alignment": 2, "margin_left": 40, "margin_right": 40, "margin_vertical": 60},
+            "font": {"name": "Montserrat", "file": "Montserrat.ttf"},
+            "style": {"font_size": 72},
+            "positioning": {"alignment": 2, "margin_left": 50, "margin_right": 50, "margin_vertical": 180},
             "watermark": {
                 "enabled": True,
                 "file": "input/watermark.png",
@@ -78,16 +78,24 @@ def mux_video():
     # Get absolute path to font file and configure subtitle filter
     font_file = config["font"]["file"]
     font_name = config["font"]["name"]
-    font_size = config["normal_word"]["font_size"]
+    font_size = config["style"]["font_size"]
     pos = config["positioning"]
+    
+    # Get style settings
+    style_config = config.get("style", {})
+    outline_thickness = style_config.get("outline_thickness", 5)
+    shadow = style_config.get("shadow", 0)
+    bold_value = 1 if style_config.get("bold", True) else 0
     
     font_path = os.path.abspath(font_file)
     if os.path.exists(font_path):
         # Use fontsdir to help FFmpeg find the font
-        subtitle_filter = f"subtitles={os.path.abspath(subtitle_file)}:fontsdir={os.path.dirname(font_path)}:force_style='FontName={font_name},FontSize={font_size},PrimaryColour=&H00FFFFFF,OutlineColour=&H0000FF00,BackColour=&H80000000,BorderStyle=1,Outline=3,Shadow=3,Alignment={pos['alignment']},MarginL={pos['margin_left']},MarginR={pos['margin_right']},MarginV={pos['margin_vertical']},Bold=1'"
+        # Note: force_style is optional since ASS file already has styles defined
+        subtitle_filter = f"subtitles={os.path.abspath(subtitle_file)}:fontsdir={os.path.dirname(font_path)}"
     else:
         # Fallback if font not found - still try font name (might be in system fonts)
-        subtitle_filter = f"subtitles={os.path.abspath(subtitle_file)}:force_style='FontName={font_name},FontSize={font_size},PrimaryColour=&H00FFFFFF,OutlineColour=&H0000FF00,BackColour=&H80000000,BorderStyle=1,Outline=3,Shadow=3,Alignment={pos['alignment']},MarginL={pos['margin_left']},MarginR={pos['margin_right']},MarginV={pos['margin_vertical']},Bold=1'"
+        # Note: force_style is optional since ASS file already has styles defined
+        subtitle_filter = f"subtitles={os.path.abspath(subtitle_file)}"
     
     # Get video and audio durations to ensure we preserve all content
     def get_duration(file_path):
@@ -111,7 +119,10 @@ def mux_video():
     if video_duration and audio_duration:
         print(f"   Video duration: {video_duration:.2f}s, Audio duration: {audio_duration:.2f}s")
         duration_diff = audio_duration - video_duration
-        if duration_diff > 0.1:  # If audio is significantly longer
+        
+        # Only extend if the difference is significant (> 0.5s)
+        # For small differences, just let FFmpeg handle it with -shortest or use the longer duration
+        if duration_diff > 0.5:  # If audio is significantly longer
             print(f"   ⚠️  Audio is {duration_diff:.2f}s longer than video")
             print(f"   📹 Extending video to match audio duration...")
             # Extend video by looping the last frame to match audio
@@ -129,6 +140,9 @@ def mux_video():
             subprocess.run(cmd_extend, check=True, capture_output=True)
             video_file = extended_video  # Use extended video
             print(f"   ✅ Video extended to match audio")
+        elif duration_diff > 0.1:
+            # Small difference (< 0.5s), just use audio duration as target
+            print(f"   ℹ️  Small duration difference ({duration_diff:.2f}s), using audio duration")
     
     # Build FFmpeg command with watermark if available
     watermark_config = config.get("watermark", {})
@@ -190,7 +204,7 @@ def mux_video():
             "-map", "2:a",
             "-c:v", "libx264",
             "-c:a", "aac",
-            "-shortest",
+            "-shortest",  # Use shortest stream to avoid extending and causing overlap
             FINAL_VIDEO
         ]
     else:
@@ -202,7 +216,7 @@ def mux_video():
             "-vf", subtitle_filter,
             "-c:v", "libx264",
             "-c:a", "aac",
-            "-shortest",  # Match the shorter stream (should be same now)
+            "-shortest",  # Use shortest stream to avoid extending and causing overlap
             FINAL_VIDEO
         ]
     

@@ -7,40 +7,52 @@
     "file": "Game of Thrones.ttf"
   },
   
-  "highlighted_word": {
-    "_comment": "Styling for the currently spoken word (highlighted word)",
-    "font_size": 48,
-    "text_color": "#FFFF00",
+  "style": {
+    "_comment": "Main subtitle style settings",
+    "font_size": 52,
+    "primary_color": "#FFFFFF",
+    "secondary_color": "#FFFF00",
+    "outline_color": "#000000",
     "background_color": "#000000",
-    "background_transparency": 176,
-    "outline_color": "#000000",
-    "border_thickness": 12,
-    "font_spacing": 6,
-    "bold": true
-  },
-  
-  "normal_word": {
-    "_comment": "Styling for other words (not currently being spoken)",
-    "font_size": 36,
-    "text_color": "#FFFFFF",
-    "outline_color": "#000000",
-    "border_thickness": 4,
-    "font_spacing": 6,
-    "bold": true
+    "background_transparency": 100,
+    "outline_thickness": 5,
+    "shadow": 0,
+    "bold": true,
+    "border_style": 1
   },
   
   "positioning": {
     "_comment": "Alignment: 1=left, 2=center, 3=right, 4=top-left, 5=top-center, 6=top-right, 7=bottom-left, 8=bottom-center, 9=bottom-right. margin_vertical: higher value = higher up on screen",
     "alignment": 2,
-    "margin_left": 40,
-    "margin_right": 40,
-    "margin_vertical": 500
+    "margin_left": 50,
+    "margin_right": 50,
+    "margin_vertical": 480
   },
   
   "display": {
     "_comment": "Display settings for subtitles",
-    "max_words": 4,
-    "word_separator": " "
+    "max_words": 3,
+    "word_separator": "  ",
+    "lines": 1,
+    "line_spacing": 10,
+    "_note_lines": "Number of lines to display subtitles (1 or 2). Second line will always have fewer words than first line.",
+    "_note_line_spacing": "Line spacing in pixels (vertical space between lines). Higher value = more space."
+  },
+  
+  "subtitle_background": {
+    "_comment": "Background settings for the subtitle area",
+    "enabled": true,
+    "color": "#000000",
+    "transparency": 255,
+    "_note": "Color format: #RRGGBB. Transparency: 0-255 (0=fully transparent, 255=fully opaque). 255 = fully opaque black background."
+  },
+  
+  "transitions": {
+    "_comment": "Subtitle transition effects",
+    "fade_enabled": false,
+    "fade_in_duration": 50,
+    "fade_out_duration": 50,
+    "_note_fade": "Fade durations in milliseconds. Higher values = slower fade. Set fade_enabled to false to disable transitions."
   },
   
   "watermark": {
