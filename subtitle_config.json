@@ -9,7 +9,7 @@
   
   "style": {
     "_comment": "Main subtitle style settings",
-    "font_size": 52,
+    "font_size": 42,
     "primary_color": "#FFFFFF",
     "secondary_color": "#FFFF00",
     "outline_color": "#000000",
@@ -18,14 +18,16 @@
     "outline_thickness": 5,
     "shadow": 0,
     "bold": true,
-    "border_style": 1
+    "border_style": 1,
+    "letter_spacing": -20,
+    "_note_letter_spacing": "Letter spacing within words. Negative values reduce spacing (tighter), positive values increase spacing (looser). Default: -2 for tighter letters."
   },
   
   "positioning": {
     "_comment": "Alignment: 1=left, 2=center, 3=right, 4=top-left, 5=top-center, 6=top-right, 7=bottom-left, 8=bottom-center, 9=bottom-right. margin_vertical: higher value = higher up on screen",
     "alignment": 2,
-    "margin_left": 50,
-    "margin_right": 50,
+    "margin_left": 200,
+    "margin_right": 200,
     "margin_vertical": 480
   },
   
@@ -67,7 +69,7 @@
     },
     "size": {
       "_comment": "Size: 'auto' (maintain aspect ratio), or specify width in pixels (height will scale proportionally)",
-      "width": 200,
+      "width": 150,
       "mode": "auto"
     },
     "opacity": {

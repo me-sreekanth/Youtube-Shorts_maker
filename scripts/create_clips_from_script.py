@@ -51,42 +51,42 @@ def get_animation_filter(effect_type: str, duration: float, width: int = 1080, h
     fps = 30
     total_frames = int(duration * fps)
     
-    # Calculate zoom parameters
-    zoom_end = 1.4
+    # Calculate zoom parameters - reduced for better clarity
+    zoom_end = 1.15  # Reduced from 1.4 to 1.15 (15% zoom instead of 40%)
     
     effects = {
-        # Zoom effects
-        "zoom_in": f"scale={int(width*zoom_end)}:{int(height*zoom_end)},zoompan=z='min(zoom+0.0018,{zoom_end})':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
-        "zoom_out": f"scale={int(width*zoom_end)}:{int(height*zoom_end)},zoompan=z='if(lte(zoom,1.0),1.0,max(zoom-0.0018,1.0))':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}:zoom={zoom_end}",
-        "ken_burns_in": f"scale={int(width*1.4)}:{int(height*1.4)},zoompan=z='min(zoom+0.0012,1.4)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
-        "ken_burns_out": f"scale={int(width*1.4)}:{int(height*1.4)},zoompan=z='if(lte(zoom,1.0),1.0,max(zoom-0.0012,1.0))':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}:zoom=1.4",
+        # Zoom effects - reduced zoom for better clarity
+        "zoom_in": f"scale={int(width*zoom_end)}:{int(height*zoom_end)},zoompan=z='min(zoom+0.0012,{zoom_end})':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        "zoom_out": f"scale={int(width*zoom_end)}:{int(height*zoom_end)},zoompan=z='if(lte(zoom,1.0),1.0,max(zoom-0.0012,1.0))':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}:zoom={zoom_end}",
+        "ken_burns_in": f"scale={int(width*1.15)}:{int(height*1.15)},zoompan=z='min(zoom+0.0010,1.15)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        "ken_burns_out": f"scale={int(width*1.15)}:{int(height*1.15)},zoompan=z='if(lte(zoom,1.0),1.0,max(zoom-0.0010,1.0))':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}:zoom=1.15",
         
-        # Pan effects
-        "pan_left": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*t/{duration}, 0)':0",
-        "pan_right": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*(1-t/{duration}), 0)':0",
-        "pan_up": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
-        "pan_down": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*(1-t/{duration}), 0)'",
+        # Pan effects - reduced scale for better clarity
+        "pan_left": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*t/{duration}, 0)':0",
+        "pan_right": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*(1-t/{duration}), 0)':0",
+        "pan_up": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
+        "pan_down": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*(1-t/{duration}), 0)'",
         
-        # Dynamic zoom effects - use simpler pulse effect instead of complex zoompan
-        "zoom_center": f"scale={int(width*1.3)}:{int(height*1.3)},zoompan=z='min(zoom+0.0008,1.3)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
-        "zoom_rapid": f"scale={int(width*1.6)}:{int(height*1.6)},zoompan=z='min(zoom+0.0025,1.6)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        # Dynamic zoom effects - reduced for better clarity
+        "zoom_center": f"scale={int(width*1.15)}:{int(height*1.15)},zoompan=z='min(zoom+0.0008,1.15)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
+        "zoom_rapid": f"scale={int(width*1.2)}:{int(height*1.2)},zoompan=z='min(zoom+0.0015,1.2)':d={total_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={width}x{height}",
         
-        # Parallax-like effects
-        "parallax_up": f"scale={int(width*1.4)}:{int(height*1.4)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*0.3*sin(PI*t/{duration}), 0)'",
-        "parallax_down": f"scale={int(width*1.4)}:{int(height*1.4)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*(1-0.3*sin(PI*t/{duration})), 0)'",
+        # Parallax-like effects - reduced scale
+        "parallax_up": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*0.3*sin(PI*t/{duration}), 0)'",
+        "parallax_down": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:0:'if(gte(t,0), (ih-{height})*(1-0.3*sin(PI*t/{duration})), 0)'",
         
-        # Movement effects
-        "drift_left": f"scale={int(width*1.2)}:{int(height*1.2)},crop={width}:{height}:'if(gte(t,0), 20*sin(2*PI*t/{duration}), 0)':0",
-        "drift_right": f"scale={int(width*1.2)}:{int(height*1.2)},crop={width}:{height}:'if(gte(t,0), -20*sin(2*PI*t/{duration}), 0)':0",
-        "float_up": f"scale={int(width*1.2)}:{int(height*1.2)},crop={width}:{height}:0:'if(gte(t,0), 15*sin(2*PI*t/{duration}), 0)'",
+        # Movement effects - reduced scale
+        "drift_left": f"scale={int(width*1.1)}:{int(height*1.1)},crop={width}:{height}:'if(gte(t,0), 20*sin(2*PI*t/{duration}), 0)':0",
+        "drift_right": f"scale={int(width*1.1)}:{int(height*1.1)},crop={width}:{height}:'if(gte(t,0), -20*sin(2*PI*t/{duration}), 0)':0",
+        "float_up": f"scale={int(width*1.1)}:{int(height*1.1)},crop={width}:{height}:0:'if(gte(t,0), 15*sin(2*PI*t/{duration}), 0)'",
         
         # Pulse and breathing
         "pulse": f"{base_scale},scale='iw*(1+0.04*sin(2*PI*t/{duration}))':'ih*(1+0.04*sin(2*PI*t/{duration}))',crop={width}:{height}",
         "breathe": f"{base_scale},scale='iw*(1+0.02*sin(4*PI*t/{duration}))':'ih*(1+0.02*sin(4*PI*t/{duration}))',crop={width}:{height}",
         
-        # Diagonal movements
-        "diagonal_tl_br": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*t/{duration}, 0)':'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
-        "diagonal_tr_bl": f"scale={int(width*1.3)}:{int(height*1.3)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*(1-t/{duration}), 0)':'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
+        # Diagonal movements - reduced scale
+        "diagonal_tl_br": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*t/{duration}, 0)':'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
+        "diagonal_tr_bl": f"scale={int(width*1.15)}:{int(height*1.15)},crop={width}:{height}:'if(gte(t,0), (iw-{width})*(1-t/{duration}), 0)':'if(gte(t,0), (ih-{height})*t/{duration}, 0)'",
         
         # Static
         "static": base_scale

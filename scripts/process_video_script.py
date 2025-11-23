@@ -196,6 +196,75 @@ def generate_audio_for_scenes(scenes):
     
     return final_audio
 
+def crop_image_remove_bottom(image_path):
+    """Crop image to remove bottom watermark area.
+    If image is 576x1024, crops to 576x978 (removes 46 pixels from bottom).
+    For other sizes, calculates proportionally: removes ~4.49% from bottom.
+    """
+    try:
+        # Get image dimensions using ffprobe
+        cmd_probe = [
+            "ffprobe", "-v", "error",
+            "-select_streams", "v:0",
+            "-show_entries", "stream=width,height",
+            "-of", "csv=s=x:p=0",
+            image_path
+        ]
+        result = subprocess.run(cmd_probe, capture_output=True, text=True, check=True)
+        width, height = map(int, result.stdout.strip().split('x'))
+        
+        # Calculate pixels to remove from bottom
+        # Target: 576x1024 -> 576x978 (remove 46 pixels = 4.49% of 1024)
+        # For other sizes, use the same percentage
+        pixels_to_remove = int(height * 0.0449)  # 4.49% of height
+        new_height = height - pixels_to_remove
+        
+        print(f"      📐 Original: {width}x{height}, Cropping to: {width}x{new_height} (removing {pixels_to_remove}px from bottom)")
+        
+        # Crop from top, removing bottom portion
+        # Crop filter: crop=width:height:x:y (x and y are top-left coordinates)
+        # We keep the top portion, so x=0, y=0
+        temp_path = image_path + ".temp.jpg"
+        cmd_crop = [
+            "ffmpeg", "-y",
+            "-i", image_path,
+            "-vf", f"crop={width}:{new_height}:0:0",
+            "-q:v", "2",  # High quality
+            temp_path
+        ]
+        result = subprocess.run(cmd_crop, capture_output=True, text=True, check=True)
+        
+        # Verify the cropped image was created and has correct dimensions
+        if os.path.exists(temp_path):
+            # Check dimensions of cropped image
+            cmd_probe_temp = cmd_probe.copy()
+            cmd_probe_temp[-1] = temp_path
+            result_check = subprocess.run(cmd_probe_temp, capture_output=True, text=True, check=True)
+            width_check, height_check = map(int, result_check.stdout.strip().split('x'))
+            
+            # Allow 1 pixel tolerance due to rounding differences
+            if abs(height_check - new_height) <= 1:
+                # Replace original with cropped version
+                import shutil
+                shutil.move(temp_path, image_path)
+                print(f"      ✅ Successfully cropped to {width_check}x{height_check}")
+                return True
+            else:
+                print(f"      ⚠️  Crop verification failed: expected {new_height}±1, got {height_check}")
+                if os.path.exists(temp_path):
+                    os.remove(temp_path)
+                return False
+        else:
+            print(f"      ⚠️  Cropped image file was not created")
+            return False
+            
+    except subprocess.CalledProcessError as e:
+        print(f"      ❌ FFmpeg error cropping image {image_path}: {e.stderr if e.stderr else e}")
+        return False
+    except Exception as e:
+        print(f"      ❌ Error cropping image {image_path}: {e}")
+        return False
+
 def generate_images_for_scenes(scenes):
     """Generate images for each scene."""
     # Import generate_images module
@@ -254,8 +323,11 @@ def generate_images_for_scenes(scenes):
             try:
                 path = generate_image(prompt, f"img_{i}.jpg")
                 if path:
+                    # Immediately crop to remove bottom watermark
+                    print(f"      ✂️  Cropping image to remove watermark...")
+                    crop_image_remove_bottom(path)
                     image_files.append(path)
-                    print(f"      ✅ Saved {path}")
+                    print(f"      ✅ Saved and cropped {path}")
                 else:
                     print(f"      ⚠️  Failed to generate image for scene {i}, will skip")
                     # Don't raise - continue with other images
@@ -349,6 +421,7 @@ def create_styled_ass_subtitles(scenes, word_timings, ass_file, scene_audio_file
     outline_thickness = style_config.get("outline_thickness", 5)
     shadow = style_config.get("shadow", 0)
     bold = style_config.get("bold", True)
+    letter_spacing = style_config.get("letter_spacing", -2)  # Negative = tighter letters
     
     # Add padding inside the black background by increasing outline thickness
     # The outline value in BorderStyle=3 controls the padding inside the box
@@ -403,7 +476,7 @@ WrapStyle: 1
 ; SecondaryColour = karaoke highlight (green)
 ; OutlineColour  = black border
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: MATRIX_CAPTION,{font_name},{font_size},{primary_color_style},{secondary_color_style},{outline_color_style},{bg_color_style},{bold_value},0,0,0,100,100,0,0,3,{background_padding},{shadow},{pos["alignment"]},{pos["margin_left"]},{pos["margin_right"]},{pos["margin_vertical"]},0
+Style: MATRIX_CAPTION,{font_name},{font_size},{primary_color_style},{secondary_color_style},{outline_color_style},{bg_color_style},{bold_value},0,0,0,100,100,{letter_spacing},0,3,{background_padding},{shadow},{pos["alignment"]},{pos["margin_left"]},{pos["margin_right"]},{pos["margin_vertical"]},0
 
 [Events]
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
