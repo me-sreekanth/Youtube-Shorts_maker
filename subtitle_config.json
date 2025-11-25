@@ -19,8 +19,8 @@
     "shadow": 0,
     "bold": true,
     "border_style": 1,
-    "letter_spacing": -20,
-    "_note_letter_spacing": "Letter spacing within words. Negative values reduce spacing (tighter), positive values increase spacing (looser). Default: -2 for tighter letters."
+    "letter_spacing": -40,
+    "_note_letter_spacing": "Letter spacing within words. Negative values reduce spacing (tighter), positive values increase spacing (looser). More negative = tighter letters. Default: -2 for tighter letters."
   },
   
   "positioning": {

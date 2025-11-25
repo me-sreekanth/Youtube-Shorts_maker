@@ -1,6 +1,6 @@
 """
 Create video clips from images using the video script JSON format.
-This uses the exact durations specified in the script.
+This uses actual audio durations when available, falling back to JSON durations.
 """
 import json
 import os
@@ -94,6 +94,19 @@ def get_animation_filter(effect_type: str, duration: float, width: int = 1080, h
     
     return effects.get(effect_type, base_scale)
 
+def get_audio_duration(audio_file):
+    """Get audio duration in seconds using ffprobe."""
+    try:
+        cmd = [
+            "ffprobe", "-v", "error", "-show_entries",
+            "format=duration", "-of", "default=noprint_wrappers=1:nokey=1",
+            audio_file
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        return float(result.stdout.strip())
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
+        return None
+
 def create_clip(image_path: str, duration: float, out_path: str, effect: str = "ken_burns_in"):
     """Create a video clip from an image with specified duration and animation effect."""
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
@@ -143,7 +156,15 @@ def main():
     ]
     
     for idx, scene in enumerate(scenes, start=1):
+        # Try to get actual audio duration first, fallback to JSON duration
         duration = scene.get("duration", 4)
+        scene_audio = os.path.join("output/audio/temp_scenes", f"scene_{idx}.mp3")
+        if os.path.exists(scene_audio):
+            audio_duration = get_audio_duration(scene_audio)
+            if audio_duration:
+                duration = audio_duration
+                print(f"  📊 Using actual audio duration: {duration:.2f}s (was {scene.get('duration', 4)}s)")
+        
         img_path = os.path.join(IMAGE_DIR, f"img_{idx}.jpg")
         
         # Get effect from scene, or auto-assign engaging effect
@@ -158,7 +179,7 @@ def main():
             continue
         
         clip_path = os.path.join(CLIPS_DIR, f"clip_{idx}.mp4")
-        print(f"  -> Clip {idx}: {duration}s from {img_path} [Effect: {effect}]")
+        print(f"  -> Clip {idx}: {duration:.2f}s from {img_path} [Effect: {effect}]")
         
         try:
             create_clip(img_path, duration, clip_path, effect)
@@ -201,6 +222,13 @@ def main():
         scene_idx = clip_scene_map[i]
         scene = scenes[scene_idx]
         duration = scene.get("duration", 4)
+        
+        # Try to get actual audio duration if available
+        scene_audio = os.path.join("output/audio/temp_scenes", f"scene_{scene_idx + 1}.mp3")
+        if os.path.exists(scene_audio):
+            audio_duration = get_audio_duration(scene_audio)
+            if audio_duration:
+                duration = audio_duration
         
         # Only apply fade_in if not the first clip
         fade_in = f"fade=t=in:st=0:d={transition_duration}" if i > 0 else ""

@@ -6,6 +6,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 SCRIPT_FILE = "input/video_script.json"
@@ -190,9 +191,9 @@ def generate_audio_for_scenes(scenes):
         final_audio = os.path.join(AUDIO_DIR, "voice.mp3")
         shutil.copy(audio_files[0], final_audio)
     
-    # Cleanup
-    import shutil
-    shutil.rmtree(temp_dir, ignore_errors=True)
+    # Don't cleanup temp_dir yet - clips need the audio durations
+    # Cleanup will happen after clips are created
+    # shutil.rmtree(temp_dir, ignore_errors=True)
     
     return final_audio
 
@@ -334,6 +335,12 @@ def generate_images_for_scenes(scenes):
             except Exception as e:
                 print(f"      ⚠️  Error generating image for scene {i}: {e}")
                 print(f"      Continuing with other images...")
+            
+            # Longer delay between requests to avoid rate limiting and server overload
+            if i < len(scenes):
+                delay = 5  # 5 second delay between image generations
+                print(f"      ⏳ Waiting {delay}s before next image...")
+                time.sleep(delay)
                 # Don't raise - continue processing
     
     return image_files
@@ -675,15 +682,14 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                         if word_idx_in_scene == i:
                             # Current word being spoken - green text color, same font size
                             # Use \1c for green text (secondary color)
-                            # \fsp for spacing between words
-                            word_spacing = 20  # Increased spacing between words
+                            # No \fsp - letter spacing is controlled by style definition
                             # Green text color for highlighted word, same font size as others
-                            text_parts.append(f"{{\\1c{secondary_color_inline}\\fsp{word_spacing}}}{w_upper}{{\\r}}")
+                            text_parts.append(f"{{\\1c{secondary_color_inline}}}{w_upper}{{\\r}}")
                         else:
                             # Other words - use PrimaryColour (white) text
-                            # Use \1c for PrimaryColour, \fsp for spacing
-                            word_spacing = 20  # Increased spacing between words
-                            text_parts.append(f"{{\\1c{primary_color_inline}\\fsp{word_spacing}}}{w_upper}{{\\r}}")
+                            # Use \1c for PrimaryColour
+                            # No \fsp - letter spacing is controlled by style definition
+                            text_parts.append(f"{{\\1c{primary_color_inline}}}{w_upper}{{\\r}}")
                     
                     # Join words with separator - ensure single line, no wrapping
                     # Use larger separator for more visual space between words

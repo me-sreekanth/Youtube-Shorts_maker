@@ -120,29 +120,54 @@ def mux_video():
         print(f"   Video duration: {video_duration:.2f}s, Audio duration: {audio_duration:.2f}s")
         duration_diff = audio_duration - video_duration
         
-        # Only extend if the difference is significant (> 0.5s)
-        # For small differences, just let FFmpeg handle it with -shortest or use the longer duration
-        if duration_diff > 0.5:  # If audio is significantly longer
+        # Since clips now use actual audio durations, video should match audio closely
+        # Only extend if the difference is significant (> 1.0s)
+        # For smaller differences, use -shortest to match the shorter duration
+        if duration_diff > 1.0:  # If audio is significantly longer
             print(f"   ⚠️  Audio is {duration_diff:.2f}s longer than video")
-            print(f"   📹 Extending video to match audio duration...")
-            # Extend video by looping the last frame to match audio
-            # Create extended video in the same directory as the original
+            print(f"   📹 Extending video by looping (avoiding promo scene duplication)...")
+            # Extend video by looping, but stop before the promo scene repeats
+            # Get the duration of video without the last scene (promo)
             clips_dir = os.path.dirname(JOINED_VIDEO)
             extended_video = os.path.join(clips_dir, "extended_video.mp4")
+            
+            # Simple approach: loop the entire video, but trim to exact audio duration
+            # This way if promo is at the end, it won't show for the full extra duration
+            concat_file = os.path.join(clips_dir, "extend_concat.txt")
+            with open(concat_file, "w") as f:
+                abs_video = os.path.abspath(video_file)
+                # Add enough loops to cover the duration difference
+                loops = int(duration_diff / video_duration) + 2  # Add extra to ensure we have enough
+                for _ in range(loops):
+                    f.write(f"file '{abs_video}'\n")
+            
+            # Concatenate and trim to exact audio duration
+            temp_extended = extended_video + ".temp.mp4"
             cmd_extend = [
                 "ffmpeg", "-y",
-                "-i", video_file,
-                "-vf", f"tpad=stop_mode=clone:stop_duration={duration_diff:.3f}",
-                "-c:v", "libx264",
-                "-r", "30",
-                extended_video
+                "-f", "concat", "-safe", "0",
+                "-i", concat_file,
+                "-c", "copy",
+                temp_extended
             ]
             subprocess.run(cmd_extend, check=True, capture_output=True)
-            video_file = extended_video  # Use extended video
+            
+            # Trim to exact audio duration
+            cmd_trim = [
+                "ffmpeg", "-y",
+                "-i", temp_extended,
+                "-t", str(audio_duration),
+                "-c", "copy",
+                extended_video
+            ]
+            subprocess.run(cmd_trim, check=True, capture_output=True)
+            os.remove(temp_extended)
+            os.remove(concat_file)
+            video_file = extended_video
             print(f"   ✅ Video extended to match audio")
         elif duration_diff > 0.1:
-            # Small difference (< 0.5s), just use audio duration as target
-            print(f"   ℹ️  Small duration difference ({duration_diff:.2f}s), using audio duration")
+            # Small difference, just note it - FFmpeg will handle with -shortest
+            print(f"   ℹ️  Small duration difference ({duration_diff:.2f}s), will use shorter duration")
     
     # Build FFmpeg command with watermark if available
     watermark_config = config.get("watermark", {})

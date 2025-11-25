@@ -32,6 +32,16 @@ def main():
         print("Check the output above for details.")
     else:
         print("\n🎉 All done! Check output/final/final_short.mp4")
+    
+    # Cleanup temp audio files after all processing is complete
+    import shutil
+    temp_audio_dir = root / "output" / "audio" / "temp_scenes"
+    if temp_audio_dir.exists():
+        try:
+            shutil.rmtree(temp_audio_dir, ignore_errors=True)
+            print("🧹 Cleaned up temporary audio files")
+        except Exception as e:
+            print(f"⚠️  Could not clean up temp files: {e}")
 
 if __name__ == "__main__":
     main()
