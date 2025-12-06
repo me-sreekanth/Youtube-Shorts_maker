@@ -539,6 +539,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             last_word_end = scene_start
             
             # Collect words for this scene based on word count matching narration
+            # Include ALL words that belong to this scene's narration
             while word_idx < len(word_timings) and words_collected < len(scene_narration_words):
                 word, word_start, word_end = word_timings[word_idx]
                 # Only collect if this word hasn't been assigned to a previous scene
@@ -550,9 +551,26 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                     # This word was already processed, skip it
                     word_idx += 1
             
+            # If we collected fewer words than expected, continue collecting until we find the next scene's start
+            # This handles cases where transcription has more words or timing differences
+            if words_collected < len(scene_narration_words) and word_idx < len(word_timings):
+                # Try to collect a few more words to ensure we get the complete sentence
+                # Stop when we've collected enough or when we reach the next scene's expected start
+                expected_next_start = scene_start + scene.get("duration", 4)
+                while word_idx < len(word_timings):
+                    word, word_start, word_end = word_timings[word_idx]
+                    # If word starts before expected next scene, include it
+                    if word_start < expected_next_start:
+                        words_collected += 1
+                        last_word_end = word_end
+                        word_idx += 1
+                    else:
+                        break
+            
             # Scene ends when its last word ends, or use JSON duration as fallback
+            # Add a small buffer to ensure we capture the complete last word
             if words_collected > 0:
-                scene_end = last_word_end
+                scene_end = last_word_end + 0.1  # Small buffer to ensure last word is fully captured
             else:
                 scene_end = scene_start + scene.get("duration", 4)
             scene_boundaries.append((scene_start, scene_end))
@@ -634,36 +652,36 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                         # Word is before scene start, skip it
                         word_index += 1
                 else:
-                    # For non-last scenes, use VERY STRICT boundaries to prevent any overlap
-                    # Only include words that are COMPLETELY within the scene boundaries
+                    # For non-last scenes, include words that START within the scene
+                    # This ensures we capture all words, even if they extend slightly beyond scene_end
                     # Word must:
                     # 1. Start at or after scene_start (with small buffer for precision)
-                    # 2. Start strictly before scene_end (no buffer - must be before)
-                    # 3. End strictly before scene_end (no buffer - must end before next scene starts)
-                    # CRITICAL: Also check if next scene exists and ensure we don't include its words
+                    # 2. Start before next scene starts (this is the key - include if word starts in this scene)
+                    # 3. Allow words to extend slightly beyond scene_end to capture complete sentences
                     next_scene_start = scene_boundaries[idx][0] if idx < len(scene_boundaries) else float('inf')
-                    word_starts_in_scene = word_start >= (scene_start - boundary_buffer) and word_start < scene_end
-                    word_ends_in_scene = word_end <= scene_end
-                    word_before_next_scene = word_end <= next_scene_start
                     
-                    if word_starts_in_scene and word_ends_in_scene and word_before_next_scene:
-                        # Word is completely within this scene and doesn't overlap with next scene
+                    # Include word if it starts within this scene (even if it extends beyond scene_end)
+                    # This ensures we capture all words, especially at the end of sentences
+                    word_starts_in_scene = word_start >= (scene_start - boundary_buffer) and word_start < next_scene_start
+                    
+                    if word_starts_in_scene:
+                        # Word starts in this scene - include it even if it extends beyond scene_end
                         words_in_scene.append((word, word_start, word_end))
                         seen_word_indices.add(word_index)
                         word_index += 1
-                    elif word_start >= scene_end or word_start >= next_scene_start:
-                        # This word starts at or after the next scene, stop collecting immediately
+                    elif word_start >= next_scene_start:
+                        # This word starts in the next scene, stop collecting for this scene
                         break
                     else:
-                        # Word is before scene start or extends beyond scene end, skip it
+                        # Word is before scene start, skip it
                         word_index += 1
             
             # Create word-by-word subtitles showing only one word at a time with random size and color
             if words_in_scene:
-                # For the last scene ONLY, extend scene_end to include the last word's end time
-                if is_last_scene and words_in_scene:
-                    last_word_end_time = words_in_scene[-1][2]  # Get end time of last word
-                    scene_end = max(scene_end, last_word_end_time)  # Extend scene to include last word
+                # Extend scene_end to include the last word's end time for ALL scenes
+                # This ensures we capture complete sentences, especially the final words
+                last_word_end_time = words_in_scene[-1][2]  # Get end time of last word
+                scene_end = max(scene_end, last_word_end_time + 0.1)  # Extend scene to include last word with buffer
                 
                 # Define colors: yellow, white, red
                 colors = ["#FFFF00", "#FFFFFF", "#FF0000"]  # Yellow, White, Red
@@ -671,6 +689,13 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                 # Define two font sizes (base size and larger size)
                 base_font_size = font_size
                 larger_font_size = int(font_size * 1.3)  # 30% larger
+                
+                # Calculate fixed Y position to lock vertical alignment
+                # For 1920px height video with margin_vertical from bottom, calculate center X and Y
+                # Alignment 2 = center-bottom, so Y position = height - margin_vertical
+                video_height = 1920
+                fixed_y = video_height - pos["margin_vertical"]
+                fixed_x = 540  # Center X for 1080px width
                 
                 # Create dialogue entries for each word - show only one word at a time
                 for i, (current_word, word_start, word_end) in enumerate(words_in_scene):
@@ -686,16 +711,22 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                     
                     # Apply random color and size to the word
                     # \1c for text color, \fs for font size
-                    full_text = f"{{\\1c{selected_color_inline}\\fs{selected_size}}}{w_upper}{{\\r}}"
+                    # Use \pos to lock the position so all words appear at the same vertical position
+                    # regardless of font size changes - this prevents words from appearing at different heights
+                    full_text = f"{{\\pos({fixed_x},{fixed_y})\\1c{selected_color_inline}\\fs{selected_size}}}{w_upper}{{\\r}}"
                     
                     # Determine timing for this dialogue entry
                     # Show from start of current word to end of current word
                     dialogue_start = word_start  # Start when current word starts
                     dialogue_end = word_end      # End when current word ends
                     
-                    # Ensure timing doesn't exceed scene boundaries
+                    # Ensure timing doesn't exceed scene boundaries, but allow slight extension for last word
                     dialogue_start = max(dialogue_start, scene_start)
-                    dialogue_end = min(dialogue_end, scene_end)
+                    # For the last word in a scene, allow it to extend slightly beyond scene_end to ensure it's fully visible
+                    if i == len(words_in_scene) - 1:
+                        dialogue_end = max(dialogue_end, scene_end)  # Allow last word to extend
+                    else:
+                        dialogue_end = min(dialogue_end, scene_end)
                     
                     # Add fade transition
                     full_text_with_fade = add_fade_transition(full_text)

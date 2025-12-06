@@ -1,70 +1,70 @@
 {
-  "title": "Why the Matrix Chose Neo #matrix #shorts",
-  "description": "Neo wasn’t a glitch—he was chosen. The Matrix designed him, predicted him, and even guided him toward rebellion. But the reason is deeper than prophecy: Neo was necessary for balance, a counter-force the system itself required. Discover why the Matrix chose Neo, how he became its greatest threat, and why he was the only one who could save it. #MatrixLore #Neo #SciFiSecrets #Shorts",
+  "title": "Why the Source Can’t Predict Love #matrix #shorts",
+  "description": "The Source can predict every decision, every probability, every outcome—except love. Love breaks logic. Love defies algorithms. And love is the one thing that let Neo defeat the system. Discover why the Source cannot model love and why this emotion became the key to humanity's freedom. #MatrixLore #Neo #SciFiSecrets #Shorts",
   "scenes": [
     {
       "scene_number": 1,
       "scene_type": "hook",
-      "narration": "Neo wasn’t the system’s mistake… he was its choice.",
-      "image_prompt": "Neo glowing gold while surrounded by layers of green Matrix code selecting him as anomaly, vertical 1080x1920",
+      "narration": "The Source can predict anything… except love.",
+      "image_prompt": "massive glowing Source core surrounded by swirling green code, unable to resolve images of Neo and Trinity, vertical 1080x1920",
       "duration": 4,
       "effect": "glitch_in"
     },
     {
       "scene_number": 2,
-      "narration": "The Matrix knew someone would question reality—so it prepared for him.",
-      "image_prompt": "probability charts and branching pathways forming Neo’s silhouette in glowing green code",
+      "narration": "It calculates every outcome with perfect logic.",
+      "image_prompt": "Source displaying branching probability trees and digital equations filling the air",
       "duration": 4,
       "effect": "slow_zoom_in"
     },
     {
       "scene_number": 3,
-      "narration": "Every version of the simulation produced an anomaly… but Neo was different.",
-      "image_prompt": "six ghostly figures representing previous Ones fading behind Neo’s bright golden outline",
+      "narration": "But love doesn’t follow logic—it's chaos shaped by emotion.",
+      "image_prompt": "digital code fracturing into swirling golden waves representing emotion beyond math",
       "duration": 4,
       "effect": "pan_left"
     },
     {
       "scene_number": 4,
-      "narration": "His code wasn’t random—it was sculpted by the system over generations.",
-      "image_prompt": "evolving DNA-like digital strands forming Neo's profile, symbolic predestination",
+      "narration": "Love isn't chosen. It emerges. It rewrites identity and purpose.",
+      "image_prompt": "Neo and Trinity glowing with interwoven golden code, symbolizing emotional connection",
       "duration": 4
     },
     {
       "scene_number": 5,
-      "narration": "The Matrix needed him… because without the One, the cycle can’t reset.",
-      "image_prompt": "digital loop forming in Matrix code, Neo standing at its center as the key to reboot",
+      "narration": "The Source models fear, ambition, survival… but love doesn’t fit patterns.",
+      "image_prompt": "probability equations failing and error messages cascading across Source screens",
       "duration": 4
     },
     {
       "scene_number": 6,
-      "narration": "But here’s the twist: Neo had to believe he chose rebellion on his own.",
-      "image_prompt": "Neo breaking chains of code while faint circuitry hints at hidden guidance",
+      "narration": "Love makes humans unpredictable. And unpredictability breaks simulations.",
+      "image_prompt": "Matrix code twisting and glitching around the image of a couple holding hands",
       "duration": 4
     },
     {
       "scene_number": 7,
-      "narration": "The Oracle didn’t predict Neo—she nurtured the choices that made him unstoppable.",
-      "image_prompt": "Oracle placing her hand on Neo’s shoulder, soft golden code spiraling between them",
+      "narration": "That’s why Neo’s choice shattered the Architect’s equation.",
+      "image_prompt": "Architect watching screens glitch as Neo’s love for Trinity causes cascading failures",
       "duration": 4
     },
     {
       "scene_number": 8,
-      "narration": "The Matrix didn’t pick Neo because he would follow it… but because he would break it.",
-      "image_prompt": "Neo cracking a wall of green code, golden light bursting through into new rules",
+      "narration": "He didn’t pick survival or logic—he chose emotion.",
+      "image_prompt": "Neo reaching through swirling code toward Trinity, green code bending away from them",
       "duration": 4
     },
     {
       "scene_number": 9,
-      "narration": "Only Neo could force the system to evolve beyond control.",
-      "image_prompt": "Matrix collapsing into new golden code patterns, Neo guiding its transformation",
+      "narration": "And no algorithm can predict a choice made from the heart.",
+      "image_prompt": "green probability charts collapsing as golden waves overwrite them, symbolizing emotion over logic",
       "duration": 4
     },
     {
       "scene_number": 10,
       "scene_type": "final",
-      "narration": "The Matrix chose Neo not as its savior… but as its evolution.",
-      "image_prompt": "Neo standing before a blinding digital sunrise, code transforming into organic light",
+      "narration": "That’s why the Source can’t predict love—because love isn’t logic… it’s freedom.",
+      "image_prompt": "Neo and Trinity embraced in glowing golden light while Matrix code dissolves around them",
       "duration": 4,
       "effect": "fade_out"
     }
