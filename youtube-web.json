@@ -1,0 +1,12 @@
+{
+  "web": {
+    "client_id": "621705575287-2vi64s3mlj7kd9v1cjmj4ttl0t7lj7ld.apps.googleusercontent.com",
+    "project_id": "rouge-ai-404909",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "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",
+    "redirect_uris": ["http://localhost:8080", "http://localhost:8080/"]
+  }
+}
+

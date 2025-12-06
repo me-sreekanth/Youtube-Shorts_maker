@@ -4,6 +4,7 @@ This replaces the summarizer workflow with a direct script format.
 """
 import json
 import os
+import random
 import subprocess
 import sys
 import time
@@ -374,9 +375,12 @@ def create_subtitles(scenes, word_timings=None):
                 millis %= 1000
                 return f"{hours:02}:{minutes:02}:{secs:02},{millis:03}"
             
+            # IMPORTANT: Use narration for subtitles to match the audio
+            # subtitle field is optional - we use narration to ensure audio and subtitles match
+            subtitle_text = scene.get('narration', scene.get('subtitle', ''))
             f.write(f"{idx}\n")
             f.write(f"{seconds_to_srt_time(start_time)} --> {seconds_to_srt_time(end_time)}\n")
-            f.write(f"{scene['subtitle']}\n\n")
+            f.write(f"{subtitle_text}\n\n")
             
             current_time = end_time
     
@@ -587,7 +591,10 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
         original_scene_start, original_scene_end = scene_boundaries[idx - 1]
         scene_start = original_scene_start
         scene_end = original_scene_end
-        subtitle_text = scene['subtitle']
+        # IMPORTANT: Use narration for subtitles to match the audio (word timings are based on narration)
+        # subtitle field is optional - if provided and different, it will cause word mismatch
+        # So we always use narration to ensure audio and subtitles match
+        subtitle_text = scene.get('narration', scene.get('subtitle', ''))
         
         # Get next scene's start time to ensure strict boundaries (prevent overlap)
         next_scene_start = scene_boundaries[idx][0] if idx < len(scene_boundaries) else float('inf')
@@ -595,6 +602,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
         # If we have word timings, create word-level highlighting
         if word_timings and word_index < len(word_timings):
             words_in_scene = []
+            seen_word_indices = set()  # Track which word indices we've already added to prevent duplicates
             
             # Collect words that belong STRICTLY to this scene only
             # For the last scene, be more lenient to include all words
@@ -608,6 +616,11 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
             boundary_buffer = 0.05  # Small buffer for timing precision
             
             while word_index < len(word_timings):
+                # Skip if we've already processed this word index
+                if word_index in seen_word_indices:
+                    word_index += 1
+                    continue
+                
                 word, word_start, word_end = word_timings[word_index]
                 
                 if is_last_scene:
@@ -615,6 +628,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                     # This ensures we capture all remaining words
                     if word_start >= scene_start - boundary_buffer:
                         words_in_scene.append((word, word_start, word_end))
+                        seen_word_indices.add(word_index)
                         word_index += 1
                     else:
                         # Word is before scene start, skip it
@@ -635,6 +649,7 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                     if word_starts_in_scene and word_ends_in_scene and word_before_next_scene:
                         # Word is completely within this scene and doesn't overlap with next scene
                         words_in_scene.append((word, word_start, word_end))
+                        seen_word_indices.add(word_index)
                         word_index += 1
                     elif word_start >= scene_end or word_start >= next_scene_start:
                         # This word starts at or after the next scene, stop collecting immediately
@@ -643,59 +658,35 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                         # Word is before scene start or extends beyond scene end, skip it
                         word_index += 1
             
-            # Create word-by-word subtitles showing max 3 words, highlighting only the current word
+            # Create word-by-word subtitles showing only one word at a time with random size and color
             if words_in_scene:
                 # For the last scene ONLY, extend scene_end to include the last word's end time
                 if is_last_scene and words_in_scene:
                     last_word_end_time = words_in_scene[-1][2]  # Get end time of last word
                     scene_end = max(scene_end, last_word_end_time)  # Extend scene to include last word
                 
-                # Create dialogue entries for each word, showing a sliding window of up to max_words (3)
+                # Define colors: yellow, white, red
+                colors = ["#FFFF00", "#FFFFFF", "#FF0000"]  # Yellow, White, Red
+                
+                # Define two font sizes (base size and larger size)
+                base_font_size = font_size
+                larger_font_size = int(font_size * 1.3)  # 30% larger
+                
+                # Create dialogue entries for each word - show only one word at a time
                 for i, (current_word, word_start, word_end) in enumerate(words_in_scene):
-                    # Determine which words to show (sliding window around current word)
-                    # Show previous word(s), current word, and next word(s) - up to max_words total
-                    # If fewer words available, show what we have
-                    start_idx = max(0, i - (max_words - 1) // 2)  # Start from word before current (if possible)
-                    # Calculate how many words we can show (up to max_words)
-                    available_words = len(words_in_scene) - start_idx
-                    words_to_show_count = min(max_words, available_words)
+                    # Randomly select color and size for this word
+                    selected_color = random.choice(colors)
+                    selected_size = random.choice([base_font_size, larger_font_size])
                     
-                    # If we don't have enough words at the end, adjust start_idx to show what we can
-                    if available_words < max_words and start_idx > 0:
-                        # Try to show more words by moving start_idx back
-                        start_idx = max(0, len(words_in_scene) - words_to_show_count)
+                    # Convert selected color to inline format
+                    selected_color_inline = hex_to_ass_inline_color(selected_color)
                     
-                    # Show the words we have (can be 1, 2, or 3 words)
-                    words_to_show = words_in_scene[start_idx:start_idx + words_to_show_count]
+                    # Build text with inline styling - only the current word
+                    w_upper = current_word.upper()
                     
-                    # Build text with inline styling - highlight only the current word
-                    # Convert colors to inline format
-                    primary_color_inline = hex_to_ass_inline_color(primary_color)
-                    secondary_color_inline = hex_to_ass_inline_color(secondary_color)
-                    outline_color_inline = hex_to_ass_inline_color(outline_color)
-                    
-                    text_parts = []
-                    for j, (w, ws, we) in enumerate(words_to_show):
-                        w_upper = w.upper()
-                        word_idx_in_scene = start_idx + j
-                        
-                        if word_idx_in_scene == i:
-                            # Current word being spoken - green text color, same font size
-                            # Use \1c for green text (secondary color)
-                            # No \fsp - letter spacing is controlled by style definition
-                            # Green text color for highlighted word, same font size as others
-                            text_parts.append(f"{{\\1c{secondary_color_inline}}}{w_upper}{{\\r}}")
-                        else:
-                            # Other words - use PrimaryColour (white) text
-                            # Use \1c for PrimaryColour
-                            # No \fsp - letter spacing is controlled by style definition
-                            text_parts.append(f"{{\\1c{primary_color_inline}}}{w_upper}{{\\r}}")
-                    
-                    # Join words with separator - ensure single line, no wrapping
-                    # Use larger separator for more visual space between words
-                    full_text = word_separator.join(text_parts)
-                    # Add \q0 to prevent wrapping (0 = no wrapping)
-                    full_text = f"{{\\q0}}{full_text}"
+                    # Apply random color and size to the word
+                    # \1c for text color, \fs for font size
+                    full_text = f"{{\\1c{selected_color_inline}\\fs{selected_size}}}{w_upper}{{\\r}}"
                     
                     # Determine timing for this dialogue entry
                     # Show from start of current word to end of current word

@@ -1,0 +1,30 @@
+# YouTube OAuth tokens
+.youtube_token.json
+
+# Environment variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files (optional - uncomment if you don't want to track generated videos)
+# output/
+

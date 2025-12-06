@@ -33,10 +33,11 @@
   
   "display": {
     "_comment": "Display settings for subtitles",
-    "max_words": 3,
+    "max_words": 1,
     "word_separator": "  ",
     "lines": 1,
     "line_spacing": 10,
+    "_note": "Now showing one word at a time with random colors (yellow, white, red) and random sizes (2 sizes)",
     "_note_lines": "Number of lines to display subtitles (1 or 2). Second line will always have fewer words than first line.",
     "_note_line_spacing": "Line spacing in pixels (vertical space between lines). Higher value = more space."
   },
