@@ -1,0 +1,6 @@
+# YouTube Live Playlist
+# Generated on Tue Dec  9 03:36:01 IST 2025
+# Total videos: 2
+
+file '/Users/terrificminds/Desktop/Projects/Github/Youtube-Shorts_maker/videos/paused/How the Matrix Learns From Humans #matrix #shorts.mp4'
+file '/Users/terrificminds/Desktop/Projects/Github/Youtube-Shorts_maker/videos/paused/The Architect’s Biggest Fear #matrix #shorts.mp4'
