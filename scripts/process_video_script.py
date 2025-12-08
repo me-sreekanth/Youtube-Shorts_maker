@@ -709,12 +709,6 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                     # Build text with inline styling - only the current word
                     w_upper = current_word.upper()
                     
-                    # Apply random color and size to the word
-                    # \1c for text color, \fs for font size
-                    # Use \pos to lock the position so all words appear at the same vertical position
-                    # regardless of font size changes - this prevents words from appearing at different heights
-                    full_text = f"{{\\pos({fixed_x},{fixed_y})\\1c{selected_color_inline}\\fs{selected_size}}}{w_upper}{{\\r}}"
-                    
                     # Determine timing for this dialogue entry
                     # Show from start of current word to end of current word
                     dialogue_start = word_start  # Start when current word starts
@@ -728,8 +722,11 @@ Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
                     else:
                         dialogue_end = min(dialogue_end, scene_end)
                     
-                    # Add fade transition
+                    # Simple fade transition for all words (no bounce to avoid glitches)
+                    # Use \pos to lock the position so all words appear at the same vertical position
+                    full_text = f"{{\\pos({fixed_x},{fixed_y})\\1c{selected_color_inline}\\fs{selected_size}}}{w_upper}{{\\r}}"
                     full_text_with_fade = add_fade_transition(full_text)
+                    
                     ass_content += f"Dialogue: 0,{seconds_to_ass_time(dialogue_start)},{seconds_to_ass_time(dialogue_end)},MATRIX_CAPTION,,0,0,0,,{full_text_with_fade}\n"
             else:
                 # Fallback to simple subtitle (no word timings)
