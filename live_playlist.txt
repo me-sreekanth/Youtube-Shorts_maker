@@ -1,6 +1,8 @@
 # YouTube Live Playlist
-# Generated on Tue Dec  9 03:36:01 IST 2025
-# Total videos: 2
+# Generated on Sun Dec 14 00:02:52 IST 2025
+# Source: output/stream
+# Total videos: 3
 
-file '/Users/terrificminds/Desktop/Projects/Github/Youtube-Shorts_maker/videos/paused/How the Matrix Learns From Humans #matrix #shorts.mp4'
-file '/Users/terrificminds/Desktop/Projects/Github/Youtube-Shorts_maker/videos/paused/The Architect’s Biggest Fear #matrix #shorts.mp4'
+file '/Users/terrificminds/Desktop/Projects/Github/Youtube-Shorts_maker/output/stream/01_The_Matrixs_Final_Failsafe_matrix_shorts.mp4'
+file '/Users/terrificminds/Desktop/Projects/Github/Youtube-Shorts_maker/output/stream/02_The_Digital_Network_Beneath_the_Source_matrix_shorts.mp4'
+file '/Users/terrificminds/Desktop/Projects/Github/Youtube-Shorts_maker/output/stream/03_The_Secret_Role_of_Destiny_in_the_Simulation_matrix_shorts.mp4'

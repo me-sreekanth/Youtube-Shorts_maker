@@ -23,7 +23,7 @@ if [ -z "$YOUTUBE_STREAM_KEY" ]; then
     echo ""
     echo "Usage:"
     echo "  export YOUTUBE_STREAM_KEY=your_stream_key_here"
-    echo "  ./stream_to_youtube.sh"
+    echo "  bash scripts/stream_to_youtube.sh"
     echo ""
     echo "Get your stream key from:"
     echo "  YouTube Studio > Go Live > Stream Settings"
@@ -33,13 +33,13 @@ fi
 # Check if playlist exists
 if [ ! -f "$PLAYLIST_FILE" ]; then
     echo -e "${YELLOW}⚠️  Playlist file not found. Generating...${NC}"
-    ./scripts/generate_live_playlist.sh
+    bash scripts/generate_live_playlist.sh
 fi
 
 # Check if playlist has content
 if [ ! -s "$PLAYLIST_FILE" ] || ! grep -q "^file " "$PLAYLIST_FILE"; then
     echo -e "${RED}❌ Error: Playlist file is empty or invalid!${NC}"
-    echo "   Run: ./scripts/generate_live_playlist.sh"
+    echo "   Run: bash scripts/generate_live_playlist.sh"
     exit 1
 fi
 
