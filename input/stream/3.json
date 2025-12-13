@@ -1,0 +1,22 @@
+{
+  "title": "The Secret Role of Destiny in the Simulation #matrix #shorts",
+  "description": "Destiny wasn’t a prophecy—it was a system protocol. The Matrix used destiny to limit choice, reduce chaos, and guide minds along predictable paths. Discover the secret role of destiny in the simulation, and why Neo was the first to transcend it. #MatrixLore #Destiny #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Destiny in the Matrix wasn’t prophecy… it was control.",
+      "image_prompt": "glowing branching probability paths disguised as destiny lines, golden threads across Matrix city, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "The system used destiny to guide humans along predictable paths.",
+      "image_prompt": "Matrix code forming rails or pathways leading humans toward fixed outcomes",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    }
+  ],
+  "total_duration": 44
+}

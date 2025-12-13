@@ -1,0 +1,89 @@
+{
+  "_comment": "Stream Video Configuration - Customize all settings for stream video generation",
+  "_note": "This file controls all aspects of stream video generation including title pause, audio mixing, and outro settings",
+  
+  "title_pause": {
+    "_comment": "Settings for the 3-second title pause screen at the start of each video",
+    "duration": 3.0,
+    "_note_duration": "Duration of the title pause in seconds",
+    
+    "margin_left": 400,
+    "margin_right": 400,
+    "_note_margins": "Left and right margins in pixels. Controls how much space from the edges of the video.",
+    
+    "font_size_normal": 40,
+    "font_size_center": 60,
+    "_note_font_sizes": "Font sizes in pixels. Center line will be bigger and yellow by default.",
+    
+    "center_line_color": "yellow",
+    "normal_line_color": "white",
+    "_note_colors": "Colors for the center line (highlighted) and other lines. Can use color names (white, yellow, red, blue, green) or hex format like #FFFFFF",
+    
+    "line_spacing": 40,
+    "_note_line_spacing": "Spacing between lines in pixels. Higher value = more space between lines.",
+    
+    "visual_gap_adjustment": 15,
+    "_note_visual_gap_adjustment": "Visual adjustment in pixels to compensate for perceived spacing differences. Positive values reduce gap above center line / increase gap below. Adjust if gaps appear unequal visually. Default: 15 (increase if gap above still looks larger, decrease if gap below becomes too large).",
+    
+    "remove_hashtags": true,
+    "_note_hashtags": "Whether to automatically remove hashtags (#matrix #shorts) from the title display"
+  },
+  
+  "audio": {
+    "_comment": "Audio mixing settings for stream videos",
+    "pause_duration": 3.0,
+    "_note_pause_duration": "Duration of the pause where only BGM plays (should match title_pause duration)",
+    
+    "bgm_volume": 0.25,
+    "_note_bgm_volume": "Background music volume multiplier (0.0 to 1.0). Lower values = quieter BGM.",
+    
+    "voice_volume": 1.0,
+    "_note_voice_volume": "Voiceover volume multiplier (0.0 to 1.0). Higher values = louder voice.",
+    
+    "bgm_file": "bgm/bgm.mp3",
+    "_note_bgm_file": "Path to background music file relative to project root"
+  },
+  
+  "outro": {
+    "_comment": "Settings for the outro scene (only added to the last video)",
+    "enabled": true,
+    "_note_enabled": "Whether to add an outro scene to the last video",
+    
+    "narration": "Anyway, Subscribe for more",
+    "_note_narration": "Default narration text for the outro scene",
+    
+    "subtitle": "Subscribe for more",
+    "_note_subtitle": "Subtitle text for the outro scene",
+    
+    "image_path": "input/channel-promo.png",
+    "_note_image_path": "Path to outro image file relative to project root",
+    
+    "duration": 4,
+    "_note_duration": "Duration of the outro scene in seconds",
+    
+    "effect": "zoom_in",
+    "_note_effect": "Animation effect for the outro scene (zoom_in, zoom_out, ken_burns_in, etc.)"
+  },
+  
+  "output": {
+    "_comment": "Output settings for generated videos",
+    "directory": "output/stream",
+    "_note_directory": "Directory where generated videos will be saved",
+    
+    "naming_format": "NN_title",
+    "_note_naming_format": "Naming format: NN = zero-padded number (01, 02, etc.), title = sanitized title",
+    
+    "sanitize_special_chars": true,
+    "_note_sanitize": "Whether to remove special characters from filenames for compatibility"
+  },
+  
+  "text_processing": {
+    "_comment": "Text processing settings for titles and narration",
+    "apostrophe_replacement": "'",
+    "_note_apostrophe": "Character to replace curly apostrophes/quotes with. Default is straight apostrophe ('). You can use any character like: ', `, or even remove it with empty string ''",
+    
+    "replace_curly_quotes": true,
+    "_note_curly_quotes": "Whether to replace curly quotes/apostrophes with the replacement character"
+  }
+}
+

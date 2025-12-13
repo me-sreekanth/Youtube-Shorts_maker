@@ -1,0 +1,20 @@
+{
+  "_comment": "Title Pause Configuration - Customize the appearance of the 3-second title pause screen",
+  "_note": "Colors can be: white, yellow, red, blue, green, or hex format like #FFFFFF",
+  
+  "margin_left": 100,
+  "margin_right": 100,
+  "_note_margins": "Left and right margins in pixels. Controls how much space from the edges of the video.",
+  
+  "font_size_normal": 72,
+  "font_size_center": 96,
+  "_note_font_sizes": "Font sizes in pixels. Center line will be bigger and yellow by default.",
+  
+  "center_line_color": "yellow",
+  "normal_line_color": "white",
+  "_note_colors": "Colors for the center line (highlighted) and other lines. Can use color names or hex codes.",
+  
+  "line_spacing": 20,
+  "_note_line_spacing": "Spacing between lines in pixels. Higher value = more space between lines."
+}
+

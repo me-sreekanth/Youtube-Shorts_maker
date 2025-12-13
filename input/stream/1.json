@@ -1,0 +1,22 @@
+{
+  "title": "The Matrix’s Final Failsafe #matrix #shorts",
+  "description": "When logic collapses, predictions fail, and rebellion spreads, the Matrix still has one final failsafe. A secret mechanism beyond algorithms, control, and calculation. Discover the ultimate system the Matrix relies on when everything else breaks. #MatrixLore #Failsafe #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Matrix had countless defenses… but one final failsafe.",
+      "image_prompt": "massive hidden mechanism glowing beneath layers of code, revealed like a buried system core, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Not power. Not prediction. Not control.",
+      "image_prompt": "Machine control systems flickering off one by one, lights failing across digital grids",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    }
+  ],
+  "total_duration": 44
+}

@@ -1,0 +1,22 @@
+{
+  "title": "The Digital Network Beneath the Source #matrix #shorts",
+  "description": "Beneath the Source lies a secret network—a layer of intelligence older than the Matrix itself. It stores forbidden data, abandoned programs, and evolving consciousness. Discover the hidden digital realm beneath the Source and how it shapes the future of the machine world. #MatrixLore #TheSource #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Beneath the Source lies a hidden digital network… older than the Matrix itself.",
+      "image_prompt": "ancient digital cavern beneath a glowing sphere of the Source, filled with luminous code veins, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "It wasn’t designed by the Architect—it evolved by itself.",
+      "image_prompt": "organic neural-like matrix of glowing code forming naturally without structured geometry",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    }
+  ],
+  "total_duration": 44
+}
