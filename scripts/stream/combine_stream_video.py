@@ -54,7 +54,7 @@ def combine_stream_video(
     
     # Load subtitle config
     root = Path(__file__).resolve().parent.parent.parent
-    config_file = root / "subtitle_config.json"
+    config_file = root / "video_config.json"
     if config_file.exists():
         with open(config_file, "r", encoding="utf-8") as f:
             config = json.load(f)

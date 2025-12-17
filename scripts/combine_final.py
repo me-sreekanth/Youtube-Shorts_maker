@@ -12,23 +12,79 @@ WATERMARK_FILE = "input/watermark.png"
 FINAL_DIR = "output/final"
 FINAL_VIDEO = os.path.join(FINAL_DIR, "final_short.mp4")
 
+def get_audio_duration(audio_file):
+    """Get audio duration in seconds using ffprobe."""
+    try:
+        cmd = [
+            "ffprobe", "-v", "error", "-show_entries",
+            "format=duration", "-of", "default=noprint_wrappers=1:nokey=1",
+            audio_file
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        return float(result.stdout.strip())
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
+        return None
+
 def mix_audio():
     os.makedirs(os.path.dirname(MIXED_AUDIO), exist_ok=True)
     if not os.path.exists(VOICE_FILE):
         raise FileNotFoundError(VOICE_FILE)
-    if not os.path.exists(BGM_FILE):
-        raise FileNotFoundError(BGM_FILE)
+    
+    # Load video config for audio settings
+    config_file = "video_config.json"
+    bgm_volume = 0.25  # Default
+    voice_volume = 1.0  # Default
+    bgm_file = BGM_FILE  # Default
+    bgm_fade_out_duration = 1.5  # Default
+    
+    if os.path.exists(config_file):
+        with open(config_file, "r", encoding="utf-8") as f:
+            config = json.load(f)
+            audio_config = config.get("audio", {})
+            bgm_volume = audio_config.get("bgm_volume", 0.25)
+            voice_volume = audio_config.get("voice_volume", 1.0)
+            bgm_file = audio_config.get("bgm_file", BGM_FILE)
+            bgm_fade_out_duration = audio_config.get("bgm_fade_out_duration", 1.5)
+    
+    if not os.path.exists(bgm_file):
+        raise FileNotFoundError(f"BGM file not found: {bgm_file}")
 
+    # Get voice duration to determine total duration
+    voice_duration = get_audio_duration(VOICE_FILE)
+    if voice_duration is None:
+        raise ValueError("Could not determine voice audio duration")
+    
+    total_duration = voice_duration
+    
     print("🎧 Mixing voice and background music...")
+    print(f"   BGM volume: {bgm_volume}, Voice volume: {voice_volume}")
+    if bgm_fade_out_duration > 0:
+        print(f"   BGM fade-out: {bgm_fade_out_duration}s at the end")
+    
+    # Build filter complex
+    # If fade-out is enabled and total duration is longer than fade duration
+    if bgm_fade_out_duration > 0 and total_duration > bgm_fade_out_duration:
+        fade_start = total_duration - bgm_fade_out_duration
+        # Apply fade-out to BGM: afade=t=out:st=<start_time>:d=<duration>
+        filter_complex = (
+            f"[0:a]volume={voice_volume},aresample=44100[a0];"
+            f"[1:a]volume={bgm_volume},aresample=44100,afade=t=out:st={fade_start}:d={bgm_fade_out_duration}[a1];"
+            "[a0][a1]amix=inputs=2:duration=first:dropout_transition=2[aout]"
+        )
+    else:
+        # No fade-out
+        filter_complex = (
+            f"[0:a]volume={voice_volume},aresample=44100[a0];"
+            f"[1:a]volume={bgm_volume},aresample=44100[a1];"
+            "[a0][a1]amix=inputs=2:duration=first:dropout_transition=2[aout]"
+        )
+    
     # Convert output to MP3 properly - use libmp3lame codec
     cmd = [
         "ffmpeg", "-y",
         "-i", VOICE_FILE,
-        "-i", BGM_FILE,
-        "-filter_complex",
-        "[0:a]volume=1.0,aresample=44100[a0];"
-        "[1:a]volume=0.25,aresample=44100[a1];"
-        "[a0][a1]amix=inputs=2:duration=first:dropout_transition=2[aout]",
+        "-i", bgm_file,
+        "-filter_complex", filter_complex,
         "-map", "[aout]",
         "-c:a", "libmp3lame",
         "-b:a", "192k",
@@ -55,8 +111,8 @@ def mux_video():
     subtitle_type = "ASS" if os.path.exists(ASS_FILE) else "SRT"
     print(f"   Using {subtitle_type} subtitles: {subtitle_file}")
     
-    # Load subtitle config
-    config_file = "subtitle_config.json"
+    # Load video config
+    config_file = "video_config.json"
     if os.path.exists(config_file):
         with open(config_file, "r", encoding="utf-8") as f:
             config = json.load(f)

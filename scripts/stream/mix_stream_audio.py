@@ -18,12 +18,13 @@ def get_audio_duration(audio_file):
     except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
         return None
 
-def mix_stream_audio(voice_file: str, bgm_file: str, output_file: str, pause_duration: float = 3.0, bgm_volume: float = 0.25, voice_volume: float = 1.0):
+def mix_stream_audio(voice_file: str, bgm_file: str, output_file: str, pause_duration: float = 3.0, bgm_volume: float = 0.25, voice_volume: float = 1.0, bgm_fade_out_duration: float = 1.5):
     """
     Mix audio for stream videos:
     - BGM starts at 0:00 (beginning of pause)
     - Voiceover starts after pause_duration (3 seconds)
     - BGM continues through entire video
+    - BGM fades out in the last bgm_fade_out_duration seconds
     
     Args:
         voice_file: Path to voice audio file
@@ -32,6 +33,7 @@ def mix_stream_audio(voice_file: str, bgm_file: str, output_file: str, pause_dur
         pause_duration: Duration of pause in seconds (default 3.0)
         bgm_volume: BGM volume multiplier (default 0.25)
         voice_volume: Voice volume multiplier (default 1.0)
+        bgm_fade_out_duration: Duration in seconds to fade out BGM at the end (default 1.5)
     """
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     
@@ -55,17 +57,27 @@ def mix_stream_audio(voice_file: str, bgm_file: str, output_file: str, pause_dur
     # Create audio mix:
     # 1. BGM starts at 0:00 and loops/extends to total_duration
     # 2. Voice starts at pause_duration (3 seconds) and continues
-    # 3. Mix both with appropriate volumes
+    # 3. BGM fades out in the last bgm_fade_out_duration seconds
+    # 4. Mix both with appropriate volumes
     
     # Build filter complex:
     # [0:a] = BGM input
     # [1:a] = Voice input
-    # - BGM: volume adjustment, loop/extend to total_duration
+    # - BGM: volume adjustment, loop/extend to total_duration, fade-out at end
     # - Voice: volume adjustment, delay by pause_duration
     # - Mix both together
     
+    # Apply fade-out to BGM if enabled and duration is sufficient
+    if bgm_fade_out_duration > 0 and total_duration > bgm_fade_out_duration:
+        fade_start = total_duration - bgm_fade_out_duration
+        # BGM: volume, resample, loop, then fade-out
+        bgm_filter = f"[0:a]volume={bgm_volume},aresample=44100,aloop=loop=-1:size=2e+09,afade=t=out:st={fade_start}:d={bgm_fade_out_duration}[bgm]"
+    else:
+        # No fade-out
+        bgm_filter = f"[0:a]volume={bgm_volume},aresample=44100,aloop=loop=-1:size=2e+09[bgm]"
+    
     filter_complex = (
-        f"[0:a]volume={bgm_volume},aresample=44100,aloop=loop=-1:size=2e+09[bgm];"
+        f"{bgm_filter};"
         f"[1:a]volume={voice_volume},aresample=44100,adelay={int(pause_duration * 1000)}|{int(pause_duration * 1000)}[voice];"
         f"[bgm][voice]amix=inputs=2:duration=first:dropout_transition=2[aout]"
     )
@@ -88,6 +100,8 @@ def mix_stream_audio(voice_file: str, bgm_file: str, output_file: str, pause_dur
         result = subprocess.run(cmd, check=True, capture_output=True, text=True)
         print(f"   ✅ Mixed audio created: {output_file}")
         print(f"      Total duration: {total_duration:.2f}s (pause: {pause_duration}s + voice: {voice_duration:.2f}s)")
+        if bgm_fade_out_duration > 0:
+            print(f"      BGM fade-out: {bgm_fade_out_duration}s at the end")
         return output_file
     except subprocess.CalledProcessError as e:
         print(f"   ❌ Failed to mix audio: {e.stderr}")

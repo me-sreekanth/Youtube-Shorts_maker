@@ -11,7 +11,7 @@ import time
 from pathlib import Path
 
 SCRIPT_FILE = "input/video_script.json"
-CONFIG_FILE = "subtitle_config.json"
+CONFIG_FILE = "video_config.json"
 OUTPUT_DIR = "output"
 AUDIO_DIR = os.path.join(OUTPUT_DIR, "audio")
 IMAGE_DIR = os.path.join(OUTPUT_DIR, "images")
