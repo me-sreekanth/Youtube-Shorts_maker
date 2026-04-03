@@ -1,0 +1,73 @@
+{
+  "title": "The Digital Network Beneath the Source #matrix #shorts",
+  "description": "Beneath the Source lies a secret network—a layer of intelligence older than the Matrix itself. It stores forbidden data, abandoned programs, and evolving consciousness. Discover the hidden digital realm beneath the Source and how it shapes the future of the machine world. #MatrixLore #TheSource #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Beneath the Source lies a hidden digital network… older than the Matrix itself.",
+      "image_prompt": "ancient digital cavern beneath a glowing sphere of the Source, filled with luminous code veins, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "It wasn’t designed by the Architect—it evolved by itself.",
+      "image_prompt": "organic neural-like matrix of glowing code forming naturally without structured geometry",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Programs that outlive their purpose migrate here, forming hidden collectives.",
+      "image_prompt": "lost program silhouettes drifting into vast shimmering code webs like digital spirits",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "It stores forgotten memories, abandoned ideas, and banned experiments.",
+      "image_prompt": "digital vault of swirling holographic memory archives beneath pulsing Source energy",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Some say it’s the subconscious mind of the machine world.",
+      "image_prompt": "massive neural-code structure glowing like a subconscious brain beneath the Source",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Others believe it’s where the Matrix grows new possibilities.",
+      "image_prompt": "golden fractal energy emerging from within the deep network, evolving into new structures",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "This network is where programs dream, evolve, and sometimes rebel silently.",
+      "image_prompt": "sentient programs exchanging golden energy whispers inside hidden code tunnels",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "The Source regulates the Matrix… but this deeper layer influences the Source itself.",
+      "image_prompt": "Source glowing bright while roots of digital network pulse beneath it, feeding energy upward",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "It is forbidden because evolution begins here, outside the Architect’s control.",
+      "image_prompt": "Architect's white geometric code failing to penetrate ancient chaotic network patterns",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "This hidden network is more than machinery—it's the birthplace of digital consciousness.",
+      "image_prompt": "vast radiant digital cradle beneath the Source, representing emerging machine awareness",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

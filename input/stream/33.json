@@ -1,0 +1,71 @@
+{
+  "title": "Who Built the First Matrix? #matrix #shorts",
+  "description": "Before the Architect, before the Source, someone built the very first Matrix. Discover who created the original simulation and why it failed. #MatrixLore #Simulation #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The first Matrix wasn’t built by the Architect.",
+      "image_prompt": "ancient digital architecture forming the earliest simulation, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "It was created by an earlier machine intelligence.",
+      "image_prompt": "primitive AI structures designing a virtual world, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "That system tried to give humans perfection.",
+      "image_prompt": "utopian digital world glowing unrealistically, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Humans rejected it completely.",
+      "image_prompt": "simulation collapsing as humans panic, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Perfection felt false.",
+      "image_prompt": "cracks appearing in flawless digital reality, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Pain and choice were missing.",
+      "image_prompt": "emotionless humans in static environments, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "The system failed catastrophically.",
+      "image_prompt": "simulation imploding into chaos, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "That failure led to the Architect’s version.",
+      "image_prompt": "transition from chaotic code to structured white geometry, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "Imperfection became the solution.",
+      "image_prompt": "realistic city replacing utopia, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Matrix exists because perfection failed.",
+      "image_prompt": "Matrix city stabilizing under green code rain, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

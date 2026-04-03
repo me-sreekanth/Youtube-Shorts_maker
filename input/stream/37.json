@@ -1,0 +1,73 @@
+{
+  "title": "The Hidden Rules of the Matrix Code #matrix #shorts",
+  "description": "The Matrix runs on code—but that code obeys deeper laws most minds never see. These hidden rules decide what is possible, what can change, and what must remain constant. Discover the secret principles behind the Matrix code, why anomalies can break them, and how Neo learned to rewrite reality from the inside. #MatrixLore #MatrixCode #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Matrix isn’t random—it follows hidden laws buried beneath the code.",
+      "image_prompt": "glowing matrix code forming geometric sacred-like patterns, mystical green symmetry, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Every object, every movement, every decision is governed by digital physics.",
+      "image_prompt": "digital physics equations overlaid on a city of green code, forming a simulation blueprint",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The first rule: Everything must be predictable—so the system can simulate choices.",
+      "image_prompt": "branching probability trees flowing as neon code across a virtual landscape",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "The second rule: The simulation can bend… but it can’t break.",
+      "image_prompt": "reality bending like rubber, buildings warping but not collapsing, controlled distortion",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "The third rule: Limits exist only where humans believe they do.",
+      "image_prompt": "barrier made of code dissolving as a human touches it, showing belief shaping reality",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Agents enforce these rules—but only for those who accept them.",
+      "image_prompt": "Agent Smith towering over grid-like code structures, enforcing boundaries, cold metallic lighting",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Anomalies like Neo ignore the rules—because they see the code beneath the illusion.",
+      "image_prompt": "Neo surrounded by transparent code layers, reaching into core algorithms glowing gold",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "That’s why he could fly, bend gravity, and rewrite physics.",
+      "image_prompt": "Neo soaring upward as green code spirals beneath him, gravitational laws snapping apart",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "The final rule: The Matrix can control anything… except choice.",
+      "image_prompt": "matrix code splitting into two glowing paths, representing free will versus control",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The hidden rules of the Matrix don’t limit reality—they limit belief. Break belief, and the system breaks with it.",
+      "image_prompt": "Neo shattering green code barriers with golden light, symbolizing the collapse of mental constraints",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

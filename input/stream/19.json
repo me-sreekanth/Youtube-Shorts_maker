@@ -1,0 +1,72 @@
+{
+  "title": "The Oracle’s Hidden Master Plan #matrix #shorts",
+  "description": "The Oracle was never just a guide or a prophet. She quietly shaped events, nudged choices, and allowed chaos to grow—all to push the system toward evolution. This is the hidden master plan behind her actions. #MatrixLore #TheOracle #Destiny #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Oracle wasn’t predicting the future… she was engineering it.",
+      "image_prompt": "warm-lit room with an oracle-like figure surrounded by shifting green code, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Unlike the Architect, she didn’t believe in pure control.",
+      "image_prompt": "contrast between cold white digital architecture and warm human space, vertical 1080x1920",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "She understood something machines struggled to calculate: choice.",
+      "image_prompt": "branching paths made of glowing code splitting into uncertainty, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Instead of stopping chaos, she allowed it to grow.",
+      "image_prompt": "controlled disruptions spreading through the Matrix code, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Every prophecy she spoke was carefully incomplete.",
+      "image_prompt": "fractured prophecy symbols fading before completion, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "She guided humans without forcing them.",
+      "image_prompt": "subtle hand guiding glowing code without direct control, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Even the One was never truly chosen—he was prepared.",
+      "image_prompt": "Neo-like figure gradually forming from scattered code, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Her goal wasn’t victory… it was balance.",
+      "image_prompt": "human and machine symbols balancing on a glowing axis, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "She played a longer game than the Architect ever could.",
+      "image_prompt": "oracle figure observing multiple Matrix cycles unfolding, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Oracle’s true power wasn’t foresight… it was faith in choice.",
+      "image_prompt": "warm golden light dissolving rigid Matrix code, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

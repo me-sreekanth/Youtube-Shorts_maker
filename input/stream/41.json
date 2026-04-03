@@ -1,0 +1,73 @@
+{
+  "title": "The Lost City Inside the Matrix #matrix #shorts",
+  "description": "Deep beneath the visible simulation lies a forgotten digital city—one erased from the Matrix but never fully deleted. Programs whisper about a place frozen in time, where abandoned code still lives and impossible glitches roam freely. Discover the truth behind the Lost City inside the Matrix, the ghost-world machines refuse to acknowledge. #MatrixLore #LostCity #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "There’s a city inside the Matrix… that no one is supposed to see.",
+      "image_prompt": "dark, abandoned digital city with broken skyscrapers and drifting code fog, eerie green glow, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "A forgotten place built in the earliest versions of the simulation.",
+      "image_prompt": "ancient Matrix architecture rendered in early low-resolution code mixed with modern glitches",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "When the Matrix was rebooted, this city wasn't deleted… it was abandoned.",
+      "image_prompt": "massive restart wave washing over a city, parts dissolving into green shards while others remain untouched",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Programs call it the Ghost Sector—a graveyard of forgotten code.",
+      "image_prompt": "haunted digital streets with flickering signs, corrupted shadows moving through data fog",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Here, old laws of physics still linger… mixed with broken rules from failed Matrix versions.",
+      "image_prompt": "floating objects, gravity glitches, warped buildings twisting through each other",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Some say exiled programs hide there—too damaged to join the Merovingian’s realm.",
+      "image_prompt": "half-corrupted programs wandering empty streets, faces glitching between identities",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Others claim the city is alive, evolving on its own without machine oversight.",
+      "image_prompt": "structures growing organically from code, buildings shifting like digital organisms",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Even Agents avoid it. Their code becomes unstable inside its borders.",
+      "image_prompt": "Agent figure glitching violently as he enters a corrupted district, red warning symbols flashing",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "For rebels, the Lost City became a myth—a hidden space where the Matrix’s rules collapse.",
+      "image_prompt": "resistance members exploring dark alleyways filled with unrendered geometry and floating code blocks",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "But the true secret is this: the Lost City isn’t broken… it’s what happens when a world remembers too much.",
+      "image_prompt": "city skyline glowing as layers of past versions overlap, forming a haunting multiverse of old code",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

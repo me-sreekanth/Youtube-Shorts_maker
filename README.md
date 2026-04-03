@@ -177,11 +177,16 @@ Main configuration for stream videos:
 - **output**: Directory, naming format
 - **text_processing**: Apostrophe replacement settings
 
-### `subtitle_config.json`
-Subtitle styling configuration:
-- Font, size, colors
-- Position, margins
-- Animation effects
+### `video_config.json`
+Video configuration for regular shorts videos:
+- **audio**: BGM volume, voice volume, BGM file path
+- **font**: Font name and file
+- **style**: Subtitle styling (font size, colors, outline, etc.)
+- **positioning**: Subtitle position and margins
+- **display**: Subtitle display settings (max words, line spacing)
+- **subtitle_background**: Background settings for subtitle area
+- **transitions**: Fade effects
+- **watermark**: Watermark overlay settings
 
 ## Project Structure
 
@@ -221,7 +226,7 @@ Subtitle styling configuration:
 │   ├── generate_live_playlist.sh  # Generate playlist for streaming
 │   └── stream_to_youtube.sh       # Stream to YouTube Live
 ├── stream_config.json             # Stream video configuration
-├── subtitle_config.json           # Subtitle styling configuration
+├── video_config.json              # Video configuration (audio, subtitles, watermark)
 ├── youtube-web.json               # YouTube API credentials (not in repo)
 └── live_playlist.txt              # Playlist for streaming (generated)
 ```
@@ -292,7 +297,9 @@ Place font files in project root:
 - `Montserrat.ttf` (fallback)
 
 ### Background Music
-Place `bgm.mp3` in `bgm/` directory. Configure volume in `stream_config.json`.
+Place `bgm.mp3` in `bgm/` directory. Configure volume:
+- **Regular videos**: Set `audio.bgm_volume` in `video_config.json` (default: 0.25)
+- **Stream videos**: Set `audio.bgm_volume` in `stream_config.json` (default: 0.25)
 
 ### Outro Image
 Place outro image in `input/channel-promo.png` (or configure path in `stream_config.json`).

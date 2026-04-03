@@ -1,0 +1,73 @@
+{
+  "title": "The Matrix After Neo's Sacrifice #matrix #shorts",
+  "description": "Neo’s sacrifice didn’t just end the war—it changed the Matrix forever. The simulation evolved, the rules shifted, and the boundary between freedom and control blurred. Discover what truly happened inside the Matrix after Neo gave his life, and how his final choice reshaped the destiny of both humans and machines. #MatrixLore #Neo #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Neo’s sacrifice didn’t destroy the Matrix… it transformed it.",
+      "image_prompt": "Matrix city lit in golden sunrise-like glow, code shifting gently as if alive, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "When Neo merged with the Source, the machine mind rewrote the rules.",
+      "image_prompt": "Source pulsing with golden and green light as code restructures itself into new patterns",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The endless cycle of reboots came to an end.",
+      "image_prompt": "digital loop collapsing, breaking into bright fragments as the system stabilizes",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "For the first time, humans weren’t prisoners… they were given a choice.",
+      "image_prompt": "Matrix skyline splitting into two glowing paths, symbolizing freedom versus simulation",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Anyone who rejected the illusion could finally leave the Matrix peacefully.",
+      "image_prompt": "green code doorway opening like a portal, humans stepping through into bright daylight",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The Oracle and Architect agreed to cooperation—not domination.",
+      "image_prompt": "Oracle and Architect standing across from each other as golden and white code intertwines",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Zion was no longer a trap—it became a true sanctuary.",
+      "image_prompt": "Zion’s caverns glowing with warm light, peaceful gathering of survivors symbolizing hope",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "The Matrix itself evolved, becoming more flexible… more human.",
+      "image_prompt": "Matrix city shifting with gentle curvature and organic designs, new rules forming in glowing spirals",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "Neo didn’t save humanity from the Machine world… he connected the two.",
+      "image_prompt": "Neo’s golden silhouette merging two sides of code—machine and human—into one flowing stream",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "After Neo’s sacrifice, the Matrix wasn’t a prison anymore… it became possibility.",
+      "image_prompt": "Matrix skyline illuminated by a rising sun made of green code, symbolizing renewal and hope",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

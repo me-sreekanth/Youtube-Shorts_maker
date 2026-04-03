@@ -166,6 +166,13 @@ def process_single_stream_video(json_file: str, output_dir: str, is_last: bool =
         spec.loader.exec_module(img_module)
         generate_image = img_module.generate_image
         
+        # Import crop function for watermark removal (same as regular video generation)
+        process_script_path_crop = root / "scripts" / "process_video_script.py"
+        spec_crop = importlib.util.spec_from_file_location("process_video_script", process_script_path_crop)
+        process_module_crop = importlib.util.module_from_spec(spec_crop)
+        spec_crop.loader.exec_module(process_module_crop)
+        crop_image_remove_bottom = process_module_crop.crop_image_remove_bottom
+        
         image_files = []
         promo_image_path = str(root / "input" / "channel-promo.png")
         
@@ -206,6 +213,10 @@ def process_single_stream_video(json_file: str, output_dir: str, is_last: bool =
                         shutil.move(path, str(image_file))
                         image_files.append(str(image_file))
                         print(f"      ✅ Generated image")
+                        
+                        # Crop image to remove watermark immediately after generation
+                        print(f"      ✂️  Cropping image to remove watermark...")
+                        crop_image_remove_bottom(str(image_file))
                     else:
                         print(f"      ⚠️  Failed to generate image")
                 except Exception as e:
@@ -214,11 +225,11 @@ def process_single_stream_video(json_file: str, output_dir: str, is_last: bool =
         # Step 4: Create subtitles
         print("\n📝 Creating subtitles...")
         
-        # Import process_video_script module to use its functions
+        # Import process_video_script module for subtitle creation
         process_script_path = root / "scripts" / "process_video_script.py"
-        spec = importlib.util.spec_from_file_location("process_video_script", process_script_path)
-        process_module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(process_module)
+        spec_process = importlib.util.spec_from_file_location("process_video_script", process_script_path)
+        process_module = importlib.util.module_from_spec(spec_process)
+        spec_process.loader.exec_module(process_module)
         
         # Try to get word timings from transcription
         word_timings = None
@@ -399,6 +410,7 @@ def process_single_stream_video(json_file: str, output_dir: str, is_last: bool =
         pause_duration = audio_config.get("pause_duration", 3.0)
         bgm_volume = audio_config.get("bgm_volume", 0.25)
         voice_volume = audio_config.get("voice_volume", 1.0)
+        bgm_fade_out_duration = audio_config.get("bgm_fade_out_duration", 1.5)
         
         mix_audio_module.mix_stream_audio(
             str(voice_audio),
@@ -406,7 +418,8 @@ def process_single_stream_video(json_file: str, output_dir: str, is_last: bool =
             str(mixed_audio),
             pause_duration=pause_duration,
             bgm_volume=bgm_volume,
-            voice_volume=voice_volume
+            voice_volume=voice_volume,
+            bgm_fade_out_duration=bgm_fade_out_duration
         )
         
         # Step 8: Combine everything

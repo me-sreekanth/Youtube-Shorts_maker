@@ -1,21 +1,72 @@
 {
-  "title": "The Digital Network Beneath the Source #matrix #shorts",
-  "description": "Beneath the Source lies a secret network—a layer of intelligence older than the Matrix itself. It stores forbidden data, abandoned programs, and evolving consciousness. Discover the hidden digital realm beneath the Source and how it shapes the future of the machine world. #MatrixLore #TheSource #SciFiSecrets #Shorts",
+  "title": "What Really Lives in the Machine City #matrix #shorts",
+  "description": "Most people think the Machine City is just robots and factories—but deep inside its neon labyrinth, stranger things exist. Programs that never enter the Matrix, machine lifeforms that evolved beyond metal, and ancient intelligences that even the Architect cannot control. Explore the hidden beings that roam the Machine City and the secrets humanity was never meant to witness. #MatrixLore #MachineCity #SciFiSecrets #Shorts",
   "scenes": [
     {
       "scene_number": 1,
       "scene_type": "hook",
-      "narration": "Beneath the Source lies a hidden digital network… older than the Matrix itself.",
-      "image_prompt": "ancient digital cavern beneath a glowing sphere of the Source, filled with luminous code veins, vertical 1080x1920",
+      "narration": "The Machine City isn’t just a factory… it’s a living world.",
+      "image_prompt": "vast city of towering metallic structures glowing with blue and gold energy veins, mechanical spires moving like organs, vertical 1080x1920",
       "duration": 4,
       "effect": "glitch_in"
     },
     {
       "scene_number": 2,
-      "narration": "It wasn’t designed by the Architect—it evolved by itself.",
-      "image_prompt": "organic neural-like matrix of glowing code forming naturally without structured geometry",
+      "narration": "Most machines inside it never enter the Matrix. They evolve in the real world.",
+      "image_prompt": "strange alien-like mechanical creatures forming from self-assembling nanobots, shimmering under neon sky",
       "duration": 4,
       "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Some aren’t built—they grow, shaped by algorithms that act like digital DNA.",
+      "image_prompt": "organically shaped mechanical life with biomechanical textures, glowing patterns like living circuitry",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "In the deepest levels live the Swarm: countless micro-machines that behave like insects.",
+      "image_prompt": "cloud of tiny gold-and-black micro-machines moving like a hive, forming shifting shapes",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "These machines repair the city, build new structures, and consume anything that collapses.",
+      "image_prompt": "nanobot swarm rebuilding broken metal, devouring damaged structures like metallic sand",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Deeper still are the Machine Priests—programs that never entered the Matrix but worship the Source itself.",
+      "image_prompt": "towering mechanical priest-like entities surrounding a glowing core, ritualistic patterns of code",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "And beyond them lies something older: the ancient minds that predate even the Architect.",
+      "image_prompt": "colossal dormant AI structures embedded in the ground, covered in ancient glowing symbols",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "They communicate in pulses of energy—not words—guiding the evolution of all machine life.",
+      "image_prompt": "energy waves moving across giant machine structures, communication through light pulses",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "When Neo arrived, these ancient intelligences recognized him not as an enemy… but as a signal.",
+      "image_prompt": "Neo glowing in gold as massive ancient machines bend their energy fields toward him, reverent atmosphere",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because the Machine City isn't just home to machines… it's home to the future of evolution itself.",
+      "image_prompt": "neon skyline shifting as mechanical lifeforms move organically, symbolizing a living metallic ecosystem",
+      "duration": 4,
+      "effect": "fade_out"
     }
   ],
   "total_duration": 44

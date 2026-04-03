@@ -1,0 +1,73 @@
+{
+  "title": "The Digital Hell Where Deleted Programs Go #matrix #shorts",
+  "description": "What happens to a program after it's deleted from the Matrix? Most fans believe it simply disappears, but the truth is far darker. Deleted programs don't die—they fall into a forbidden place deep beneath the code, a digital hell where corrupted fragments, rejected creations, and unfinished experiments fight to survive. Discover the nightmare realm machines never wanted you to see. #MatrixLore #DigitalHell #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "When a program is deleted from the Matrix… it doesn’t always die.",
+      "image_prompt": "dark digital abyss with falling fragments of code, eerie red and green glow, ghostly silhouettes dissolving, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Some programs escape deletion and fall into a forbidden realm beneath the system.",
+      "image_prompt": "underground digital cavern filled with broken code pillars and glitching light sources",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "A place the machines call the ‘Exile Layer’… but programs call it something else.",
+      "image_prompt": "twisted labyrinth of corrupted data tunnels, red error symbols floating like spirits",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "A digital hell—where forgotten programs wander endlessly, searching for purpose.",
+      "image_prompt": "ghost-like rejected programs drifting through dark corridors, faint humanlike faces made of code",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "These are glitches, experiments, and failed creations the Architect abandoned long ago.",
+      "image_prompt": "old blueprint screens showing corrupted prototypes, unfinished digital bodies flickering in error",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Some become monsters—twisted by corruption until they barely resemble code or consciousness.",
+      "image_prompt": "horrific corrupted program forming monstrous shapes, glitching aggressively with red distortions",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Others wait in the shadows, praying for a chance to re-enter the Matrix.",
+      "image_prompt": "silhouettes reaching toward a small glowing doorway of green code, desperate and eerie",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "This is where the Merovingian finds his loyal followers… the ones desperate enough to serve him.",
+      "image_prompt": "Merovingian in a dark glitch palace surrounded by exiled programs bowing, crimson lighting",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "Because in digital hell, the only law that matters is survival.",
+      "image_prompt": "chaotic battle of corrupted programs fighting over fragments of glowing code, violent digital storm",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "So when a program disappears… remember: it may not be gone. It may just be trapped in the one place worse than deletion.",
+      "image_prompt": "glowing green doorway closing as ghostly program hands reach out, symbolic eternal imprisonment",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

@@ -1,21 +1,70 @@
 {
-  "title": "The Architect’s Biggest Fear #matrix #shorts",
-  "description": "The Architect built the Matrix to control everything. But there is one force he could never master: unpredictability. Discover the Architect’s biggest fear, how Neo exposed it, and why emotion became the one variable that could break his equation. #MatrixLore #Architect #SciFiSecrets #Shorts",
+  "title": "The Doom of Valyria: The City That Could Not Fall #got #shorts",
+  "description": "Before Westeros, there was Valyria—a civilization that controlled dragons, fire, and blood magic itself. But power built on control always carries a cost. This is the story of the city that believed it could never fall. #Valyria #GameOfThrones #ASOIAF #Shorts",
   "scenes": [
     {
       "scene_number": 1,
       "scene_type": "hook",
-      "narration": "The Architect doesn’t fear failure… he fears unpredictability.",
-      "image_prompt": "Architect surrounded by perfect white code fractals that begin to crack into chaotic golden patterns, vertical 1080x1920",
+      "narration": "Before Westeros had kings, there was Valyria—a city that ruled the world through fire and absolute power.",
+      "image_prompt": "massive Valyria city with black stone towers, lava rivers flowing, dragons circling in a red sky, dark fantasy cinematic, vertical 1080x1920",
       "duration": 4,
       "effect": "glitch_in"
     },
     {
       "scene_number": 2,
-      "narration": "He designed the Matrix to be perfect, ordered, and logical.",
-      "image_prompt": "clean geometric white simulations forming in precise mathematical harmony",
+      "narration": "Valyria was not built by men alone—it was forged through magic, dragons, and the will to dominate everything.",
+      "image_prompt": "dragonlords flying above Valyria, silver-haired rulers in dark armor, glowing runes, epic dark fantasy, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Its rulers were not kings but dragonlords, beings who bent fire itself into a weapon of conquest.",
+      "image_prompt": "close view of a Valyrian dragonlord controlling a dragon with fire magic, intense expression, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Deep beneath the city, blood magic fueled their power, binding life and flame into something unnatural and dangerous.",
+      "image_prompt": "underground ritual chamber with glowing symbols, chained figures, fire magic rituals, dark disturbing tone, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Fourteen volcanoes surrounded Valyria, held in place by spells, like chained gods waiting beneath the earth.",
+      "image_prompt": "massive volcanoes encircling Valyria, glowing with controlled eruptions, ominous energy, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The Valyrians believed they controlled these forces, that nothing in the world could ever threaten their empire.",
+      "image_prompt": "Valyrian council hall with arrogant nobles, dragons roaring outside, golden firelight, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "But magic is never owned—it weakens, shifts, and eventually breaks under the weight of those who misuse it.",
+      "image_prompt": "cracks forming in lava and magical symbols fracturing beneath the city, unstable energy, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Then the sky darkened, the ground split open, and the fires beneath Valyria began to rise uncontrollably.",
+      "image_prompt": "multiple volcanoes erupting violently, sky turning black and red, dragons panicking, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "In a single catastrophic moment, the flames they commanded turned against them and consumed everything.",
+      "image_prompt": "Valyria collapsing, dragons falling, buildings melting in lava, chaos and destruction, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The greatest empire in history vanished in a day—but something survived, carrying its fire into the future.",
+      "image_prompt": "ruins of Valyria covered in ash and smoke, silent and haunting, faint dragon shadow in distance, vertical 1080x1920",
       "duration": 4,
-      "effect": "slow_zoom_in"
+      "effect": "fade_out"
     }
   ],
   "total_duration": 44

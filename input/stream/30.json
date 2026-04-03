@@ -1,0 +1,73 @@
+{
+  "title": "Who Was the First One? #matrix #shorts",
+  "description": "Before Neo, before the prophecy, there was another One—the first anomaly ever to awaken inside the original Matrix. His story was buried by the machines, erased from code, and hidden even from the Oracle. Discover the forgotten truth about the very first One, why he appeared, and how his failure shaped every version of the Matrix universe. #MatrixLore #TheOne #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Long before Neo… there was another One. A man the machines tried to erase.",
+      "image_prompt": "ancient digital figure standing in a crumbling early Matrix world, heavy green and gold code, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "He appeared in the first version of the Matrix—a paradise humans rejected instantly.",
+      "image_prompt": "perfect utopian city made of glowing golden code, serene but eerie perfection",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The machines didn’t understand why humans were dying inside the simulation… until he woke up.",
+      "image_prompt": "man realizing the world around him is fake, paradise glitching into code fragments",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "He sensed the illusion instantly. He was the first anomaly—a mind that questioned everything.",
+      "image_prompt": "lone figure touching the sky as it cracks open into green code, symbolic awakening",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "The machines feared him—but the Architect studied him.",
+      "image_prompt": "Architect observing early One through holographic screens, analyzing his code",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "This first One tried to free everyone… but humans weren’t ready to accept the truth.",
+      "image_prompt": "crowds rejecting the One, collapsing between paradise and corrupted code, symbolic fear",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "The Matrix collapsed under its own perfection, forcing the machines to reset everything.",
+      "image_prompt": "paradise city shattering into green shards, simulation rebooting violently",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "The first One vanished during the reset—some say deleted, others say he escaped the system.",
+      "image_prompt": "glowing silhouette fading into digital darkness, unresolved fate and mystery",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "But his code lived on… becoming the blueprint for every One that followed.",
+      "image_prompt": "code of early One splitting and flowing into multiple versions across Matrix timelines",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Neo wasn’t the first One—only the first to succeed. The original One showed the machines what was possible.",
+      "image_prompt": "Neo standing beside ghostly image of the first One, golden energy connecting them like destiny",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

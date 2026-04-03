@@ -1,0 +1,73 @@
+{
+  "title": "How Zion Keeps Coming Back #matrix #shorts",
+  "description": "Zion wasn’t humanity’s first refuge… and it won’t be the last. The Matrix has been rebooted multiple times, and every version sees Zion fall—only to rise again. But why? Discover the hidden loop created by both the Architect and the Oracle, and the shocking truth about why Zion always returns. #MatrixLore #Zion #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Zion has been destroyed over and over… yet it keeps coming back.",
+      "image_prompt": "ancient futuristic underground city glowing in dim blue light, collapsing and rebuilding in glitching cycles, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Most people think Zion is humanity’s last hope… but it's actually part of the system.",
+      "image_prompt": "Zion blueprints overlaid with green matrix code, revealing hidden circuitry behind the city",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Every version of the Matrix creates its own Zion—built from rebels chosen by the system.",
+      "image_prompt": "digital selection chamber showing rows of chosen humans encoded in glowing data streams",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "The Architect allows Zion to exist as a controlled outlet for human resistance.",
+      "image_prompt": "the Architect calmly watching giant screens showing Zion population metrics and charts",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Each time Zion grows too strong… the machines purge it.",
+      "image_prompt": "machine army storming underground tunnels, red mechanical drones overwhelming defenses, dark sci-fi tones",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Then a new One is chosen… sent to restart the cycle and rebuild Zion from scratch.",
+      "image_prompt": "mysterious chosen figure glowing with light, surrounded by floating digital embryos representing new citizens",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "But here's the twist: the Oracle secretly manipulated the cycle every time.",
+      "image_prompt": "the Oracle smiling knowingly while green code swirls subtly around her, warm but mysterious lighting",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "She believed Zion didn’t need to reset forever… it needed someone who would break the loop.",
+      "image_prompt": "Neo shown as an anomaly in golden code, breaking a circular digital loop symbolizing the cycle",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "That’s why Neo was different—he chose love, not obedience, shattering the cycle for the first time.",
+      "image_prompt": "Neo touching Trinity’s hand as waves of green and gold code explode outward, emotional and powerful",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Zion kept coming back because the Matrix needed it… until the One finally chose to set it free.",
+      "image_prompt": "Zion rising into brilliant light, tunnels opening, code breaking like chains around the city",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

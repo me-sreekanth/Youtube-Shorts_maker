@@ -1,0 +1,73 @@
+{
+  "title": "How Choice Rewrote the System #matrix #shorts",
+  "description": "Choice didn’t just disrupt the Matrix—it rewrote its core. The moment Neo chose love over logic, the system had to evolve. Discover how choice rewrote the Matrix, changed the Source, and forced machines to acknowledge free will. #MatrixLore #Choice #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Choice didn’t just break the Matrix… it rewrote it.",
+      "image_prompt": "golden shockwaves radiating through green code city as the system reorganizes, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "The system assumed humans only acted logically… until Neo proved otherwise.",
+      "image_prompt": "Architect screens glitching as Neo makes emotional decisions that defy predictions",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Choice revealed a flaw the machines never planned for: unpredictable purpose.",
+      "image_prompt": "equations collapsing into chaotic fractals as golden purpose energy forms",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "When Neo chose Trinity over the reboot, the Architect’s equation broke.",
+      "image_prompt": "green code shattering like glass as golden light breaks through emotional choice",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "That forced the Source to rewrite itself—to adapt instead of control.",
+      "image_prompt": "Source transforming from strict geometric sphere into swirling golden harmony",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The Matrix gained something it never had before: possibility.",
+      "image_prompt": "multiple branching gold and green paths forming an organic evolving code structure",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Choice made the future unpredictable—and unpredictability forced evolution.",
+      "image_prompt": "code reforming into new spirals of growth, chaotic yet beautiful",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "The system didn’t lose control—it learned to coexist.",
+      "image_prompt": "green machine code merging smoothly with golden human emotion energy",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "Neo didn’t destroy the Matrix. He taught it to grow.",
+      "image_prompt": "Neo radiating golden aura as Matrix city shifts into more flexible organic shapes",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Choice rewrote the system because evolution always begins where control ends.",
+      "image_prompt": "Matrix skyline transforming under sunrise-like golden light symbolizing new era",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

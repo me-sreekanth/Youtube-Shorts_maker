@@ -1,0 +1,72 @@
+{
+  "title": "The Matrix: The Memory Hack You Never Noticed #matrix #shorts",
+  "description": "The Matrix doesn’t just simulate reality—it manufactures memory. Childhoods, relationships, and identities are carefully designed to keep humans obedient and predictable. This is the hidden memory hack that keeps the system alive. #MatrixLore #MemoryHack #SimulationTheory #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "What if every memory you have… was put there on purpose?",
+      "image_prompt": "digital brain made of green code, memory fragments floating like holograms, glitching cyberpunk aesthetic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "In the Matrix, humans don’t remember their real lives… because machines rewrite the mind.",
+      "image_prompt": "robotic hands adjusting glowing brain nodes, neural rewriting interface, futuristic bio-tech, vertical 1080x1920",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The childhood you remember? The school you attended? It’s all fabricated code.",
+      "image_prompt": "fake city forming from green matrix code, buildings assembling like data blocks, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Even the faces of your parents are generated to keep your mind obedient.",
+      "image_prompt": "AI-generated human faces melting into digital code, unsettling sci-fi aesthetic, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Machines know humans behave better when they believe they belong somewhere.",
+      "image_prompt": "human silhouette controlled by puppet strings made of glowing matrix code, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "So memories are tailored to your personality… to keep you predictable.",
+      "image_prompt": "rows of glowing memory capsules labeled with personality traits, futuristic memory archive, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Every decision you make is shaped by events that never actually happened.",
+      "image_prompt": "human walking through a digital mirror splitting into false timelines, surreal sci-fi visual, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Some humans sense the glitches—moments that feel wrong… like déjà vu.",
+      "image_prompt": "glitching cat in a hallway with repeated frames, classic Matrix déjà vu reference, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "These cracks in the illusion mean your real mind is waking up.",
+      "image_prompt": "human eyes opening as green code fractures outward, awakening symbolism, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because the only thing harder to control than a human body… is a human memory.",
+      "image_prompt": "glowing human brain breaking free from chains of matrix code, dramatic heroic frame, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

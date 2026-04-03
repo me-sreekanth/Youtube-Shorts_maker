@@ -1,6 +1,18 @@
 {
-  "_comment": "Subtitle Configuration File - Edit these values to customize subtitle appearance",
+  "_comment": "Video Configuration File - Edit these values to customize video appearance, subtitles, and audio",
   "_note": "Color format: #RRGGBB (hexadecimal). Transparency: 0-255 (0=fully transparent, 255=fully opaque)",
+  
+  "audio": {
+    "_comment": "Audio mixing settings for regular shorts videos",
+    "bgm_volume": 0.3,
+    "_note_bgm_volume": "Background music volume multiplier (0.0 to 1.0). Lower values = quieter BGM. Default: 0.25",
+    "voice_volume": 1.0,
+    "_note_voice_volume": "Voiceover volume multiplier (0.0 to 1.0). Default: 1.0",
+    "bgm_fade_out_duration": 1.5,
+    "_note_bgm_fade_out": "Duration in seconds to fade out background music at the end of the video. Set to 0 to disable fade-out. Default: 1.5",
+    "bgm_file": "bgm/bgm.mp3",
+    "_note_bgm_file": "Path to background music file relative to project root"
+  },
   
   "font": {
     "name": "Game of Thrones",
@@ -79,3 +91,4 @@
     }
   }
 }
+

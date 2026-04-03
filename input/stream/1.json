@@ -1,22 +1,80 @@
 {
-  "title": "The Matrix’s Final Failsafe #matrix #shorts",
-  "description": "When logic collapses, predictions fail, and rebellion spreads, the Matrix still has one final failsafe. A secret mechanism beyond algorithms, control, and calculation. Discover the ultimate system the Matrix relies on when everything else breaks. #MatrixLore #Failsafe #SciFiSecrets #Shorts",
-  "scenes": [
-    {
-      "scene_number": 1,
-      "scene_type": "hook",
-      "narration": "The Matrix had countless defenses… but one final failsafe.",
-      "image_prompt": "massive hidden mechanism glowing beneath layers of code, revealed like a buried system core, vertical 1080x1920",
-      "duration": 4,
-      "effect": "glitch_in"
-    },
-    {
-      "scene_number": 2,
-      "narration": "Not power. Not prediction. Not control.",
-      "image_prompt": "Machine control systems flickering off one by one, lights failing across digital grids",
-      "duration": 4,
-      "effect": "slow_zoom_in"
-    }
-  ],
-  "total_duration": 44
-}
+    "title": "The Matrix Explained #matrix #shorts",
+    "description": "What if your entire life was a simulation? This short is the gateway into the Matrix universe—where reality is coded, humanity is controlled, and choice becomes the ultimate weapon. This is the beginning of a deeper journey into the secrets of the Matrix. #MatrixExplained #SimulationTheory #SciFiLore #Shorts",
+    "scenes": [
+      {
+        "scene_number": 1,
+        "scene_type": "hook",
+        "narration": "What if your entire life was just a simulation?",
+        "image_prompt": "digital matrix code raining down, green neon cyberpunk theme, dramatic lighting, vertical 1080x1920",
+        "duration": 4,
+        "effect": "glitch_in"
+      },
+      {
+        "scene_number": 2,
+        "narration": "In the Matrix, humans live inside a computer program created by machines.",
+        "image_prompt": "futuristic pods with humans connected by cables, dystopian sci-fi, cinematic, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 3,
+        "narration": "Most people never realize their reality isn’t real.",
+        "image_prompt": "ordinary city scene subtly dissolving into green digital code, hidden simulation effect, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 4,
+        "narration": "Neo, a hacker, senses something is wrong with the world around him.",
+        "image_prompt": "young man at a computer, green monitor glow, glitch effects creeping into reality, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 5,
+        "narration": "He meets Morpheus, who offers him a choice.",
+        "image_prompt": "mysterious figure holding red pill and blue pill, cyberpunk sunglasses reflection, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 6,
+        "narration": "Take the blue pill and stay asleep… or take the red pill and learn the truth.",
+        "image_prompt": "red pill floating in a dark void, neon glow, dramatic focus, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 7,
+        "narration": "Neo chooses the truth—and wakes up in a ruined world controlled by machines.",
+        "image_prompt": "post-apocalyptic landscape with giant machines harvesting humans, dark realism, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 8,
+        "narration": "Inside the Matrix, agents can bend the rules of the simulation.",
+        "image_prompt": "agent-like figure with glitching digital distortion, reality warping around them, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 9,
+        "narration": "But Neo discovers the impossible—the rules can be broken.",
+        "image_prompt": "Neo dodging bullets in slow motion, frozen projectiles, cyberpunk action scene, vertical 1080x1920",
+        "duration": 4,
+        "effect": "slow_zoom_in"
+      },
+      {
+        "scene_number": 10,
+        "scene_type": "final",
+        "narration": "This is where the story begins. Welcome to the Matrix.",
+        "image_prompt": "Neo flying upward through cascading green Matrix code, heroic and symbolic frame, vertical 1080x1920",
+        "duration": 4,
+        "effect": "fade_out"
+      }
+    ],
+    "total_duration": 44
+  }
+  

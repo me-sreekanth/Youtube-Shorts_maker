@@ -1,0 +1,73 @@
+{
+  "title": "The Seventh Matrix Theory #matrix #shorts",
+  "description": "What if the Matrix we know is not the first version—but the seventh? According to hidden lore, the system has been rebooted over and over, each version shaped by the failures of the last. Discover the mind-bending theory that humanity has lived through six forgotten worlds, why the machines erased every trace, and what makes the seventh Matrix fundamentally different. #MatrixLore #MatrixTheory #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "What if the Matrix we know… is actually the seventh version?",
+      "image_prompt": "glitching number seven formed from green Matrix code, shifting through six previous ghostly layers, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "According to hidden lore, the Matrix has been rebooted many times.",
+      "image_prompt": "six faded holographic worlds stacked behind the current Matrix, each with different visual styles",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The first version was a perfect paradise… and it collapsed instantly.",
+      "image_prompt": "golden utopian simulation glitching violently as humans reject the perfection",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "The second was a brutal dystopia… and humans rejected that too.",
+      "image_prompt": "dark oppressive world of endless rain and chaos dissolving into red error code",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Each new Matrix experimented with different levels of freedom, control, and illusion.",
+      "image_prompt": "timeline of six different Matrices, each with unique visual patterns—utopia, dystopia, chaos, order",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "But every version produced an anomaly—someone who questioned the system from within.",
+      "image_prompt": "silhouettes of past Ones glowing in different colors, representing six previous anomalies",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "These anomalies forced the machines to reset the simulation again and again.",
+      "image_prompt": "Matrix reboot waves washing across a digital landscape, cities dissolving into pure green code",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Then came the seventh Matrix—the one built around choice instead of perfection.",
+      "image_prompt": "modern Matrix city forming from layered code strands, more chaotic and realistic than past versions",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "This version worked… because it embraced human flaws instead of hiding them.",
+      "image_prompt": "Matrix skyline merging beauty and decay, glitches intentionally woven into the world’s design",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "And that is the Seventh Matrix Theory: we’re not living in the first illusion… we’re living in the last experiment.",
+      "image_prompt": "seven rings of code collapsing into one final stable version glowing in bright green light",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

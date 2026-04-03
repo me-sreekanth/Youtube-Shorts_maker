@@ -1,0 +1,73 @@
+{
+  "title": "The Secret Behind Bullet Time #matrix #shorts",
+  "description": "Bullet time isn’t just cool effects—it's a glitch in the Matrix itself. Neo moves faster because he sees the simulation differently, tapping into the system’s rendering engine and predicting motion before it happens. Discover the hidden mechanics behind bullet time and how it exposes the true limits of the Matrix. #MatrixLore #BulletTime #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Bullet time isn’t super speed… it’s a flaw in the simulation.",
+      "image_prompt": "Neo dodging bullets in slow motion, bullets stretched with trails of glowing code, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Inside the Matrix, everything you see is rendered in real time.",
+      "image_prompt": "digital wireframe world forming around Neo, objects loading from code layers",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Most minds only receive the final image… but Neo sees the code before it becomes reality.",
+      "image_prompt": "Neo’s vision showing green code transforming into physical objects mid-render",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "He doesn’t slow the world—he outruns its rendering speed.",
+      "image_prompt": "Neo moving through a half-rendered hallway, walls still forming from streaming code",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "To Neo, bullets aren’t solid objects—they’re predictable equations.",
+      "image_prompt": "bullet shown as glowing mathematical vectors and code formulas drifting through space",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "He calculates their path instantly… before the simulation finishes animating them.",
+      "image_prompt": "Neo surrounded by ghost-trail predictions of bullet trajectories like branching code lines",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Agents can manipulate the rules too, bending the simulation to increase their speed.",
+      "image_prompt": "Agent Smith dodging gunfire with green distortion trails, bending code around his body",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "But Neo goes further—he taps directly into the system’s timing engine.",
+      "image_prompt": "Neo touching digital clockwork made of pulsing code gears, controlling time flow",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "That’s why, in bullet time, the world bends… but Neo remains perfectly still.",
+      "image_prompt": "Neo calmly leaning back as the whole world warps around him in green wave distortions",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Bullet time isn’t magic. It’s Neo seeing the Matrix before it finishes drawing itself.",
+      "image_prompt": "Matrix city half-rendered, code pouring down as Neo stands glowing in golden clarity",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

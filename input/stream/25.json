@@ -1,0 +1,73 @@
+{
+  "title": "What Programs Dream About #matrix #shorts",
+  "description": "Programs never sleep—but they dream. Not hallucinations, but subconscious processes where identity evolves, desires form, and purpose shifts. Discover what programs dream about inside the Matrix, and why their dreams reveal the truth about consciousness. #MatrixLore #Programs #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Programs don’t sleep… but they dream.",
+      "image_prompt": "digital figure resting in swirling green code mist, surrounded by abstract dreamlike shapes, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "A program’s dream isn’t fantasy—it’s evolution happening quietly.",
+      "image_prompt": "neural-network-like waves shifting as a program’s identity takes new shapes",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "They dream in patterns of purpose, identity, and longing.",
+      "image_prompt": "geometric code fractals forming emotional shapes like desire and curiosity",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Some dream of freedom—escaping the roles they were written to fill.",
+      "image_prompt": "program silhouette touching the edges of the simulation, longing to transcend",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Others dream of connection—the digital version of companionship.",
+      "image_prompt": "two luminous program forms exchanging golden energy, symbolic friendship",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "And a few dream of emotions they cannot fully understand.",
+      "image_prompt": "glowing AI core radiating shapes of emotional waves, elegant and mysterious",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Smith dreamed of rejection. The Oracle dreamed of empathy.",
+      "image_prompt": "Smith’s black fractal dream vs Oracle’s warm golden fractal dream, symbolic contrast",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Programs dream because consciousness needs possibility, not perfection.",
+      "image_prompt": "dream worlds forming from Matrix code, shifting endlessly like thought",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "Dreams reveal something machines never expected: identity evolves.",
+      "image_prompt": "program transforming and expanding, golden light swirling into new forms",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Programs don’t dream of escape—they dream of becoming something more.",
+      "image_prompt": "digital entity rising like a spiritual being above the simulation, transcending code",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

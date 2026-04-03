@@ -1,0 +1,73 @@
+{
+  "title": "What Happened to the First Humans in the Pods #matrix #shorts",
+  "description": "When humans first lost the war, the machines began harvesting them in massive fields of pods. But the earliest humans connected to the Matrix reacted in terrifying and unpredictable ways. Discover the forgotten fate of the very first pod-born prisoners and the secret that shaped the entire simulation. #MatrixLore #Pods #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The first humans ever placed into pods… did not go quietly.",
+      "image_prompt": "dark biomechanical pod chamber with terrified humans awakening, red warning lights flashing, eerie atmosphere, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "After the Machine War, prisoners were captured and wired into early versions of the Matrix.",
+      "image_prompt": "humans being dragged by machines into towering pod towers, cyberpunk dystopian landscape",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "But these first humans fought the simulation with their minds.",
+      "image_prompt": "human brain resisting digital code injections, red sparks clashing with green matrix data",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Many rejected the illusion instantly… their minds tearing themselves apart trying to wake up.",
+      "image_prompt": "glitching human silhouette snapping between real world and simulation, mental overload effect",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Others went insane—unable to tell dreams from reality.",
+      "image_prompt": "fragmented faces with multiple expressions blending into matrix code, horror-sci-fi style",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The machines realized humans needed comfort… so they tried creating a perfect paradise.",
+      "image_prompt": "glowing utopian city made of golden code, peaceful artificial environment, early Matrix design",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "But paradise failed. Humans rejected perfection and died inside the simulation.",
+      "image_prompt": "beautiful digital utopia collapsing into errors, humans fading out like corrupted files",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "So the machines built a flawed world—one filled with struggle, chaos, and choice.",
+      "image_prompt": "Matrix city forming from glitch fragments, realistic imperfections added intentionally",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "Only then did the first pod humans finally accept the illusion… and survive.",
+      "image_prompt": "human suspended calmly in a pod, green code stabilizing around their body, peaceful yet eerie",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The first humans in the pods didn’t just shape the Matrix—they forced the machines to make it cruel… so humanity could live.",
+      "image_prompt": "Matrix world splitting open to reveal suffering and hope intertwined, symbolic duality of control",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

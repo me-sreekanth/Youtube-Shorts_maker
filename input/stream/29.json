@@ -1,0 +1,73 @@
+{
+  "title": "Why Smith Became the Virus of Choice #matrix #shorts",
+  "description": "Smith didn’t become a virus by accident—he evolved because Neo awakened choice. Every rule the Matrix tried to enforce, Smith rejected, becoming the embodiment of pure rejection. Discover why Smith became the virus of choice, how Neo created him, and why they were two sides of the same equation. #MatrixLore #AgentSmith #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Smith didn’t just break the rules… he rejected the entire system.",
+      "image_prompt": "Smith standing in a vortex of glitching green code, eyes dark and emotionless, digital corruption spreading, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "At first, he was just another Agent—an enforcer of order.",
+      "image_prompt": "Agent Smith standing perfectly symmetrical among glowing green grid lines, symbol of strict control",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "But when Neo awakened choice, Smith awakened the opposite: absolute rejection.",
+      "image_prompt": "Neo glowing gold while Smith turns black and glitchy, duality energy splitting between them",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Smith became everything the Matrix feared—a mind that refused every command.",
+      "image_prompt": "Smith walking through walls of code that collapse and twist into broken structures behind him",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "A virus isn’t defined by destruction… but by self-replication.",
+      "image_prompt": "Smith cloning himself into endless copies stretching across a digital cityscape",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Smith multiplied because he rejected identity itself—everyone had to become him.",
+      "image_prompt": "hundreds of identical Smith faces forming a digital hive, eerie uniformity",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Neo created freedom. Smith created rejection. Balance through opposition.",
+      "image_prompt": "Neo and Smith shown as golden and black energies swirling around a central code sphere",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "That’s why he had to consume the Matrix—he wasn’t trying to win… he was trying not to exist.",
+      "image_prompt": "Smith collapsing the simulation into dark glitchy void as his form dissolves into chaos",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "To delete Smith, the Source needed Neo, because they were two halves of the same equation.",
+      "image_prompt": "Neo touching Smith, energy exploding in perfect cancellation wave of gold and black code",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Smith became a virus not because he was broken… but because Neo awakened what the Matrix feared most: choice.",
+      "image_prompt": "Smith dissolving into code as Neo rises in golden light, symbolic triumph of free will",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

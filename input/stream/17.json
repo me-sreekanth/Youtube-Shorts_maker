@@ -1,0 +1,73 @@
+{
+  "title": "Why the Oracle Manipulated Destiny #matrix #shorts",
+  "description": "The Oracle didn’t just predict the future—she shaped it. Every prophecy, every hint, every choice she offered Neo was part of a larger plan the machines could never understand. Discover why the Oracle manipulated destiny, what she was really trying to protect, and the hidden truth behind her greatest gamble. #MatrixLore #Oracle #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Oracle never told the future… she guided it.",
+      "image_prompt": "Oracle sitting calmly in a soft-lit digital kitchen, green code drifting like dust around her silhouette, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "She was designed to understand human choice better than any machine.",
+      "image_prompt": "Oracle’s face reflected in screens showing branching decision trees, luminous choice-path visualizations",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "But she saw something the Architect didn’t: the Matrix couldn’t survive without free will.",
+      "image_prompt": "Architect’s cold white control room split beside Oracle’s warm green code realm, contrasting philosophies",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "So when she met Neo, she didn’t prophesize his destiny… she shaped it.",
+      "image_prompt": "Oracle handing Neo a cookie glowing with subtle golden code, symbolic act of influence",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "She nudged him toward the decisions she knew he would make—because choice defines the One.",
+      "image_prompt": "Neo’s silhouette branching into multiple glowing timelines, only one path shining brightly",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The Oracle’s greatest secret was this: she didn’t want to end the war… she wanted to end the cycle.",
+      "image_prompt": "digital loop representing countless Matrix resets, Oracle breaking the cycle with golden light",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Every version of the Matrix before Neo ended the same way—reboot, rebuild, repeat.",
+      "image_prompt": "six previous Matrix versions represented as fading holograms arranged in a circle",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "She knew only a human choice—not a machine algorithm—could break the pattern.",
+      "image_prompt": "Neo choosing between two glowing paths, one green and one gold, symbolizing true free will",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "So she manipulated destiny to force the One into making the impossible choice: peace.",
+      "image_prompt": "Neo reaching calmly into a storm of red and green machine energy, creating balance",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Oracle didn’t control the future. She simply believed humans deserved one.",
+      "image_prompt": "Oracle standing in golden sunrise-like digital glow, serene and timeless, symbol of hope",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

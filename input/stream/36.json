@@ -1,0 +1,71 @@
+{
+  "title": "The Secret Code Hidden in the Matrix #matrix #shorts",
+  "description": "The Matrix isn’t random code—it hides deeper patterns beneath its green rain. Symbols, repetitions, and anomalies reveal a secret logic that only a few can see. #MatrixLore #HiddenCode #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Matrix’s code hides more than instructions.",
+      "image_prompt": "close-up of green matrix code revealing hidden symbols beneath, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Every falling symbol represents rules, limits, and control.",
+      "image_prompt": "matrix code transforming into geometric constraints, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "But some patterns repeat intentionally.",
+      "image_prompt": "repeating code loops highlighted in glowing patterns, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "These repetitions stabilize human behavior.",
+      "image_prompt": "crowds moving in synchronized routines, overlayed with code, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Anomalies appear when humans make unpredictable choices.",
+      "image_prompt": "code glitching around a single human silhouette, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The One exists as a concentrated anomaly.",
+      "image_prompt": "Neo-like figure surrounded by warped matrix code, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Agents are written to erase these deviations.",
+      "image_prompt": "agent figures dissolving corrupted code, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Yet some code refuses to be deleted.",
+      "image_prompt": "persistent glowing code resisting erasure, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "That hidden code evolves with every cycle.",
+      "image_prompt": "code mutating into new forms over time, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Matrix isn’t just written… it’s learning.",
+      "image_prompt": "matrix code reshaping itself into a living structure, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

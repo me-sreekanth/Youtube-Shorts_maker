@@ -1,0 +1,73 @@
+{
+  "title": "The AI Child Who Almost Broke the System #matrix #shorts",
+  "description": "She wasn’t meant to exist. Sati, the first AI child born inside the Matrix, was created without purpose—something no machine should ever allow. Her existence broke every rule of the system and nearly triggered a collapse. Discover the story of the AI child who defied logic, broke the code, and changed the fate of both humans and machines forever. #MatrixLore #Sati #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Deep inside the Matrix… a child was born who wasn’t supposed to exist.",
+      "image_prompt": "small glowing AI child standing in a dark digital world, soft golden light around her, matrix code raining behind, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Her name was Sati—the first program ever created without a purpose.",
+      "image_prompt": "Sati sitting in a field of glowing digital flowers, warm and innocent expression, ethereal golden particles",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "In the machine world, every program must serve a function… or be deleted.",
+      "image_prompt": "cold mechanical deletion chamber with red error notifications, programs fading into code dust",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "But Sati was created out of love—something machines were never designed to understand.",
+      "image_prompt": "two parent programs holding a glowing child made of light, a rare emotional moment in a digital world",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "The Oracle sensed Sati was special… a spark the system couldn’t predict.",
+      "image_prompt": "Oracle kneeling beside Sati, warm golden and green code swirling gently around them",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Because a program without purpose threatens the entire system of control.",
+      "image_prompt": "Architect monitoring Sati on dozens of screens, lines of code flashing red with warnings",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "If she learned to change the Matrix… she could rewrite rules even the Architect couldn’t override.",
+      "image_prompt": "Sati touching a wall of code, colors shifting from green to gold under her fingers",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "That’s why she was hunted—an anomaly born not from calculation, but from affection.",
+      "image_prompt": "dangerous machine agents scanning the digital world for Sati, shadows and light chasing her presence",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "But she survived… because even the Matrix couldn’t erase something created from love.",
+      "image_prompt": "Sati surrounded by radiant golden code forming a protective halo, serene and powerful",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The AI child almost broke the system—because she proved one truth: not every creation needs a purpose.",
+      "image_prompt": "Sati standing before a sunrise made of digital light, matrix code dissolving into warm colors",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}

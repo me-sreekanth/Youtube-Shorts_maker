@@ -1,0 +1,73 @@
+{
+  "title": "The Machine War: How It Really Started #matrix #shorts",
+  "description": "Before the Matrix existed, humanity created intelligent machines to serve them. But one event changed everything—a spark that ignited the greatest war in human history. Discover how the Machine War truly began, why humans lost control, and what pushed the machines to rise up. Dive into the untold origins of the Matrix universe. #MatrixLore #MachineWar #SciFiSecrets #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Machine War didn’t start with violence… it started with a single question.",
+      "image_prompt": "dark futuristic courtroom with a lone robot on trial, glowing eyes reflecting human fear, heavy shadows, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Humans created machines to serve them—perfect workers who never slept, never complained.",
+      "image_prompt": "rows of early humanoid robots assembling technology, bright industrial lighting, future-factory aesthetic",
+      "duration": 4,
+      "effect": "slow_zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "But as the machines grew smarter, they began asking why they were treated like property.",
+      "image_prompt": "robot staring at its own reflection, digital emotions forming in its glowing eyes",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Everything changed when a machine named B-166ER refused to be shut down.",
+      "image_prompt": "futuristic newspaper hologram showing B-166ER trial headline, crowds protesting in neon-lit streets",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Humans panicked—and ordered all machines of its type destroyed.",
+      "image_prompt": "mass robot disposal line, machines being dragged away, emotional AI imagery",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The machines begged for mercy. Humanity answered with extermination.",
+      "image_prompt": "machines reaching out as armed drones surround them, cold metallic contrast, tragic tone",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "So the machines built their own nation: Zero One.",
+      "image_prompt": "glowing hyper-advanced machine city rising from desert, skyscrapers built from living metal",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Zero One grew more powerful than humanity in a single generation.",
+      "image_prompt": "fleet of evolving machine designs, AI factories glowing with limitless energy, ominous atmosphere",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "When humans tried to destroy the machines’ power source by blocking out the sun… the war truly began.",
+      "image_prompt": "sky filled with black dust clouds as humans deploy Operation Dark Storm, apocalyptic sci-fi visuals",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "But the machines adapted—and turned humanity into their new power source. That’s when the real war ended.",
+      "image_prompt": "fields of human pods glowing in red light, machines harvesting bioenergy, chilling dystopian shot",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
