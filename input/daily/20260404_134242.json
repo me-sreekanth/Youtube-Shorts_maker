@@ -1,0 +1,71 @@
+{
+  "title": "The Doom of Valyria: The Survivors — House Targaryen #got #shorts",
+  "description": "When Valyria burned, one house survived. Not by strength—but by foresight. This is the story of House Targaryen, the last dragonlords, and the prophecy that saved them from extinction. #Valyria #Targaryen #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "When Valyria burned, every dragonlord perished—except one house that left before the world collapsed.",
+      "image_prompt": "Valyria erupting in the distance while a small group with dragons escapes across the sea, dark red sky, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "House Targaryen was not the strongest, richest, or most powerful among Valyria’s ruling families.",
+      "image_prompt": "Targaryen family standing apart from more powerful dragonlords in Valyria, subtle isolation, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "They survived because of a dream—a vision that others dismissed as madness or fear.",
+      "image_prompt": "young Daenys the Dreamer surrounded by prophetic fire visions, dragons and destruction, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Daenys Targaryen saw the Doom before it came, a future written in fire, ash, and silence.",
+      "image_prompt": "prophetic vision of Valyria exploding reflected in Daenys’s eyes, intense mystical glow, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Her father believed her, abandoning the greatest empire in the world for a distant, uncertain island.",
+      "image_prompt": "Targaryens leaving Valyria with dragons, sailing toward Dragonstone, somber tone, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Other dragonlords laughed, choosing power over caution, convinced nothing could ever destroy Valyria.",
+      "image_prompt": "arrogant Valyrian nobles mocking the departing Targaryens, dragons behind them, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Then the Doom came—and every house that stayed was erased from history in a single day.",
+      "image_prompt": "Valyria exploding violently, dragonlords consumed by fire, apocalyptic scale, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "From Dragonstone, the Targaryens watched the sky burn, realizing survival came with a heavy cost.",
+      "image_prompt": "Targaryens standing on Dragonstone cliffs watching distant red sky of Doom, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "They were no longer one house among many—they were the last keepers of fire in a world without Valyria.",
+      "image_prompt": "lone Targaryen dragon flying over a dark empty world, symbolic isolation, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "And one day, that fire would rise again—not to rebuild Valyria, but to conquer a new world.",
+      "image_prompt": "Aegon Targaryen silhouette with dragon over Westeros map, dawn breaking, cinematic close, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
