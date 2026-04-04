@@ -1,0 +1,71 @@
+{
+  "title": "The Doom of Valyria: Why It Really Fell #got #shorts",
+  "description": "Valyria didn’t just fall—it collapsed under the weight of its own power. Blood magic, dragons, and control over the Fourteen Flames came at a cost. This is the hidden truth behind the Doom of Valyria. #Valyria #ASOIAF #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Valyria was not destroyed by chance—the Doom was the price it paid for trying to control forces beyond understanding.",
+      "image_prompt": "Valyria glowing ominously with unstable lava and magical energy, dark prophecy tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "For centuries, dragonlords bound the Fourteen Flames with blood magic, forcing nature itself into submission.",
+      "image_prompt": "Valyrian mages performing rituals beneath volcanoes, chains of fire binding eruptions, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Each spell demanded sacrifice, each ritual weakening the balance between the world above and the fire below.",
+      "image_prompt": "sacrificial ritual draining life into glowing lava symbols, eerie and intense, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "The Valyrians believed they had mastered magic—but in truth, they were holding back something far greater.",
+      "image_prompt": "cracks forming beneath a volcanic chamber, ancient force glowing beneath, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "As their empire grew, their control weakened, stretched thin by arrogance, conquest, and endless demand for power.",
+      "image_prompt": "map of Valyria expanding while fissures spread underneath, symbolic instability, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "The spells began to fail—not suddenly, but slowly, like a foundation cracking beneath a towering empire.",
+      "image_prompt": "lava chains snapping, magical symbols breaking apart, tension rising, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Then came the rupture, when all fourteen volcanoes erupted together, as if something had finally broken free.",
+      "image_prompt": "simultaneous volcanic eruptions tearing Valyria apart, apocalyptic scale, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Dragons fell from the sky, magic collapsed, and the land itself turned against its creators in a single violent moment.",
+      "image_prompt": "dragons crashing amid firestorms, city collapsing, chaos everywhere, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "This was not destruction—it was release, the world correcting what had been forced into unnatural control.",
+      "image_prompt": "massive eruption wave consuming the city, energy bursting outward like a reset, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Valyria did not fall because it was weak—it fell because it believed it could never fall.",
+      "image_prompt": "ruins of Valyria smoldering in silence, ash drifting across a dead landscape, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
