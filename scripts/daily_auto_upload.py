@@ -3,6 +3,8 @@ import sys
 import glob
 import shutil
 import subprocess
+import re
+import requests
 from pathlib import Path
 
 # Configuration
@@ -64,13 +66,43 @@ def main():
         # 6. Run upload_to_youtube.py
         print("   📤 Running YouTube upload...")
         upload_script = BASE_DIR / "scripts" / "upload_to_youtube.py"
-        result_up = subprocess.run([python_exec, str(upload_script)], check=False)
+        
+        result_up = subprocess.run([python_exec, str(upload_script)], capture_output=True, text=True)
+        print(result_up.stdout) # Print output so we still see the log!
         
         if result_up.returncode != 0:
             print("   ❌ YouTube upload failed. Aborting further processing.")
+            print(result_up.stderr)
             sys.exit(1)
             
         print("   ✅ YouTube upload successful!")
+        
+        # Parse the video URL from the standard output
+        youtube_url = None
+        url_match = re.search(r"URL:\s+(https://www.youtube.com/watch\?v=[\w-]+)", result_up.stdout)
+        if url_match:
+            youtube_url = url_match.group(1)
+            print(f"   🔗 Extracted YouTube URL: {youtube_url}")
+            
+            # Send Telegram Notification!
+            telegram_token = os.environ.get("TELEGRAM_TOKEN")
+            chat_id_match = re.search(r"__chat_(\d+)\.json$", file_path.name)
+            
+            if telegram_token and chat_id_match:
+                chat_id = chat_id_match.group(1)
+                print(f"   📱 Sending Telegram notification to chat ID: {chat_id}...")
+                try:
+                    payload = {
+                        "chat_id": chat_id,
+                        "text": f"🎉 Your video was generated and successfully uploaded to YouTube!\n\n📺 Link: {youtube_url}"
+                    }
+                    req = requests.post(f"https://api.telegram.org/bot{telegram_token}/sendMessage", json=payload)
+                    if req.status_code == 200:
+                        print("   ✅ Notification sent!")
+                    else:
+                        print(f"   ⚠️ Failed to send notification: {req.text}")
+                except Exception as e:
+                    print(f"   ⚠️ Error pinging Telegram: {e}")
         
         # 7. Delete the processed JSON from daily/
         try:

@@ -59,11 +59,12 @@ jobs:
             echo "⚠️ YOUTUBE_TOKEN_JSON secret is not set!"
           fi
 
-      - name: Run Daily Auto Upload
+      - name: Run Auto Upload Wrapper
         env:
-          # Optional: If you use Pollinations or Deepgram API keys, set them here
-          # DEEPGRAM_API_KEY: ${{ secrets.DEEPGRAM_API_KEY }}
-          PYTHONUNBUFFERED: "1"
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          DEEPGRAM_API_KEY: ${{ secrets.DEEPGRAM_API_KEY }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         run: |
           python scripts/daily_auto_upload.py
 

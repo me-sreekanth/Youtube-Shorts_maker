@@ -3,8 +3,6 @@ import json
 import base64
 import datetime
 import requests
-import threading
-from http.server import HTTPServer, BaseHTTPRequestHandler
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
 
@@ -59,9 +57,9 @@ async def schedule_choice(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         
     await update.message.reply_text("⏳ Pushing to GitHub...", reply_markup=ReplyKeyboardRemove())
     
-    # Generate timestamped filename to ensure sequential alphabetical sorting
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"input/daily/{timestamp}.json"
+    chat_id = update.effective_chat.id
+    filename = f"input/daily/{timestamp}__chat_{chat_id}.json"
     
     content = context.user_data['json_content']
     encoded_content = base64.b64encode(content.encode()).decode()
@@ -112,18 +110,6 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     )
     return ConversationHandler.END
 
-class DummyHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/plain')
-        self.end_headers()
-        self.wfile.write(b"Telegram bot is running!")
-
-def run_dummy_server():
-    port = int(os.environ.get("PORT", 8080))
-    server = HTTPServer(("0.0.0.0", port), DummyHandler)
-    server.serve_forever()
-
 def main() -> None:
     """Run the bot."""
     if not all([TELEGRAM_TOKEN, GITHUB_TOKEN, GITHUB_REPO]):
@@ -133,10 +119,6 @@ def main() -> None:
         print("- GITHUB_TOKEN (Personal Access Token with 'repo' scope)")
         print("- GITHUB_REPO (Format: username/Youtube-Shorts_maker)")
         return
-
-    # Start dummy web server for Render health checks
-    threading.Thread(target=run_dummy_server, daemon=True).start()
-    print("🌐 Started dummy web server for health checks.")
 
     # Create the Application
     application = Application.builder().token(TELEGRAM_TOKEN).build()
