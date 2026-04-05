@@ -32,7 +32,7 @@ def mix_audio():
     
     # Load video config for audio settings
     config_file = "video_config.json"
-    bgm_volume = 0.25  # Default
+    bgm_volume = 0.10  # Default (decreased from 0.25)
     voice_volume = 1.0  # Default
     bgm_file = BGM_FILE  # Default
     bgm_fade_out_duration = 1.5  # Default
@@ -41,7 +41,7 @@ def mix_audio():
         with open(config_file, "r", encoding="utf-8") as f:
             config = json.load(f)
             audio_config = config.get("audio", {})
-            bgm_volume = audio_config.get("bgm_volume", 0.25)
+            bgm_volume = audio_config.get("bgm_volume", 0.10)
             voice_volume = audio_config.get("voice_volume", 1.0)
             bgm_file = audio_config.get("bgm_file", BGM_FILE)
             bgm_fade_out_duration = audio_config.get("bgm_fade_out_duration", 1.5)
@@ -83,6 +83,7 @@ def mix_audio():
     cmd = [
         "ffmpeg", "-y",
         "-i", VOICE_FILE,
+        "-stream_loop", "-1",  # Loop BGM infinitely to cover video
         "-i", bgm_file,
         "-filter_complex", filter_complex,
         "-map", "[aout]",
