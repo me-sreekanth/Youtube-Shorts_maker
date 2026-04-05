@@ -1,0 +1,71 @@
+{
+  "title": "The Dance of the Dragons: When Fire Turned on Itself #got #shorts",
+  "description": "The Targaryens were never defeated by enemies—they destroyed themselves. The Dance of the Dragons was a civil war that turned dragon against dragon, leaving the empire broken forever. #DanceOfTheDragons #Targaryen #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Targaryens were not destroyed by outsiders—they were destroyed when fire turned against itself.",
+      "image_prompt": "two dragons facing each other in a storm, lightning and fire clashing, dark fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "After generations of rule, the greatest threat to the Targaryens became their own bloodline.",
+      "image_prompt": "Targaryen family divided into opposing factions, tension and rivalry, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "A dispute over succession split the realm, turning allies into enemies and heirs into rivals.",
+      "image_prompt": "two claimants facing each other with armies behind them, symbolic division, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Rhaenyra and Aegon each claimed the throne, and neither side was willing to yield.",
+      "image_prompt": "Rhaenyra and Aegon II facing off with dragons behind them, intense confrontation, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "What began as politics quickly became war, as dragons took to the skies against their own kind.",
+      "image_prompt": "multiple dragons clashing mid-air in fiery combat, epic chaos, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Cities burned, armies vanished, and the sky itself became a battlefield of fire and death.",
+      "image_prompt": "city engulfed in dragonfire while dragons battle above, apocalyptic scene, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "For the first time, dragons were no longer symbols of power—but casualties of it.",
+      "image_prompt": "fallen dragon on battlefield, lifeless and massive, tragic tone, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "The war consumed the Targaryens from within, leaving no true victor, only loss and ruin.",
+      "image_prompt": "ruined throne room with broken banners and ash, aftermath of destruction, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "By the end, most dragons were dead, and the power that built the empire was gone forever.",
+      "image_prompt": "empty dragon pit with silence and decay, symbolic extinction, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Dance of the Dragons did not end the Targaryens—but it ensured they would never rule the same way again.",
+      "image_prompt": "Iron Throne standing alone in dim light, no dragons in sight, somber ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
