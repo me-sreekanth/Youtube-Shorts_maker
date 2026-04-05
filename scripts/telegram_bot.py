@@ -3,6 +3,8 @@ import json
 import base64
 import datetime
 import requests
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
 
@@ -110,6 +112,18 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     )
     return ConversationHandler.END
 
+class DummyHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b"Telegram bot is running on Render!")
+
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 8080))
+    server = HTTPServer(("0.0.0.0", port), DummyHandler)
+    server.serve_forever()
+
 def main() -> None:
     """Run the bot."""
     if not all([TELEGRAM_TOKEN, GITHUB_TOKEN, GITHUB_REPO]):
@@ -119,6 +133,10 @@ def main() -> None:
         print("- GITHUB_TOKEN (Personal Access Token with 'repo' scope)")
         print("- GITHUB_REPO (Format: username/Youtube-Shorts_maker)")
         return
+
+    # Start dummy web server for Render health checks
+    threading.Thread(target=run_dummy_server, daemon=True).start()
+    print("🌐 Started dummy web server for health checks.")
 
     # Create the Application
     application = Application.builder().token(TELEGRAM_TOKEN).build()
