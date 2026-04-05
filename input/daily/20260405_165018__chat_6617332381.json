@@ -1,0 +1,71 @@
+{
+  "title": "Aegon’s Conquest: The Beginning of Fire #got #shorts",
+  "description": "After the Doom of Valyria, one house remained. Aegon Targaryen did not flee history—he rewrote it with fire and blood. This is how Westeros was conquered. #Targaryen #AegonTheConqueror #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "After Valyria fell, the world believed the age of dragons had ended—but one man had other plans.",
+      "image_prompt": "Aegon Targaryen standing before a massive dragon on Dragonstone cliffs, stormy sky, dark fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Aegon Targaryen was not the strongest ruler—but he possessed something no kingdom could withstand.",
+      "image_prompt": "Aegon with Balerion the Black Dread looming behind him, massive scale, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Three dragons—Balerion, Vhagar, and Meraxes—each one capable of burning armies into ash.",
+      "image_prompt": "three dragons flying in formation across a dark sky, fire trailing behind them, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "At the time, Westeros was divided into kingdoms that fought endlessly, never expecting what was coming.",
+      "image_prompt": "map of Westeros split into seven kingdoms with war banners clashing, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Aegon did not ask for loyalty—he demanded submission, offering a choice between fire and survival.",
+      "image_prompt": "Aegon on dragon overlooking kneeling lords, flames behind him, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Those who resisted were burned, their castles melted into symbols of defeat and warning.",
+      "image_prompt": "castle melting under dragonfire, stone turning to molten ruin, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "The Field of Fire became legend, where entire armies vanished beneath dragonflame in moments.",
+      "image_prompt": "massive battlefield engulfed in dragonfire, soldiers disappearing in flames, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "One by one, the kingdoms fell—not through diplomacy, but through overwhelming force.",
+      "image_prompt": "crowns falling and banners collapsing as dragons fly overhead, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "From the ashes of conquest, Aegon forged a single throne to rule them all.",
+      "image_prompt": "Iron Throne forming from melted swords under dragonfire, cinematic glow, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Seven Kingdoms were united not by peace—but by fear, fire, and the return of dragons.",
+      "image_prompt": "Aegon seated on the Iron Throne with dragon shadow behind him, epic final frame, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
