@@ -1,0 +1,71 @@
+{
+  "title": "The Fall of the Targaryens: Fire Ends in Ash #got #shorts",
+  "description": "The Targaryens ruled for centuries with dragons and fire—but in the end, they fell not to dragons, but to rebellion, madness, and the collapse of their own legacy. This is how the dynasty ended. #Targaryen #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Targaryens ruled Westeros for centuries—but their fall began long before the rebellion that ended them.",
+      "image_prompt": "Iron Throne in darkness with fading dragon shadows, ominous tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "After the Dance of the Dragons, their greatest strength was gone, leaving only power without fear to sustain it.",
+      "image_prompt": "empty dragon pit with broken chains and silence, symbolic loss, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Generations of rulers followed, some wise, some cruel, but none able to restore what had been lost.",
+      "image_prompt": "line of Targaryen kings fading into one another, unstable legacy, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Without dragons, their authority weakened, and rebellion became not just possible—but inevitable.",
+      "image_prompt": "lords whispering in shadows, plotting rebellion, tension rising, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Then came Aerys II, the Mad King, whose fear turned into obsession and whose rule turned into terror.",
+      "image_prompt": "Mad King on the Iron Throne surrounded by wildfire glow, paranoia and madness, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "He saw enemies everywhere, trusting no one, and believing fire could solve every threat.",
+      "image_prompt": "wildfire jars beneath King’s Landing glowing green, unstable danger, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "When he began to destroy his own people, the realm turned against him at last.",
+      "image_prompt": "lords raising banners in rebellion across Westeros, war beginning, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "Robert’s Rebellion shattered the dynasty, ending centuries of Targaryen rule in blood and fire.",
+      "image_prompt": "massive battlefield with armies clashing, Baratheon and Stark banners rising, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "The last dragonlords were exiled, their empire reduced to memory and a fading name.",
+      "image_prompt": "Viserys and Daenerys as children fleeing across the sea, somber tone, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Targaryens did not lose their throne in a single moment—they lost it the day they lost their dragons.",
+      "image_prompt": "Iron Throne empty as ashes fall like snow, final cinematic frame, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
