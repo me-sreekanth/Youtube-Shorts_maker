@@ -1,0 +1,71 @@
+{
+  "title": "The Battle of the Trident: Where Kings Fell #got #shorts",
+  "description": "The war was decided at the Trident. Robert Baratheon faced Rhaegar Targaryen in a battle that would end a dynasty and change Westeros forever. This is the clash that shaped history. #BattleOfTheTrident #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The fate of Westeros was decided in a single battle—where two leaders met in a clash that would end a dynasty.",
+      "image_prompt": "massive armies facing each other across a river, storm clouds above, cinematic war scale, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "At the Trident, the rebel forces and the Targaryen army gathered for a battle that would decide everything.",
+      "image_prompt": "wide battlefield split by a river, armies preparing for war, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Robert Baratheon led the rebellion, driven by rage, loss, and the promise of ending the Mad King’s rule.",
+      "image_prompt": "Robert raising his war hammer, battle armor, fierce expression, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Rhaegar Targaryen led the royal army, calm and composed, carrying the weight of prophecy and duty.",
+      "image_prompt": "Rhaegar in shining armor with rubies, composed and noble, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "When the battle began, thousands clashed, but all eyes were on the two men who would decide its outcome.",
+      "image_prompt": "chaotic battlefield with soldiers fighting, focus on two approaching figures, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "In the heart of the river, Robert and Rhaegar met—hammer against sword, fury against purpose.",
+      "image_prompt": "Robert and Rhaegar fighting in shallow river water, splashes and sparks, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Their duel was brief but devastating, each strike carrying the weight of an entire kingdom.",
+      "image_prompt": "close intense combat moment, impact of hammer and sword, cinematic slow motion, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "With a final blow, Robert shattered Rhaegar’s chest, sending rubies scattering across the water.",
+      "image_prompt": "Rhaegar falling as red jewels scatter in river, dramatic symbolic moment, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "With Rhaegar’s death, the Targaryen cause collapsed, and the war was effectively won.",
+      "image_prompt": "Targaryen army breaking as banners fall, turning point of battle, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The Battle of the Trident did not just decide a war—it ended a dynasty and changed the course of history forever.",
+      "image_prompt": "river flowing quietly with scattered rubies glowing beneath the water, symbolic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
