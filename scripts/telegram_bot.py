@@ -60,7 +60,7 @@ Make sure to generate exactly 3-4 scenes that form a cohesive and engaging short
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "google/gemini-2.0-flash-lite-preview-02-05:free",
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
