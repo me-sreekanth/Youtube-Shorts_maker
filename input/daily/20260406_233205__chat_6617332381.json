@@ -1,0 +1,71 @@
+{
+  "title": "Jon Snow’s Secret: The Truth That Changed Everything #got #shorts",
+  "description": "The rebellion was built on a lie. Jon Snow was never just a bastard—he was the secret that could have changed the fate of Westeros. This is the truth behind his birth. #JonSnow #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Robert’s Rebellion was built on a lie—and at its center was a child no one knew existed.",
+      "image_prompt": "shadow of a child surrounded by fire and ice symbols, mysterious tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "The realm believed Lyanna Stark was taken, but the truth was hidden to protect something far more important.",
+      "image_prompt": "Lyanna in the Tower of Joy, soft light, secretive atmosphere, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Inside that tower, she gave birth to a son—the child of Rhaegar Targaryen and Lyanna Stark.",
+      "image_prompt": "newborn wrapped in cloth, dim candlelight, emotional and intimate, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "A child of two worlds—fire and blood, ice and honor—born into a war that could not know his name.",
+      "image_prompt": "symbols of Stark direwolf and Targaryen dragon merging behind a baby, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "Ned Stark found Lyanna as she died, and made a promise that would define the rest of his life.",
+      "image_prompt": "Ned kneeling beside Lyanna, holding her hand, tragic and emotional, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "To protect the child, he hid the truth, raising him as his own and burying the secret from the world.",
+      "image_prompt": "Ned holding baby Jon in Winterfell, solemn and protective, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Jon Snow grew up believing he was a bastard, never knowing the legacy he carried within him.",
+      "image_prompt": "young Jon standing alone in Winterfell courtyard, isolated, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "His true name, his claim, and his purpose were hidden—waiting for a time when the truth could emerge.",
+      "image_prompt": "older Jon with fire and ice swirling around him, destiny imagery, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "The war that destroyed a dynasty was never about a throne—it was about protecting this one secret.",
+      "image_prompt": "battlefields fading into image of Jon standing in silence, symbolic transition, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Jon Snow was not the aftermath of the rebellion—he was the reason it mattered at all.",
+      "image_prompt": "Jon standing between fire and ice, final cinematic reveal, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
