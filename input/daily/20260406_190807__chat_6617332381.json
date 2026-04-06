@@ -1,0 +1,71 @@
+{
+  "title": "The Truth About Lyanna Stark #got #shorts",
+  "description": "Was Lyanna Stark kidnapped… or did she choose her fate? The truth behind her story changes everything we know about Robert’s Rebellion—and the secret that shaped Westeros. #LyannaStark #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Lyanna Stark was said to be kidnapped—but what if that story was never true?",
+      "image_prompt": "Lyanna Stark standing in mist, torn between two paths, mysterious tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "The realm believed Rhaegar Targaryen took her by force, sparking outrage that led to war.",
+      "image_prompt": "rumors spreading through noble courts, angry lords reacting, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "But the truth is far more complicated—and far more dangerous than anyone realized.",
+      "image_prompt": "hidden truth symbolized by a shadowed tower in the distance, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "Lyanna may not have been taken at all—but chosen to leave, bound by something deeper than politics.",
+      "image_prompt": "Lyanna and Rhaegar riding together through quiet lands, calm but secretive, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "They disappeared to the Tower of Joy, far from the war their absence would ignite.",
+      "image_prompt": "Tower of Joy standing alone in a desert landscape, isolated and symbolic, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "While kingdoms burned, Lyanna remained hidden, guarded and protected from the world outside.",
+      "image_prompt": "Kingsguard standing watch outside the tower, solemn and unwavering, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Inside, she gave birth to a child—a secret that would reshape the future of Westeros.",
+      "image_prompt": "dimly lit room with newborn wrapped in cloth, emotional and quiet, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "When Ned Stark found her, she was dying, and the truth had to be buried to protect the child.",
+      "image_prompt": "Ned Stark kneeling beside Lyanna in the tower, tragic farewell, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "The world was told a different story—one of kidnapping, revenge, and war.",
+      "image_prompt": "false narrative spreading across Westeros like fire, symbolic imagery, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "But the truth was simple and dangerous—Lyanna’s choice created a secret that would outlive every king.",
+      "image_prompt": "Jon Snow as a child in shadow with Stark and Targaryen symbols behind him, cinematic reveal, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
