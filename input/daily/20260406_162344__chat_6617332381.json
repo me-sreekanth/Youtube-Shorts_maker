@@ -1,0 +1,71 @@
+{
+  "title": "Rhaegar Targaryen: The Prince Who Changed Everything #got #shorts",
+  "description": "Rhaegar Targaryen was not the villain history remembers. A prince driven by prophecy, he made a choice that reshaped Westeros forever. This is the truth behind the man who started the rebellion. #Rhaegar #Targaryen #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Rhaegar Targaryen is remembered as the man who started a war—but the truth is far more complicated.",
+      "image_prompt": "Rhaegar standing in shadow with a crown of light behind him, mysterious and noble, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "He was not a reckless prince, but a quiet, thoughtful man shaped by books, music, and prophecy.",
+      "image_prompt": "Rhaegar playing a harp in a dim hall, reflective and calm, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "From a young age, he believed he had a role to play in a future yet to come.",
+      "image_prompt": "young Rhaegar reading ancient scrolls with glowing symbols, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "He became obsessed with prophecy—the belief that a savior would be born from his bloodline.",
+      "image_prompt": "fire visions reflecting in Rhaegar’s eyes, prophecy imagery, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "To him, the future mattered more than the present, even if it meant breaking the world around him.",
+      "image_prompt": "Rhaegar walking away from a crown toward a burning horizon, symbolic choice, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "When he chose Lyanna Stark, it was not just desire—but a decision tied to something greater.",
+      "image_prompt": "Rhaegar and Lyanna meeting in secret, soft but tense atmosphere, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "The realm saw it as kidnapping—but Rhaegar may have believed he was fulfilling destiny.",
+      "image_prompt": "whispers spreading through courts, rumors turning into outrage, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "His actions ignited Robert’s Rebellion, turning prophecy into war and hope into destruction.",
+      "image_prompt": "war banners rising as flames spread across Westeros map, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "At the Trident, he faced Robert Baratheon, a battle that would decide everything.",
+      "image_prompt": "Rhaegar and Robert charging toward each other in battle, epic clash, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Rhaegar died as a prince—but the consequences of his choices lived on in a secret the world was never meant to know.",
+      "image_prompt": "Rhaegar falling in battle as his crown sinks into the river, symbolic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
