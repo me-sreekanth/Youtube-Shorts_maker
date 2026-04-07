@@ -1,0 +1,86 @@
+{
+  "title": "The Children of the Forest: Ancient Guardians of Westeros",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "content",
+      "narration": "Deep in the ancient forests of Westeros, before men ever set foot on the continent, lived a mysterious race...",
+      "image_prompt": "Ancient forest with towering trees, mystical fog, and glowing symbols carved into bark, cinematic lighting, fantasy art style",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 2,
+      "scene_type": "content",
+      "narration": "The Children of the Forest, small in stature but mighty in magic, were the first inhabitants of the land.",
+      "image_prompt": "Small humanoid figures with large eyes and brown skin, wearing bark-like clothing, sitting around a glowing weirwood tree, mystical atmosphere",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "scene_type": "content",
+      "narration": "They worshipped the old gods and carved faces into weirwood trees to watch over the forests they protected.",
+      "image_prompt": "Close-up of a carved weirwood face with red leaves, glowing eyes, mystical lighting, ancient texture",
+      "duration": 4,
+      "effect": "pan_up"
+    },
+    {
+      "scene_number": 4,
+      "scene_type": "content",
+      "narration": "Masters of nature magic, they could control beasts, plants, and even the weather itself.",
+      "image_prompt": "Magical scene of a child of the forest commanding wolves and ravens, swirling magical energy, vibrant colors, fantasy style",
+      "duration": 4,
+      "effect": "zoom_out"
+    },
+    {
+      "scene_number": 5,
+      "scene_type": "content",
+      "narration": "Their peaceful existence changed when the First Men arrived, cutting down their sacred weirwoods and sparking a war.",
+      "image_prompt": "cinematic fantasy scene",
+      "duration": 4,
+      "effect": "ken_burns_out"
+    },
+    {
+      "scene_number": 6,
+      "scene_type": "content",
+      "narration": "After centuries of conflict, a pact was made - the Children would keep the deep forests while men settled the open lands.",
+      "image_prompt": "Ancient treaty scene with Children of the Forest and First Men shaking hands, weirwood trees in background, peaceful atmosphere",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "scene_type": "content",
+      "narration": "But peace was short-lived. The Long Night brought the White Walkers, forcing the Children to create weapons of obsidian.",
+      "image_prompt": "Children of the Forest crafting dragonglass weapons, blue glow of White Walkers in distance, dark and ominous atmosphere",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 8,
+      "scene_type": "content",
+      "narration": "In a desperate act, they created the White Walkers themselves, unleashing a force they could no longer control.",
+      "image_prompt": "Dramatic scene of a Child of the Forest plunging a dragonglass dagger into a human, blue energy swirling, dark fantasy style",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 9,
+      "scene_type": "content",
+      "narration": "With the help of the First Men and the legendary hero Azor Ahai, they defeated the White Walkers in the Battle for the Dawn.",
+      "image_prompt": "Epic battle scene with Children of the Forest, First Men, and Azor Ahai fighting White Walkers, dawn breaking on horizon",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "content",
+      "narration": "As men built their kingdoms, the Children faded into legend, their magic and wisdom lost to time.",
+      "image_prompt": "Abandoned weirwood grove with overgrown ruins, fading Children of the Forest figures, misty atmosphere, melancholic tone",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 40
+}
