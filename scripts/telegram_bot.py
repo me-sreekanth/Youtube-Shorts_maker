@@ -32,23 +32,26 @@ def generate_script_from_topic_openrouter(topic: str) -> str:
         raise ValueError("OPENROUTER_API_KEY is not set in environment.")
         
     system_prompt = """You are an expert YouTube Shorts video script creator. 
-You must output ONLY a valid JSON object. Do not include markdown formatting blocks (like ```json), no intro, no outro text.
-The JSON must strictly follow this structure:
+You must output ONLY a valid JSON object. Do not include markdown formatting blocks (like ```json).
+The JSON must strictly follow this exact structure WITHOUT ANY ADDITIONAL KEYS (do NOT output a 'subtitle' key):
 {
   "title": "A catchy title about the topic",
   "scenes": [
     {
       "scene_number": 1,
-      "scene_type": "fact",
+      "scene_type": "content",
       "narration": "A captivating narration sentence.",
-      "subtitle": "Short subtitle text",
       "image_prompt": "A highly detailed image generation prompt specifying cinematic lighting, style, subject, and composition",
       "duration": 4,
       "effect": "zoom_in"
     }
   ]
 }
-Make sure to generate exactly 3-4 scenes that form a cohesive and engaging short video. End with a promo scene (e.g. Subscribe for more) if appropriate.
+
+CRITICAL RULES YOU MUST FOLLOW OR YOU WILL BE PENALIZED:
+1. ONLY generate exactly 7-10 scenes containing actual content. NEVER generate a "promo", "subscribe", or "outro" scene. Your scenes should end with the final fact or story point.
+2. The "effect" field MUST be chosen strictly from this exact list: ["zoom_in", "zoom_out", "ken_burns_in", "ken_burns_out", "pan_left", "pan_right", "pan_up", "pan_down", "zoom_center", "zoom_rapid", "parallax_up", "parallax_down", "drift_left", "drift_right", "float_up", "pulse", "breathe", "diagonal_tl_br", "diagonal_tr_bl", "static"]. ANY OTHER EFFECT IS INVALID.
+3. DO NOT output a "subtitle" field inside the scenes.
 """
     user_prompt = f'Generate a short video script about the topic: "{topic}".'
     
@@ -98,6 +101,60 @@ Make sure to generate exactly 3-4 scenes that form a cohesive and engaging short
     all_errors = " | ".join(errors)
     raise Exception(f"All fallback models failed. Errors: {all_errors}")
 
+def enforce_strict_json_structure(json_data):
+    valid_effects = [
+        "zoom_in", "zoom_out", "ken_burns_in", "ken_burns_out",
+        "pan_left", "pan_right", "pan_up", "pan_down",
+        "zoom_center", "zoom_rapid", "parallax_up", "parallax_down",
+        "drift_left", "drift_right", "float_up", "pulse", "breathe",
+        "diagonal_tl_br", "diagonal_tr_bl", "static"
+    ]
+
+    default_effect_cycle = [
+        "zoom_in", "ken_burns_in", "pan_left", "parallax_up",
+        "drift_right", "zoom_rapid", "pulse", "breathe",
+        "diagonal_tl_br", "zoom_out"
+    ]
+
+    scenes = json_data.get("scenes", [])
+
+    # Ensure 7–10 scenes
+    if len(scenes) < 7:
+        raise ValueError("❌ Too few scenes. Minimum 7 required.")
+    if len(scenes) > 10:
+        scenes = scenes[:10]
+
+    sanitized = []
+
+    for i, s in enumerate(scenes):
+        scene = {}
+
+        # REQUIRED FIELDS
+        scene["scene_number"] = i + 1
+        scene["scene_type"] = s.get("scene_type", "content")
+
+        scene["narration"] = s.get("narration", "").strip() or "..."
+
+        scene["image_prompt"] = s.get("image_prompt", "").strip() or "cinematic fantasy scene"
+
+        scene["duration"] = 4
+
+        # EFFECT FIX (CRITICAL)
+        effect = s.get("effect")
+        if effect not in valid_effects:
+            effect = default_effect_cycle[i % len(default_effect_cycle)]
+
+        scene["effect"] = effect
+
+        sanitized.append(scene)
+
+    json_data["scenes"] = sanitized
+
+    # Optional: enforce total_duration
+    json_data["total_duration"] = len(sanitized) * 4
+
+    return json_data
+
 async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Validate JSON or generate it from topic, and save it to context."""
     text = update.message.text
@@ -124,7 +181,11 @@ async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
                 json_data = json.loads(json_content)
                 if "title" not in json_data or "scenes" not in json_data:
                     raise ValueError("Generated JSON is missing 'title' or 'scenes'.")
-                    
+                
+                # Apply the strict schema structure enforcement
+                json_data = enforce_strict_json_structure(json_data)
+                json_content = json.dumps(json_data, indent=2)
+                
                 context.user_data['json_content'] = json_content
                 num_scenes = len(json_data.get('scenes', []))
                 await update.message.reply_text(f"✅ Generated script: '{json_data.get('title', 'Unknown Title')}' with {num_scenes} scenes.\n")
