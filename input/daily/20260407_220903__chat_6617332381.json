@@ -1,0 +1,86 @@
+{
+  "title": "Iran Conflict Flashpoints: What's Happening Now?",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "content",
+      "narration": "Tensions in the Middle East remain high as Iran and its proxies engage in a shadow war with Israel and US forces.",
+      "image_prompt": "Wide shot of the Persian Gulf at dusk, with a US Navy destroyer and an Iranian fast attack craft silhouetted against an orange and purple sky, cinematic lighting, deep focus, photorealistic",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 2,
+      "scene_type": "content",
+      "narration": "Recent weeks saw Iran-backed Houthis launch drones and missiles targeting shipping in the Red Sea, prompting US and UK naval\u56de\u5e94.",
+      "image_prompt": "Low-angle shot from the deck of a warship at night, a defensive CIWS gun firing tracers into the sky against exploding drone flashes, dramatic chiaroscuro lighting, hyperrealistic",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 3,
+      "scene_type": "content",
+      "narration": "In Syria and Iraq, US forces conducted airstrikes on militia positions after attacks on bases injured American personnel.",
+      "image_prompt": "Thermal imaging view from a drone, showing a ground explosion in a desert compound at night, stark white heat signature against dark sand, surveillance aesthetic",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 4,
+      "scene_type": "content",
+      "narration": "The Israeli military has intensified covert operations within Iran, reportedly targeting nuclear facilities and weapons shipments.",
+      "image_prompt": "Extreme close-up of a satellite image overlay, zooming into a dimly lit industrial complex in the Iranian desert with annotated markers, cold blue tone, documentary style",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 5,
+      "scene_type": "content",
+      "narration": "Diplomatically, indirect talks over Iran's nuclear program have stalled, with new sanctions from the EU cited as a key obstacle.",
+      "image_prompt": "Inside a grand but empty UN Security Council chamber, wide shot with flags of member states out of focus in the foreground, one empty chair under spotlight, melancholic mood",
+      "duration": 4,
+      "effect": "static"
+    },
+    {
+      "scene_number": 6,
+      "scene_type": "content",
+      "narration": "The economic pressure continues, with oil tankers facing delays and insurance premiums soaring for voyages through the Strait of Hormuz.",
+      "image_prompt": "Aerial view of a massive oil tanker queueing at the entrance to the Strait of Hormuz under a scorching midday sun, sharp detail, desaturated colors",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 7,
+      "scene_type": "content",
+      "narration": "The cycle of attack and retaliation persists, with no direct war between Iran and the US but a persistent risk of miscalculation.",
+      "image_prompt": "Split-screen image: left side shows Iranian soldiers in a parade, right side shows US pilots suiting up, both under stark, contrasty lighting, tense atmosphere",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 8,
+      "scene_type": "content",
+      "narration": "Analysts warn the region is in a volatile equilibrium, where a single major strike could trigger a widespread regional conflict.",
+      "image_prompt": "Close-up on a world map, finger tracing routes from Tehran to Tel Aviv and Washington DC, shallow depth of field, ominous ambient lighting",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 9,
+      "scene_type": "content",
+      "narration": "For now, the shadow war continues through proxies, cyber attacks, and covert ops, shaping the region's future away from headlines.",
+      "image_prompt": "Night vision green-tinted shot of a figure handing a package in an alleyway in a regional city, then running into darkness, grainy texture, suspenseful",
+      "duration": 4,
+      "effect": "parallax_down"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "content",
+      "narration": "The world watches, as these latest happenings redefine security in a already unstable corner of the globe.",
+      "image_prompt": "Final wide shot of the sun rising over a chaotic, mountainous border landscape between Iran and a neighboring country, hopeful yet uncertain golden hour light",
+      "duration": 4,
+      "effect": "ken_burns_out"
+    }
+  ],
+  "total_duration": 40
+}
