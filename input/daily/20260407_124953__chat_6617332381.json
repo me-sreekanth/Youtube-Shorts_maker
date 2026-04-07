@@ -1,0 +1,50 @@
+{
+  "title": "The Rise and Fall of a Tyrant: Hitler's Dark Reign",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "fact",
+      "narration": "In the aftermath of World War I, Germany faced economic ruin and political chaos.",
+      "subtitle": "How a broken nation birthed a monster",
+      "image_prompt": "Montage of 1920s Germany: rubble, starving citizens, and a young Hitler speaking at a crowded beer hall with intense lighting, gritty textures, muted color palette, wide-angle shot highlighting desperation",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "scene_type": "fact",
+      "narration": "Hitler exploited Germany's despair with fiery speeches promising national rebirth and scapegoating minorities.",
+      "subtitle": "Propaganda and hatred fueled his ascent",
+      "image_prompt": "Close-up of Hitler waving to a roaring crowd under floodlights, stark shadows, saturated colors, shallow depth of field emphasizing his charismatic yet menacing presence",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 3,
+      "scene_type": "fact",
+      "narration": "By 1933, Hitler became Chancellor, transforming democracy into a totalitarian nightmare.",
+      "subtitle": "The press became a weapon of mass control",
+      "image_prompt": "Burning books in Berlin streets at night, flickering flames casting long shadows, dramatic low-angle shot with smoke-filled air, desaturated colors with occasional red highlights",
+      "duration": 4,
+      "effect": "tilt_up"
+    },
+    {
+      "scene_number": 4,
+      "scene_type": "fact",
+      "narration": "Six million lives were extinguished in concentration camps as the world turned a blind eye.",
+      "subtitle": "The world's deadliest genocide unfolded in plain sight",
+      "image_prompt": "Black-and-white footage of Auschwitz's gate, long lens compression showing endless rows of barracks, somber stillness, cinematic chiaroscuro lighting with single shaft of sunlight piercing through clouds",
+      "duration": 4,
+      "effect": "pull_back"
+    },
+    {
+      "scene_number": 5,
+      "scene_type": "promo",
+      "narration": "History repeats when we forget... Subscribe for more untold stories.",
+      "subtitle": "",
+      "image_prompt": "Dramatic slow-motion shot of war-torn Berlin skyline at dusk, golden hour lighting, handheld camera shake, distant thunder rumble, wide shot framing ruins with lone dove flying",
+      "duration": 4,
+      "effect": "fade_to_black"
+    }
+  ]
+}
