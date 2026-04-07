@@ -1,0 +1,79 @@
+{
+  "title": "The First White Walkers: How They Were Created #got #shorts",
+  "description": "The White Walkers were not always the enemy. They were created as a weapon—but became something far more dangerous. This is how the first of them came to exist. #WhiteWalkers #LongNight #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The White Walkers were not born—they were created, forged in magic and fear by those trying to save themselves.",
+      "image_prompt": "ritual deep in forest with glowing stones and ancient symbols, dark icy magic forming, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "The Children of the Forest needed a weapon strong enough to stop the First Men’s relentless expansion.",
+      "image_prompt": "Children of the Forest preparing ritual while First Men advance in distance, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "They chose a man, binding him to a weirwood tree and using ancient magic to change him forever.",
+      "image_prompt": "man tied to weirwood tree during ritual, glowing roots and symbols, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 4,
+      "narration": "A shard of dragonglass was driven into his heart, turning life into something cold and unrecognizable.",
+      "image_prompt": "dragonglass piercing chest, transformation beginning, icy glow spreading, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 5,
+      "narration": "His eyes turned blue, his body changed, and the first White Walker opened its gaze upon the world.",
+      "image_prompt": "first White Walker opening glowing blue eyes, silent and terrifying, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "What was meant to be controlled quickly became something independent, driven by a purpose of its own.",
+      "image_prompt": "White Walker standing apart from creators, cold authority, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 7,
+      "narration": "They did not remain alone—more were created, and soon, they began to spread beyond control.",
+      "image_prompt": "multiple White Walkers forming in icy terrain, growing numbers, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_down"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Where they walked, the dead rose again, turning every battlefield into an army that never stopped growing.",
+      "image_prompt": "wights rising from frozen battlefield under White Walker command, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 9,
+      "narration": "The weapon became the threat, and the world faced a force that neither side had prepared for.",
+      "image_prompt": "humans and Children watching advancing White Walkers in fear, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "The first White Walker was not the end of a war—but the beginning of something far worse than either side imagined.",
+      "image_prompt": "White Walker army stretching into horizon under dark sky, cinematic final, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
