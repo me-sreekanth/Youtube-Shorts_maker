@@ -59,30 +59,43 @@ Make sure to generate exactly 3-4 scenes that form a cohesive and engaging short
         "X-Title": "YouTube Shorts Bot",
         "Content-Type": "application/json"
     }
-    payload = {
-        "model": "meta-llama/llama-3.3-70b-instruct:free",
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ]
-    }
+    models_to_try = [
+        "google/gemma-3-27b-it:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "nvidia/nemotron-mini-4b-instruct:free"
+    ]
     
-    response = requests.post(url, headers=headers, json=payload)
-    if response.status_code != 200:
-        raise Exception(f"OpenRouter API error: {response.text}")
+    last_error = ""
+    for model in models_to_try:
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ]
+        }
         
-    data = response.json()
-    content = data['choices'][0]['message']['content'].strip()
-    
-    # Strip markdown if the model hallucinates it despite instructions
-    if content.startswith("```json"):
-        content = content[7:]
-    if content.startswith("```"):
-        content = content[3:]
-    if content.endswith("```"):
-        content = content[:-3]
+        response = requests.post(url, headers=headers, json=payload)
         
-    return content.strip()
+        if response.status_code == 200:
+            data = response.json()
+            content = data['choices'][0]['message']['content'].strip()
+            
+            # Strip markdown if the model hallucinates it despite instructions
+            if content.startswith("```json"):
+                content = content[7:]
+            if content.startswith("```"):
+                content = content[3:]
+            if content.endswith("```"):
+                content = content[:-3]
+                
+            return content.strip()
+        else:
+            last_error = response.text
+            continue
+            
+    raise Exception(f"All fallback models failed. Last error: {last_error}")
 
 async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Validate JSON or generate it from topic, and save it to context."""
