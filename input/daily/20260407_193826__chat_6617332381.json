@@ -1,0 +1,71 @@
+{
+  "title": "The Long Night: When Winter First Came #got #shorts",
+  "description": "Before the kingdoms, before the throne, there was a winter that nearly ended the world. The Long Night was not just a season—it was a war against darkness itself. This is how it began. #LongNight #WhiteWalkers #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Long before kings and kingdoms, there came a winter that did not end—and the world nearly died in darkness.",
+      "image_prompt": "ancient frozen landscape under endless night sky, eerie and vast, dark fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "glitch_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "This was the Long Night, a time when the sun vanished and cold consumed everything.",
+      "image_prompt": "sun fading behind black clouds as snow spreads across the land, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 3,
+      "narration": "Crops failed, fires dimmed, and entire civilizations began to collapse under the weight of endless winter.",
+      "image_prompt": "frozen villages with starving people and dying fires, bleak atmosphere, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 4,
+      "narration": "But the cold was not the only threat—something moved within the darkness, watching and waiting.",
+      "image_prompt": "shadowy figures with glowing blue eyes in the distance, barely visible, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 5,
+      "narration": "The Others emerged, beings of ice and silence, bringing death with every step they took.",
+      "image_prompt": "White Walkers appearing through snowstorm, elegant and terrifying, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 6,
+      "narration": "Where they walked, the dead rose again, turning the fallen into an army that could not be stopped.",
+      "image_prompt": "wights rising from snow, lifeless eyes glowing, horror tone, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 7,
+      "narration": "Humanity faced an enemy it could not understand, one that did not tire, fear, or negotiate.",
+      "image_prompt": "humans retreating before advancing icy army, overwhelming threat, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 8,
+      "narration": "As the darkness spread, hope began to fade, and the world stood on the edge of extinction.",
+      "image_prompt": "map of ancient world being consumed by darkness and ice, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 9,
+      "narration": "Legends say a hero rose during this time, bringing light against the endless night.",
+      "image_prompt": "silhouette of a warrior holding a glowing sword in the darkness, vertical 1080x1920",
+      "duration": 4
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because the Long Night was not just a disaster—it was a war between life and something far older than death.",
+      "image_prompt": "massive clash between fire-lit warriors and icy shadows, epic final frame, vertical 1080x1920",
+      "duration": 4,
+      "effect": "fade_out"
+    }
+  ],
+  "total_duration": 44
+}
