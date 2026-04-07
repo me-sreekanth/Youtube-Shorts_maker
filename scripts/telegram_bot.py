@@ -60,13 +60,13 @@ Make sure to generate exactly 3-4 scenes that form a cohesive and engaging short
         "Content-Type": "application/json"
     }
     models_to_try = [
+        "openrouter/free",
         "google/gemma-3-27b-it:free",
         "nousresearch/hermes-3-llama-3.1-405b:free",
-        "meta-llama/llama-3.3-70b-instruct:free",
-        "nvidia/nemotron-mini-4b-instruct:free"
+        "meta-llama/llama-3.3-70b-instruct:free"
     ]
     
-    last_error = ""
+    errors = []
     for model in models_to_try:
         payload = {
             "model": model,
@@ -92,10 +92,11 @@ Make sure to generate exactly 3-4 scenes that form a cohesive and engaging short
                 
             return content.strip()
         else:
-            last_error = response.text
+            errors.append(f"{model}: {response.text}")
             continue
             
-    raise Exception(f"All fallback models failed. Last error: {last_error}")
+    all_errors = " | ".join(errors)
+    raise Exception(f"All fallback models failed. Errors: {all_errors}")
 
 async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Validate JSON or generate it from topic, and save it to context."""
