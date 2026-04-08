@@ -1,0 +1,70 @@
+{
+  "title": "Moon Landing: Proof It Was Real",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "content",
+      "narration": "Apollo 11's 1969 moon landing sparked hoax theories, but scientific evidence confirms its authenticity.",
+      "image_prompt": "Cinematic wide-angle shot of the Apollo 11 lunar module on the moon's gray surface, Earth visible in the black sky, harsh directional sunlight creating sharp shadows, realistic NASA archival style, dramatic composition.",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "scene_type": "content",
+      "narration": "Independent tracking by the Soviet Union and other nations monitored Apollo's journey, verifying its path to the moon.",
+      "image_prompt": "Dimly lit 1960s control room with multiple radar screens showing spacecraft blips moving toward a lunar map, technical graphs and analog dials, documentary realism, medium shot composition.",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 3,
+      "scene_type": "content",
+      "narration": "Astronauts placed retroreflectors on the moon, which scientists still use today to bounce laser beams and measure the Earth-moon distance precisely.",
+      "image_prompt": "Close-up macro photography of a lunar retroreflector array with astronaut footprints in the foreground, stark lighting on the metal panels, detailed scientific equipment, shallow depth of field.",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 4,
+      "scene_type": "content",
+      "narration": "Photos show consistent shadows and no stars, matching the moon's vacuum and bright sunlight conditions, impossible to fake perfectly.",
+      "image_prompt": "Collage of iconic moon landing images with superimposed grid lines analyzing light angles, annotated in red, educational diagram style, clean white background, centered composition.",
+      "duration": 4,
+      "effect": "static"
+    },
+    {
+      "scene_number": 5,
+      "scene_type": "content",
+      "narration": "Moon dust falls straight down without air resistance, creating distinct parabolic arcs when disturbed, as seen in footage.",
+      "image_prompt": "High-speed photography still of dust particles kicked by an astronaut's boot, particles suspended in slow motion against dark lunar soil, dramatic lighting, dynamic action shot.",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 6,
+      "scene_type": "content",
+      "narration": "Thousands of NASA employees and international observers would have needed to conspire silently, an implausible scale of deception.",
+      "image_prompt": "Cinematic portrait of Buzz Aldrin with reflective helmet, Mission Control blurred in the background, moody chiaroscuro lighting, emotional and realistic style, close-up composition.",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 7,
+      "scene_type": "content",
+      "narration": "The Saturn V rocket and lunar module were real, proven by engineering blueprints and successful unmanned tests before manned flights.",
+      "image_prompt": "Low-angle epic shot of Saturn V launching, massive fire and smoke billowing, golden hour lighting, historical documentary style, awe-inspiring scale composition.",
+      "duration": 4,
+      "effect": "zoom_out"
+    },
+    {
+      "scene_number": 8,
+      "scene_type": "content",
+      "narration": "With hardware left on the moon, laser reflectors still active, and global verification, the moon landing stands as a genuine human achievement.",
+      "image_prompt": "Iconic 'Earthrise' photo from lunar orbit, blue Earth hovering over the moon's cratered horizon, ethereal lighting, realistic space photography, serene wide composition.",
+      "duration": 4,
+      "effect": "parallax_up"
+    }
+  ],
+  "total_duration": 32
+}
