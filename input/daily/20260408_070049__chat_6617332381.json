@@ -1,0 +1,70 @@
+{
+  "title": "Decoding Victory: Turing, the Enigma, and WWII",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "content",
+      "narration": "During World War II, Nazi Germany's Enigma machine encoded secret military messages, baffling Allied cryptanalysts.",
+      "image_prompt": "A dramatic dusk-lit German military bunker, an Enigma machine on a wooden table, cobwebs and oil stains, cinematic lighting, Art Deco style, close\u2011up composition",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 2,
+      "scene_type": "content",
+      "narration": "Alan Turing, a brilliant mathematician, joined Bletchley Park to crack Enigma\u2019s impossible code.",
+      "image_prompt": "A young Alan Turing in tweed coat, deep in thought, surrounded by chalkboards full of equations, moody studio lighting, hyperrealistic style, centered composition",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 3,
+      "scene_type": "content",
+      "narration": "Turing devised the 'bombe', an electromechanical device that mimicked Enigma\u2019s rotor logic to test thousands of key settings per minute.",
+      "image_prompt": "A massive, steam\u2011puffing bombe machine, gears and cables illuminated by warm lamp light, industrial style, wide shot, cinematic lighting",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 4,
+      "scene_type": "content",
+      "narration": "The first successful session discovered a German fleet\u2019s position, preventing a devastating naval attack.",
+      "image_prompt": "A tense war room with crew hunched over monitor screens, colored map displayed, high contrast lighting, realistic style, frontal composition",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 5,
+      "scene_type": "content",
+      "narration": "Every day, decoded intelligence shortened battles and saved lives\u2014an unseen army of codebreakers.",
+      "image_prompt": "Soldiers marching across a battlefield at sunrise, patriotism in color, softly lit by early morning light, cinematic wide-angle, epic style",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 6,
+      "scene_type": "content",
+      "narration": "Turing\u2019s legacy is not just the win\u2014it\u2019s the foundation of modern computer science and artificial intelligence.",
+      "image_prompt": "A sleek, glowing Turing machine with binary code flowing overhead, futuristic neon ambiance, minimalist color palette, high definition, centered composition",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 7,
+      "scene_type": "content",
+      "narration": "His personal story reminds us: brilliance must often carry a heavy burden, as Turing paid a costly price for his contributions.",
+      "image_prompt": "A lone figure in a dim hallway, silhouette against a blue LED glow, subtle melancholy lighting, subtle color grading, introspective composition",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 8,
+      "scene_type": "content",
+      "narration": "Alan Turing\u2019s triumph over Enigma shows that imagination, perseverance, and collaborative courage can rewrite history.",
+      "image_prompt": "A sunrise over a calm sea, leading to an illuminated lighthouse beacon, warm cinematic lighting, realistic style, wide horizon composition",
+      "duration": 4,
+      "effect": "breathe"
+    }
+  ],
+  "total_duration": 32
+}
