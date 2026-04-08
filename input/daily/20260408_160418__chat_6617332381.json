@@ -1,0 +1,79 @@
+{
+  "title": "How the Long Night Ended #got #shorts",
+  "description": "The Long Night did not end by chance. It took alliance, sacrifice, and ancient magic to push back the darkness. This is how the world survived its darkest age. #LongNight #WhiteWalkers #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Long Night did not last forever—but ending it required the world to unite against a common extinction.",
+      "image_prompt": "massive battlefield of fire vs ice, humans and ancient beings together, cinematic dark fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "For the first time, humans and the Children of the Forest stood together against the White Walkers.",
+      "image_prompt": "humans and Children of the Forest forming alliance in glowing forest, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_out"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The war stretched across lands and years, a relentless battle where neither side could truly rest.",
+      "image_prompt": "long war montage across frozen lands, endless conflict, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Azor Ahai and other heroes led the fight, using fire and dragonglass to push back the rising dead.",
+      "image_prompt": "heroes with flaming weapons battling White Walkers, epic clash, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Slowly, the tide began to turn, as the forces of winter were driven back into the far North.",
+      "image_prompt": "White Walkers retreating into icy wilderness, fading darkness, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 6,
+      "narration": "To ensure the darkness would never return unchecked, a great barrier was raised across the land.",
+      "image_prompt": "massive Wall rising from earth with magic and ice, ancient construction, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 7,
+      "narration": "The Wall was not just stone and ice—it was built with magic, binding the world against what lay beyond.",
+      "image_prompt": "glowing magical runes embedded in the Wall, ancient protective energy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 8,
+      "narration": "The Night’s Watch was formed to guard it, ensuring that the memory of the Long Night would never fade.",
+      "image_prompt": "first Night’s Watch standing atop the Wall, torches glowing in darkness, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_up"
+    },
+    {
+      "scene_number": 9,
+      "narration": "The world survived—but at a cost so great it became legend rather than memory.",
+      "image_prompt": "battlefield now silent, snow covering fallen warriors, melancholic tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because the Long Night did not truly end—it was only pushed back, waiting for the world to forget.",
+      "image_prompt": "far North beyond the Wall, faint blue eyes opening in darkness, ominous ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
