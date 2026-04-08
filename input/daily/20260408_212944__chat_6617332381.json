@@ -1,0 +1,78 @@
+{
+  "title": "The Lost Knight of the Seven Kingdoms",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "content",
+      "narration": "In the misty dawn of Westeros, a lone knight mounts his black destrier, seeking honor beyond the iron throne.",
+      "image_prompt": "Cinematic sunrise over a misty castle courtyard, detailed armor glinting, black warhorse breathing, dramatic rim lighting, high contrast, epic fantasy style, wide shot",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "scene_type": "content",
+      "narration": "He bears the sigil of the Seventh House, a golden direwolf entwined with a silver rose, a forgotten lineage.",
+      "image_prompt": "Close\u2011up of a polished shield displaying a golden direwolf wrapped around a silver rose, intricate engravings, soft glow, cinematic lighting, shallow depth of field",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 3,
+      "scene_type": "content",
+      "narration": "His oath: to protect the smallfolk of the Riverlands, even if the great houses turn a blind eye.",
+      "image_prompt": "Knight kneeling before a humble village well, children watching, warm amber light, rustic stone walls, emotional atmosphere, cinematic composition",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 4,
+      "scene_type": "content",
+      "narration": "A sudden raven\u2019s cry warns of an invading raiding party from the Iron Islands.",
+      "image_prompt": "Dark skies over a coastal cliff, a single raven silhouetted against a stormy horizon, wind\u2011swept sea, dramatic chiaroscuro, high detail",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 5,
+      "scene_type": "content",
+      "narration": "He rallies the farmers, forging makeshift spears, turning fear into fierce resolve.",
+      "image_prompt": "Farmers gathering around a roaring forge, molten metal spilling, faces illuminated by firelight, gritty realism, cinematic close\u2011up",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 6,
+      "scene_type": "content",
+      "narration": "The battle erupts on the misty field, steel clashing under a blood\u2011red sky.",
+      "image_prompt": "Epic battlefield at twilight, knights charging, arrows arcing, red sky ablaze, dynamic composition, high\u2011contrast lighting, cinematic scope",
+      "duration": 4,
+      "effect": "pan_up"
+    },
+    {
+      "scene_number": 7,
+      "scene_type": "content",
+      "narration": "Against overwhelming odds, the knight breaks the enemy\u2019s shield wall with a heroic charge.",
+      "image_prompt": "Heroic knight in mid\u2011lunge, sword raised, shield wall splintering, dust swirling, dramatic backlight, ultra\u2011realistic detail",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 8,
+      "scene_type": "content",
+      "narration": "When the last raider falls, the soaked fields echo with the cheers of liberated villagers.",
+      "image_prompt": "Villagers celebrating amidst a dew\u2011covered field, lanterns flickering, sunrise breaking, warm tones, cinematic bokeh",
+      "duration": 4,
+      "effect": "float_up"
+    },
+    {
+      "scene_number": 9,
+      "scene_type": "content",
+      "narration": "The knight rides onward, his legend whispered across all seven kingdoms, a reminder that true honor defies crowns.",
+      "image_prompt": "Silhouette of the knight on a hilltop, cape fluttering, distant castles across a sprawling landscape, golden hour lighting, epic widescreen",
+      "duration": 4,
+      "effect": "pan_down"
+    }
+  ],
+  "total_duration": 36
+}
