@@ -5,8 +5,8 @@ import datetime
 import requests
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
+from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler, CallbackQueryHandler
 
 # Environment variables
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
@@ -188,7 +188,13 @@ async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
                 
                 context.user_data['json_content'] = json_content
                 num_scenes = len(json_data.get('scenes', []))
-                await update.message.reply_text(f"✅ Generated script: '{json_data.get('title', 'Unknown Title')}' with {num_scenes} scenes.\n")
+                
+                keyboard = [[InlineKeyboardButton("📑 Show script", callback_data="show_script")]]
+                reply_markup = InlineKeyboardMarkup(keyboard)
+                await update.message.reply_text(
+                    f"✅ Generated script: '{json_data.get('title', 'Unknown Title')}' with {num_scenes} scenes.\n",
+                    reply_markup=reply_markup
+                )
             except Exception as e:
                 await update.message.reply_text(f"❌ Failed to generate script. Please send valid JSON or try a different topic.\nError: {str(e)}")
                 return WAITING_FOR_JSON
@@ -265,6 +271,23 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     )
     return ConversationHandler.END
 
+async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle inline keyboard button clicks."""
+    query = update.callback_query
+    await query.answer()
+    
+    if query.data == "show_script":
+        json_content = context.user_data.get('json_content')
+        if json_content:
+            # Telegram limits messages to 4096 characters.
+            if len(json_content) > 4000:
+                truncated = json_content[:3900] + "\n... (truncated)"
+                await query.message.reply_text(f"```json\n{truncated}\n```", parse_mode='Markdown')
+            else:
+                await query.message.reply_text(f"```json\n{json_content}\n```", parse_mode='Markdown')
+        else:
+            await query.message.reply_text("❌ No script found in current session.")
+
 class DummyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -314,6 +337,7 @@ def main() -> None:
     )
 
     application.add_handler(conv_handler)
+    application.add_handler(CallbackQueryHandler(button_callback))
     
     print("🤖 YouTube Shorts Telegram Bot is successfully listening...")
     
