@@ -4,6 +4,9 @@ import base64
 import datetime
 import requests
 import threading
+import re
+from urllib.parse import urlparse, parse_qs
+from youtube_transcript_api import YouTubeTranscriptApi
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler, CallbackQueryHandler
@@ -25,6 +28,110 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         reply_markup=ReplyKeyboardRemove(),
     )
     return WAITING_FOR_JSON
+
+def extract_youtube_id(url: str) -> str:
+    """Extract the video ID from a YouTube URL."""
+    try:
+        parsed_url = urlparse(url)
+        if parsed_url.hostname in ('youtu.be', 'www.youtu.be'):
+            return parsed_url.path[1:]
+        if parsed_url.hostname in ('youtube.com', 'www.youtube.com'):
+            if parsed_url.path == '/watch':
+                return parse_qs(parsed_url.query)['v'][0]
+            if parsed_url.path.startswith('/shorts/'):
+                return parsed_url.path.split('/')[2]
+    except Exception:
+        pass
+    return None
+
+def get_youtube_transcript(video_id: str) -> str:
+    """Fetch the transcript for a given YouTube video ID."""
+    try:
+        transcript_data = YouTubeTranscriptApi().fetch(video_id)
+        # transcript_data is a list of FetchedTranscriptSnippet objects
+        transcript = " ".join([item.text for item in transcript_data])
+        # Truncate to first 15000 chars to avoid token limits on free models
+        if len(transcript) > 15000:
+            transcript = transcript[:15000] + "..."
+        return transcript
+    except Exception as e:
+        raise Exception(f"Failed to fetch transcript: {str(e)}")
+
+def generate_script_from_transcript_openrouter(transcript: str) -> str:
+    """Generate a valid JSON video script from a YouTube transcript utilizing OpenRouter."""
+    if not OPENROUTER_API_KEY:
+        raise ValueError("OPENROUTER_API_KEY is not set in environment.")
+        
+    system_prompt = """You are an expert YouTube Shorts video script creator. 
+You must output ONLY a valid JSON object. Do not include markdown formatting blocks (like ```json).
+The JSON must strictly follow this exact structure WITHOUT ANY ADDITIONAL KEYS (do NOT output a 'subtitle' key):
+{
+  "title": "A catchy title about the topic",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "content",
+      "narration": "A captivating narration sentence.",
+      "image_prompt": "A highly detailed image generation prompt specifying cinematic lighting, style, subject, and composition",
+      "duration": 4,
+      "effect": "zoom_in"
+    }
+  ]
+}
+
+CRITICAL RULES YOU MUST FOLLOW OR YOU WILL BE PENALIZED:
+1. ONLY generate exactly 7-10 scenes containing actual content. NEVER generate a "promo", "subscribe", or "outro" scene. Your scenes should end with the final fact or story point.
+2. The "effect" field MUST be chosen strictly from this exact list: ["zoom_in", "zoom_out", "ken_burns_in", "ken_burns_out", "pan_left", "pan_right", "pan_up", "pan_down", "zoom_center", "zoom_rapid", "parallax_up", "parallax_down", "drift_left", "drift_right", "float_up", "pulse", "breathe", "diagonal_tl_br", "diagonal_tr_bl", "static"]. ANY OTHER EFFECT IS INVALID.
+3. DO NOT output a "subtitle" field inside the scenes.
+4. Extract the most interesting, engaging, and relevant parts of the provided transcript to form a cohesive, compelling Shorts narrative. Do NOT just summarize it boringly! Make it engaging!
+"""
+    user_prompt = f'Here is the transcript of a video. Create a highly engaging short video script based on it:\n\n"{transcript}"'
+    
+    url = "https://openrouter.ai/api/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "HTTP-Referer": "https://github.com/terrificminds/Youtube-Shorts_maker",
+        "X-Title": "YouTube Shorts Bot",
+        "Content-Type": "application/json"
+    }
+    models_to_try = [
+        "openrouter/free",
+        "google/gemma-3-27b-it:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "meta-llama/llama-3.3-70b-instruct:free"
+    ]
+    
+    errors = []
+    for model in models_to_try:
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ]
+        }
+        
+        response = requests.post(url, headers=headers, json=payload)
+        
+        if response.status_code == 200:
+            data = response.json()
+            content = data['choices'][0]['message']['content'].strip()
+            
+            # Strip markdown if the model hallucinates it despite instructions
+            if content.startswith("```json"):
+                content = content[7:]
+            if content.startswith("```"):
+                content = content[3:]
+            if content.endswith("```"):
+                content = content[:-3]
+                
+            return content.strip()
+        else:
+            errors.append(f"{model}: {response.text}")
+            continue
+            
+    all_errors = " | ".join(errors)
+    raise Exception(f"All fallback models failed. Errors: {all_errors}")
 
 def generate_script_from_topic_openrouter(topic: str) -> str:
     """Generate a valid JSON video script from a text topic using OpenRouter."""
@@ -171,12 +278,31 @@ async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
             context.user_data['json_content'] = text
             await update.message.reply_text("✅ Valid JSON received.\n")
         else:
-            # Treat as text topic
-            await update.message.reply_text(f"🤖 Generating a video script for topic: '{text}'...")
-            
+            # Treat as text topic or Youtube URL
             import asyncio
+            
+            # Check if text contains a YouTube URL
+            youtube_id = extract_youtube_id(text.strip())
+            
+            if youtube_id:
+                try:
+                    await update.message.reply_text(f"🎥 Detected YouTube URL. Fetching transcript for video ID: {youtube_id}...")
+                    transcript = await asyncio.to_thread(get_youtube_transcript, youtube_id)
+                    await update.message.reply_text("✅ Transcript fetched! Generating a video script based on the video content...")
+                    json_content = await asyncio.to_thread(generate_script_from_transcript_openrouter, transcript)
+                except Exception as e:
+                    await update.message.reply_text(f"❌ Failed to process YouTube link. Ensure the video has transcripts available.\nError: {str(e)}")
+                    return WAITING_FOR_JSON
+            else:
+                await update.message.reply_text(f"🤖 Generating a video script for topic: '{text}'...")
+                
+                try:
+                    json_content = await asyncio.to_thread(generate_script_from_topic_openrouter, text)
+                except Exception as e:
+                    await update.message.reply_text(f"❌ Failed to generate script. Please send valid JSON, a YouTube link, or try a different topic.\nError: {str(e)}")
+                    return WAITING_FOR_JSON
+                
             try:
-                json_content = await asyncio.to_thread(generate_script_from_topic_openrouter, text)
                 
                 json_data = json.loads(json_content)
                 if "title" not in json_data or "scenes" not in json_data:
@@ -206,7 +332,7 @@ async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
         )
         return WAITING_FOR_SCHEDULE
     except json.JSONDecodeError:
-        await update.message.reply_text("❌ Invalid JSON format. Please ensure you're pasting valid JSON if you intend to send a script directly.")
+        await update.message.reply_text("❌ Invalid JSON format. Please ensure you're pasting valid JSON if you intend to send a script directly, or send a topic text / Youtube Link.")
         return WAITING_FOR_JSON
 
 async def schedule_choice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -313,11 +439,11 @@ def main() -> None:
         print("- TELEGRAM_TOKEN (from BotFather)")
         print("- GITHUB_TOKEN (Personal Access Token with 'repo' scope)")
         print("- GITHUB_REPO (Format: username/Youtube-Shorts_maker)")
-        print("- OPENROUTER_API_KEY (Optional, for text topic generation)")
+        print("- OPENROUTER_API_KEY (Optional, for text topic/youtube transcript generation)")
         return
         
     if not OPENROUTER_API_KEY:
-        print("⚠️ Warning: OPENROUTER_API_KEY is not set. Topic generation will fail. Direct JSON will still work.")
+        print("⚠️ Warning: OPENROUTER_API_KEY is not set. Topic/YouTube script generation will fail. Direct JSON will still work.")
 
     # Start dummy web server for Render health checks
     threading.Thread(target=run_dummy_server, daemon=True).start()
