@@ -1,0 +1,79 @@
+{
+  "title": "The North Remembers: House Stark Explained #got #shorts",
+  "description": "House Stark is built on honor, resilience, and survival. Through loss and betrayal, they endured when others fell. This is why the North remembers. #HouseStark #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "In a world ruled by power and betrayal, one house chose a different path—honor above everything else.",
+      "image_prompt": "Winterfell in snow under grey skies, calm but strong atmosphere, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "House Stark ruled the North, a land shaped by cold, hardship, and the constant memory of survival.",
+      "image_prompt": "vast northern landscape with snowstorms and wolves, harsh environment, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Their words were simple—Winter is Coming—a warning that shaped every decision they made.",
+      "image_prompt": "Stark banner with direwolf in snowfall, symbolic tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Unlike other houses, the Starks believed power was not meant to be taken—but to be carried responsibly.",
+      "image_prompt": "Ned Stark standing solemnly in Winterfell courtyard, honorable presence, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 5,
+      "narration": "This belief made them respected—but also vulnerable in a world where honor was often exploited.",
+      "image_prompt": "southern court contrasting Stark honor with political scheming, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Their downfall began not because they were weak—but because they refused to play the game others did.",
+      "image_prompt": "Ned Stark in King’s Landing surrounded by shadows and danger, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "Loss followed loss, as betrayal and war tore the family apart across the Seven Kingdoms.",
+      "image_prompt": "Stark family members separated across different locations, emotional montage, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 8,
+      "narration": "But the North never forgot, and the Stark name became a symbol of endurance and memory.",
+      "image_prompt": "northern lords raising Stark banners in snow, loyalty and unity, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 9,
+      "narration": "Piece by piece, the Starks returned—not through power, but through resilience and survival.",
+      "image_prompt": "Stark children growing into leaders, symbolic transformation, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because in the end, House Stark did not conquer the world—they endured it.",
+      "image_prompt": "Winterfell standing strong at dawn, calm and victorious, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
