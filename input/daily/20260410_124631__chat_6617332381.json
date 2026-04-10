@@ -1,0 +1,79 @@
+{
+  "title": "The Rise of Sansa Stark #got #shorts",
+  "description": "Sansa Stark began as a pawn in the game of thrones—but she became one of its most skilled players. This is the story of her transformation into a ruler. #SansaStark #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Sansa Stark was never meant to survive the game of thrones—but she learned how to master it.",
+      "image_prompt": "Sansa standing in dim throne room with shadows of power around her, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "She began as a dreamer, believing in knights, honor, and a world that did not truly exist.",
+      "image_prompt": "young Sansa in bright court attire, hopeful expression, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "But King’s Landing taught her the truth—that power is built on control, not kindness.",
+      "image_prompt": "Sansa surrounded by cold, manipulative figures in court, tension, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_down"
+    },
+    {
+      "scene_number": 4,
+      "narration": "She endured cruelty, manipulation, and loss, learning from every moment instead of breaking under it.",
+      "image_prompt": "Sansa standing silently amid chaos, inner strength forming, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Unlike others, she did not fight with swords—she learned to understand people, power, and timing.",
+      "image_prompt": "Sansa observing court politics carefully, calculating gaze, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_right"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Her strength became patience, her weapon became knowledge, and her survival became strategy.",
+      "image_prompt": "Sansa in darker attire symbolizing transformation, confident posture, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "When she returned to the North, she was no longer a victim—she was a leader shaped by experience.",
+      "image_prompt": "Sansa returning to Winterfell, strong and composed, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 8,
+      "narration": "She understood what the North needed—stability, memory, and someone who would not repeat past mistakes.",
+      "image_prompt": "Sansa addressing northern lords with authority, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 9,
+      "narration": "While others chased power, Sansa built it quietly, ensuring the North would stand on its own.",
+      "image_prompt": "Winterfell thriving under Sansa’s leadership, calm strength, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Sansa Stark did not win the game of thrones—she changed the rules so she would never have to play it again.",
+      "image_prompt": "Sansa crowned Queen in the North, dignified and powerful, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
