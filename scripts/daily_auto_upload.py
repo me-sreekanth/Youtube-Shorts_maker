@@ -73,6 +73,25 @@ def main():
         if result_up.returncode != 0:
             print("   ❌ YouTube upload failed. Aborting further processing.")
             print(result_up.stderr)
+            
+            # Check for YouTube token expiration in the output/stderr
+            combined_output = result_up.stdout + result_up.stderr
+            if "invalid_grant" in combined_output or "Token has been expired" in combined_output:
+                telegram_token = os.environ.get("TELEGRAM_TOKEN")
+                chat_id_match = re.search(r"__chat_(\d+)\.json$", file_path.name)
+                
+                if telegram_token and chat_id_match:
+                    chat_id = chat_id_match.group(1)
+                    print(f"   ⚠️ Sending token expiration alert to Telegram: {chat_id}")
+                    try:
+                        payload = {
+                            "chat_id": chat_id,
+                            "text": "⚠️ **YouTube Upload Failed: Token Expired!**\n\nThe daily video upload failed because your YouTube authorization token expired.\n\n**How to fix:**\n1. Open terminal on your local Mac.\n2. Delete the old `.youtube_token.json` file if it exists.\n3. Run `python scripts/upload_to_youtube.py` locally to open your browser and authorize.\n4. A new `.youtube_token.json` file will be generated locally.\n5. Open that file and copy its contents.\n6. Go to your GitHub Repository -> Settings -> Secrets and variables -> Actions.\n7. Update the `YOUTUBE_TOKEN_JSON` secret with the new copied contents!"
+                        }
+                        requests.post(f"https://api.telegram.org/bot{telegram_token}/sendMessage", json=payload)
+                    except Exception as e:
+                        print(f"   ⚠️ Error pinging Telegram for token alert: {e}")
+
             sys.exit(1)
             
         print("   ✅ YouTube upload successful!")
