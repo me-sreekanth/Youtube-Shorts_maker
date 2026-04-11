@@ -1,0 +1,79 @@
+{
+  "title": "Bloodraven: The Man Behind Everything? #got #shorts",
+  "description": "Hidden in the roots of the world, Bloodraven may be the most powerful and mysterious figure in Westeros. Watching, guiding, and shaping events from the shadows—this is the truth behind the Three-Eyed Raven. #ASOIAF #Bloodraven #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "What if the most powerful player in Westeros was never on the throne—but hidden beyond the world itself?",
+      "image_prompt": "ancient weirwood tree with glowing red eyes in darkness, mystical and eerie, dark fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Bloodraven was once a man—a Targaryen bastard who served as Hand of the King and master of secrets.",
+      "image_prompt": "pale one-eyed man in dark cloak standing in royal court shadows, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "He was known for seeing everything, using spies, whispers, and intelligence to control the realm.",
+      "image_prompt": "network of spies and ravens spreading messages across Westeros map, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "After being sent to the Wall, he disappeared beyond it—into the far North where magic still lives.",
+      "image_prompt": "Bloodraven walking beyond the Wall into frozen wilderness, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 5,
+      "narration": "There, he became something else—merged with the weirwood trees, connected to memory itself.",
+      "image_prompt": "figure fused into weirwood roots with glowing red eye, surreal transformation, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Through this power, he could see the past, influence the present, and possibly shape the future.",
+      "image_prompt": "visions flowing through tree roots showing past and future events, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 7,
+      "narration": "Some theories suggest he has been guiding events for years—choosing who lives, who dies, and who matters.",
+      "image_prompt": "puppet-like strings connecting major characters to a hidden figure, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Bran Stark may not just be his student—but his successor in a plan far larger than anyone realizes.",
+      "image_prompt": "Bran beneath weirwood with Bloodraven shadow behind him, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 9,
+      "narration": "If true, then the game of thrones was never controlled by kings—but by someone watching from the roots of the world.",
+      "image_prompt": "weirwood roots spreading beneath entire map of Westeros, hidden control, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because Bloodraven may not just be part of the story—he may be the one shaping how it ends.",
+      "image_prompt": "single glowing red eye fading into darkness within weirwood tree, ominous ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
