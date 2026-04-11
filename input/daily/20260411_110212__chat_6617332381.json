@@ -1,0 +1,79 @@
+{
+  "title": "The Truth About Valyrian Magic #got #shorts",
+  "description": "Valyrian magic was not just powerful—it was dangerous, built on blood, fire, and control over life itself. This is the truth behind the magic that shaped dragons and destroyed an empire. #ASOIAF #Valyria #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Valyrians did not just control dragons—they controlled the forces that created them.",
+      "image_prompt": "ancient Valyrian mages surrounded by dragons and fire rituals, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Their magic was rooted in blood and fire, a system that bound life, power, and sacrifice together.",
+      "image_prompt": "blood ritual glowing with fire symbols and ancient runes, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Through these rituals, they were able to bond with dragons, creating a connection that went beyond control.",
+      "image_prompt": "Valyrian dragonrider forming mystical bond with dragon, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Some theories suggest dragons themselves were not natural—but created through magic and experimentation.",
+      "image_prompt": "dragon forming from magical energy and transformation process, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Valyrian steel, another product of their magic, was forged using techniques that have been lost for centuries.",
+      "image_prompt": "Valyrian steel sword glowing in forge with fire and magic combined, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Their power allowed them to shape the world itself—but it also came with a cost they could not control.",
+      "image_prompt": "Valyrian empire expanding with fire and dominance, overwhelming power, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "The deeper they went into forbidden magic, the closer they came to something unstable and destructive.",
+      "image_prompt": "ritual spiraling out of control with fire erupting violently, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Some believe this imbalance is what led to the Doom of Valyria—an event that erased an entire civilization.",
+      "image_prompt": "Valyria collapsing in volcanic eruption and magical chaos, apocalyptic scene, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 9,
+      "narration": "Their magic did not disappear—but fragments of it survived in bloodlines, artifacts, and forgotten knowledge.",
+      "image_prompt": "Targaryen lineage glowing faintly with dragonfire connection, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because Valyrian magic was never meant to be controlled—it was only ever meant to be survived.",
+      "image_prompt": "ruins of Valyria still glowing with lingering magic, haunting and powerful ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
