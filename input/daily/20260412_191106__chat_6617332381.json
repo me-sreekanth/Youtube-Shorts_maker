@@ -1,0 +1,79 @@
+{
+  "title": "Euron Greyjoy: The True Villain of the Books #got #shorts",
+  "description": "Euron Greyjoy in the books is far darker than the show ever revealed. Obsessed with gods, magic, and power, he may be the most dangerous threat in Westeros. #ASOIAF #EuronGreyjoy #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The show turned Euron Greyjoy into a pirate—but in the books, he may be something far worse.",
+      "image_prompt": "dark pirate king with glowing eye and stormy seas, ominous presence, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Known as Euron Crow’s Eye, he is feared not just for violence—but for what he believes.",
+      "image_prompt": "Euron with black armor and single glowing eye, unsettling aura, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "He speaks of gods, magic, and becoming something greater than human.",
+      "image_prompt": "Euron standing before storm with mystical symbols forming around him, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Unlike other rulers, Euron does not seek power to rule—he seeks power to transform the world itself.",
+      "image_prompt": "storm swallowing fleets as Euron stands at center, apocalyptic tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 5,
+      "narration": "He has traveled to distant lands, possibly even Asshai, collecting knowledge of forbidden magic.",
+      "image_prompt": "Euron in shadowy eastern city filled with dark magic and ruins, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Some theories suggest he is trying to harness powers similar to the Others—or even surpass them.",
+      "image_prompt": "Euron surrounded by dark energy resembling icy and shadow forces, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 7,
+      "narration": "His actions are unpredictable, driven not by politics, but by something far more chaotic and dangerous.",
+      "image_prompt": "chaotic storm and burning ships under Euron’s control, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "If his plans succeed, the threat he represents may rival—or even exceed—the Long Night itself.",
+      "image_prompt": "apocalyptic vision of world consumed by dark storms and magic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 9,
+      "narration": "Unlike other villains, Euron is not trying to control the game—he may be trying to break it entirely.",
+      "image_prompt": "game board shattering under dark force, symbolic destruction, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because Euron Greyjoy may not just be a villain—he may be the storm that ends everything.",
+      "image_prompt": "Euron standing at center of massive storm with lightning and darkness closing in, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
