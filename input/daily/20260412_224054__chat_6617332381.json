@@ -1,0 +1,79 @@
+{
+  "title": "Why Dragons Returned #got #shorts",
+  "description": "Dragons didn’t just come back by chance. Their return may be tied to magic, prophecy, and a world falling out of balance. This is why dragons returned. #ASOIAF #Dragons #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "For centuries, dragons were gone—until suddenly, they returned to the world.",
+      "image_prompt": "dragon eggs in darkness beginning to glow faintly, mysterious and ancient, dark fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Their disappearance marked the fading of magic, as if the world itself had begun to weaken.",
+      "image_prompt": "empty skies and abandoned dragon pits under fading light, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "But in the books, magic is not gone—it is dormant, waiting for the right moment to rise again.",
+      "image_prompt": "hidden magical energy beneath the earth slowly awakening, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 4,
+      "narration": "As the Others begin to stir in the North, the balance between ice and fire begins to shift.",
+      "image_prompt": "icy forces rising in the North contrasted with distant fire glow, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 5,
+      "narration": "The return of dragons may not be coincidence—but a response to this growing imbalance.",
+      "image_prompt": "dragon egg cracking as icy wind blows around it, symbolic balance, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Some theories suggest dragons are tied directly to magic itself—when one returns, so does the other.",
+      "image_prompt": "dragon emerging surrounded by magical energy waves, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 7,
+      "narration": "This would explain why ancient prophecies speak of fire rising again when darkness returns.",
+      "image_prompt": "ancient prophecy scroll showing dragon and flame symbols, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 8,
+      "narration": "The world of Westeros may operate on balance—where ice rises, fire must answer.",
+      "image_prompt": "massive dragon facing distant icy army, balanced standoff, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 9,
+      "narration": "This makes dragons more than creatures—they are forces tied to the fate of the world itself.",
+      "image_prompt": "dragon soaring above Westeros map glowing with energy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because dragons did not just return to the world—they returned because the world needed them.",
+      "image_prompt": "dragon rising into sky at dawn with fire spreading light across horizon, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
