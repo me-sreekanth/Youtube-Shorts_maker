@@ -1,0 +1,79 @@
+{
+  "title": "Are Dragons Created or Born? #got #shorts",
+  "description": "Dragons may not be natural creatures. Some theories suggest they were created through ancient Valyrian magic, combining fire, blood, and experimentation. This changes everything we know about them. #ASOIAF #Dragons #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "What if dragons were never natural creatures—but something created through magic?",
+      "image_prompt": "dragon forming from fire and shadow magic in ritual setting, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "In the books, the origins of dragons are unclear, but many clues point toward something unnatural.",
+      "image_prompt": "ancient texts with dragon sketches and unknown symbols, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Valyrian magic was built on blood and fire, a system capable of shaping life itself.",
+      "image_prompt": "blood ritual with fire and magical runes forming living shapes, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Some theories suggest dragons were created by combining creatures through magical experimentation.",
+      "image_prompt": "creatures merging through magical transformation into dragon-like form, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 5,
+      "narration": "This could explain their unique traits—their fire, intelligence, and deep connection to specific bloodlines.",
+      "image_prompt": "dragon eye glowing while connected to human bloodline energy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "It may also explain why only certain families, like the Targaryens, could bond with them.",
+      "image_prompt": "Targaryen lineage glowing alongside dragon silhouettes, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "If dragons were created, then they are not just animals—but weapons designed for power.",
+      "image_prompt": "dragon used in battle as controlled force of destruction, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "But like all powerful creations, they may have consequences the creators could never fully control.",
+      "image_prompt": "dragon turning uncontrollable in chaotic flames, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 9,
+      "narration": "The Doom of Valyria may be linked to this—an experiment or power that went too far.",
+      "image_prompt": "Valyria collapsing under magical catastrophe and volcanic destruction, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because dragons may not just be born—they may be the result of a power the world was never meant to hold.",
+      "image_prompt": "ancient dragon shadow rising behind ruined Valyria, ominous ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
