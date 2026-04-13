@@ -1,0 +1,79 @@
+{
+  "title": "Tyrion’s Darker Story (Books) #got #shorts",
+  "description": "In the books, Tyrion Lannister is far darker than the show ever revealed. His journey becomes one of anger, survival, and transformation into something much more dangerous. #ASOIAF #Tyrion #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Tyrion Lannister in the books is not the hero you remember—his story takes a much darker turn.",
+      "image_prompt": "Tyrion in shadows with conflicted expression, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "After being betrayed and condemned, Tyrion escapes—but he does not leave unchanged.",
+      "image_prompt": "Tyrion fleeing through darkness, tense escape, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "In the books, his anger grows deeper, turning into something closer to bitterness and revenge.",
+      "image_prompt": "Tyrion sitting alone with shadowy expression, internal conflict, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "He begins to lose the moral balance that once defined him, making choices driven more by survival than empathy.",
+      "image_prompt": "Tyrion surrounded by dark choices and consequences, symbolic imagery, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Unlike the show, he is not simply clever and good-hearted—he becomes unpredictable and dangerous.",
+      "image_prompt": "Tyrion half-lit face with sinister undertone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "His journey across Essos exposes him to new influences, shaping a version of himself that is harder to trust.",
+      "image_prompt": "Tyrion traveling through foreign lands with uncertain allies, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "Some theories suggest he may not seek justice—but revenge against those who wronged him.",
+      "image_prompt": "Tyrion imagining downfall of enemies, symbolic revenge imagery, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "This makes him one of the most complex characters in the story—not hero, not villain, but something in between.",
+      "image_prompt": "Tyrion standing between light and shadow, dual nature, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 9,
+      "narration": "His decisions moving forward could influence major events, possibly in ways far darker than expected.",
+      "image_prompt": "Tyrion pulling strings behind scenes, hidden influence, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because in the books, Tyrion Lannister is not becoming a better man—he is becoming a more dangerous one.",
+      "image_prompt": "Tyrion fading into shadow with subtle smirk, ominous ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
