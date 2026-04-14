@@ -1,0 +1,79 @@
+{
+  "title": "What the Show Changed About Dorne #got #shorts",
+  "description": "Dorne in the books is far more complex than the show revealed. Hidden plans, patient strategy, and a long game for power—this is the real story of Dorne. #ASOIAF #Dorne #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Dorne in the books is not weak or chaotic—it is one of the most calculated players in Westeros.",
+      "image_prompt": "sunlit desert kingdom with hidden shadows and observers, political intrigue tone, dark fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Unlike the show, Dorne is ruled by careful planning, not impulsive revenge.",
+      "image_prompt": "Dorne rulers in calm council discussing strategy, composed atmosphere, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "At the center of this is a long-term plan tied to the Targaryen restoration.",
+      "image_prompt": "Dorne map connected to dragon sigil, hidden alliances, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Dorne has been waiting, preparing, and positioning itself for the right moment to act.",
+      "image_prompt": "desert warriors standing still under sun, patient and ready, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Key characters and storylines were removed from the show—reducing a complex strategy into something much simpler.",
+      "image_prompt": "missing puzzle pieces representing removed characters and plots, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "In the books, Dorne’s role is not loud—it is subtle, shaping events without drawing attention.",
+      "image_prompt": "shadow figures influencing events from distance, desert backdrop, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "Their strategy focuses on alliances, legitimacy, and restoring balance rather than immediate power.",
+      "image_prompt": "hands forming alliances over map of Westeros, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "This makes Dorne one of the few regions playing a long game, thinking beyond the current war.",
+      "image_prompt": "long path stretching into horizon across desert, symbolic strategy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 9,
+      "narration": "If their plans succeed, they could become one of the most influential forces in the final outcome.",
+      "image_prompt": "Dorne banner rising alongside other major powers, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because the most dangerous players are not the ones who act first—but the ones who wait.",
+      "image_prompt": "Dorne ruler watching horizon calmly while storms gather far away, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
