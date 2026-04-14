@@ -1,0 +1,79 @@
+{
+  "title": "The Secret Prince: Young Griff Explained #got #shorts",
+  "description": "A hidden Targaryen prince may still be alive in the books—and his claim could change everything. Young Griff, also known as Aegon, is one of the biggest missing pieces from the show. #ASOIAF #Targaryen #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "What if a Targaryen heir survived—and has been hidden in plain sight all along?",
+      "image_prompt": "young noble figure in disguise with faint dragon shadow behind him, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "In the books, a character known as Young Griff is introduced as a mysterious boy with a hidden identity.",
+      "image_prompt": "young boy traveling with guardians across sea, secretive tone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "He is later revealed to be Aegon Targaryen—the supposed son of Rhaegar, believed to have died as a child.",
+      "image_prompt": "reveal moment with dragon sigil appearing behind him, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 4,
+      "narration": "But unlike Daenerys or Jon, his identity is uncertain—raising the question: is he real, or something else?",
+      "image_prompt": "Aegon split between light and shadow, uncertain identity, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Some believe he is the true heir to the Iron Throne—while others think he is a carefully crafted impostor.",
+      "image_prompt": "two versions of Aegon overlapping, real vs fake symbolism, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Backed by powerful allies, he begins his journey to claim Westeros before Daenerys even arrives.",
+      "image_prompt": "army gathering behind Aegon as he prepares to invade, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "This creates a new conflict—not just for the throne, but for identity, legacy, and legitimacy.",
+      "image_prompt": "multiple claimants to throne clashing symbolically, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "If he is real, he changes everything. If he is not, he may be the most dangerous lie in the story.",
+      "image_prompt": "Aegon standing with crown casting uncertain shadow, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 9,
+      "narration": "Either way, his presence reshapes the entire endgame of the books.",
+      "image_prompt": "map of Westeros shifting with new power lines forming, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because the greatest threat to a kingdom is not always a dragon—it may be the truth about who should rule.",
+      "image_prompt": "Iron Throne with multiple shadows reaching toward it, ominous ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
