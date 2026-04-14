@@ -1,0 +1,79 @@
+{
+  "title": "The Ending the Show Could Never Reveal #got #shorts",
+  "description": "The ending of Game of Thrones may have shown us what happened—but not what it meant. The books are building toward something deeper, more complex, and far more unsettling. #ASOIAF #GameOfThrones #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The show gave us an ending—but it may have missed the deeper truth the books are building toward.",
+      "image_prompt": "Iron Throne fading into shadow while deeper layers of meaning emerge beneath, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "In A Song of Ice and Fire, the story is not about who wins—but about what power does to the world.",
+      "image_prompt": "characters affected by power with shadows of consequences forming behind them, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The conflict between ice and fire may not end with victory—but with balance or uneasy understanding.",
+      "image_prompt": "fire and ice forces merging into equilibrium rather than clashing, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "The Others are still unresolved in the books, suggesting their purpose is far more complex than destruction.",
+      "image_prompt": "White Walkers standing still in mysterious formation, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Characters like Jon, Daenerys, and Bran may not follow the same paths—and their roles may be far more uncertain.",
+      "image_prompt": "three figures standing at crossroads with diverging futures, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "The idea of a single ruler may be dismantled entirely, ending the cycle rather than continuing it.",
+      "image_prompt": "Iron Throne breaking apart into fragments, symbolic change, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 7,
+      "narration": "This would make the ending less about resolution—and more about transformation of the world itself.",
+      "image_prompt": "Westeros evolving into new era after destruction, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Many mysteries may remain unanswered, because the story is meant to reflect reality—not provide closure.",
+      "image_prompt": "open-ended horizon with unresolved paths fading into mist, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 9,
+      "narration": "The books are building toward something deeper than a final battle—they are building toward meaning.",
+      "image_prompt": "layers of history, prophecy, and characters merging into one narrative, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because the true ending of this story may not tell us who wins—but ask us what was ever worth fighting for.",
+      "image_prompt": "quiet dawn over Westeros after long darkness, philosophical cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
