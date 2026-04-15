@@ -1,0 +1,79 @@
+{
+  "title": "Dance of the Dragons: The First Blood #got #shorts",
+  "description": "The Dance of the Dragons began with tension—but it was the first bloodshed that made war inevitable. This is the moment everything changed. #ASOIAF #Targaryen #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Wars don’t truly begin with armies—they begin with a single moment that cannot be undone.",
+      "image_prompt": "dark sky with two dragons circling in tension, cinematic fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "As tensions rose, both sides prepared for conflict—but still hoped to avoid full war.",
+      "image_prompt": "two opposing factions watching each other across distance, uneasy calm, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "A message was sent—one final attempt to demand loyalty and submission.",
+      "image_prompt": "young rider flying on dragon carrying message through storm, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "But the skies were no longer safe—and another dragon was already waiting.",
+      "image_prompt": "larger dragon emerging from clouds behind smaller one, ominous tension, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 5,
+      "narration": "What followed was not a battle—but a sudden, brutal clash in the sky.",
+      "image_prompt": "two dragons colliding mid-air in violent struggle, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Fire met fire, and in moments, the first life of the war was lost.",
+      "image_prompt": "falling dragon rider silhouetted against flames, tragic moment, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 7,
+      "narration": "The death shocked both sides, turning fear into rage and hesitation into action.",
+      "image_prompt": "reaction shots of both factions realizing what has happened, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 8,
+      "narration": "There would be no more messages, no more negotiations—only revenge.",
+      "image_prompt": "armies preparing aggressively for war, tension rising, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 9,
+      "narration": "From that moment on, the war was no longer avoidable—it had already begun.",
+      "image_prompt": "battlefield igniting as forces march forward, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because once the first blood is spilled, peace is no longer an option.",
+      "image_prompt": "burning sky with dragon silhouettes and falling embers, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
