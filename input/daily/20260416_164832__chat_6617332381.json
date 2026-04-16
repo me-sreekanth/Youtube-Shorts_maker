@@ -1,0 +1,79 @@
+{
+  "title": "Dance of the Dragons: Blood and Revenge #got #shorts",
+  "description": "After the first death, the war escalated into something far darker. Revenge replaced reason, and the Dance of the Dragons became unstoppable. #ASOIAF #Targaryen #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The first death started the war—but revenge is what made it unstoppable.",
+      "image_prompt": "dark battlefield with flames rising as dragons circle above, intense atmosphere, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "When news of the death spread, grief quickly turned into rage.",
+      "image_prompt": "court reacting in shock and anger, emotional tension, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "Both sides demanded justice—but what they truly wanted was retaliation.",
+      "image_prompt": "leaders giving orders with intense expressions, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "The war shifted overnight—from conflict to vengeance.",
+      "image_prompt": "battle preparations intensifying under stormy sky, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Strikes became more brutal, targeting not just armies—but symbols of power and family.",
+      "image_prompt": "dragonfire hitting castles and strongholds, destructive imagery, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Each attack led to another, creating a cycle that neither side could escape.",
+      "image_prompt": "chain reaction of battles across map of Westeros, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "Even dragonriders began to fall, proving that no one was safe in this war.",
+      "image_prompt": "dragon rider falling from sky amid battle, tragic visual, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 8,
+      "narration": "The destruction spread faster than anyone could control.",
+      "image_prompt": "multiple regions burning simultaneously, chaos across land, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 9,
+      "narration": "What began as a fight for the throne became a war that consumed everything.",
+      "image_prompt": "battlefield filled with fire, dragons, and fallen armies, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because once revenge takes control, there is no path back—only destruction.",
+      "image_prompt": "burning horizon with dragon silhouettes fading into smoke, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
