@@ -1,0 +1,79 @@
+{
+  "title": "The Long Night: Before Westeros Had Kings #got #shorts",
+  "description": "Long before kings and castles, the world was older, darker, and far more dangerous. This is the beginning of the Long Night. #ASOIAF #LongNight #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Before kings, before castles, and before history… there was a world lost to time.",
+      "image_prompt": "ancient untouched wilderness under dark sky with no civilization, mystical and eerie, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Westeros was not ruled by men, but by ancient forces older than memory.",
+      "image_prompt": "vast forests with glowing eyes hidden within, ancient presence, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The Children of the Forest lived in harmony with the land, bound to nature and magic.",
+      "image_prompt": "small mystical beings among trees with glowing symbols, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Their magic was old, quiet, and deeply connected to the world itself.",
+      "image_prompt": "weirwood trees glowing softly with ancient energy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Then came the First Men—bringing steel, fire, and war to a land that had never known it.",
+      "image_prompt": "early humans entering forests with weapons and fire, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "They cut down sacred trees and broke the balance that had existed for centuries.",
+      "image_prompt": "weirwood trees being destroyed, magic fading, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "War followed—long, brutal, and unlike anything the world had seen before.",
+      "image_prompt": "battle between First Men and Children of the Forest in ancient setting, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "In desperation, the Children turned to a power they barely understood.",
+      "image_prompt": "Children performing ancient ritual in darkness, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 9,
+      "narration": "They sought a weapon… something that could stop the war forever.",
+      "image_prompt": "ritual intensifying with dark energy forming, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "But what they created would become something far worse than war.",
+      "image_prompt": "first hint of icy figure forming in shadows, ominous ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
