@@ -1,0 +1,79 @@
+{
+  "title": "Artemis II: The Technical Journey to the Moon #NASA #Artemis #Shorts",
+  "description": "Deep dive into the Artemis II mission. 10 days, 4 astronauts, and a 460,000-mile journey to test the systems that will return us to the lunar surface. #SpaceTech #Orion #MoonMission",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Artemis II isn't just a flight; it’s a 10-day high-stakes test of the most powerful rocket ever built: the SLS.",
+      "image_prompt": "Close-up of the SLS rocket boosters with technical overlays showing 8.8 million pounds of thrust, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "The crew—Wiseman, Glover, Koch, and Hansen—are the first humans to leave Low Earth Orbit in over 50 years.",
+      "image_prompt": "The four astronauts walking toward the launch pad in their OCSS pressure suits, cinematic and detailed, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "After launch, Orion enters a High Earth Orbit, spending 24 hours testing life support and proximity operations maneuvers.",
+      "image_prompt": "Orion capsule separating from the ICPS upper stage against the curve of Earth, technical and clean, vertical 1080x1920",
+      "duration": 5,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Then, the Trans-Lunar Injection burn pushes them 230,000 miles away, targeting a 'free return trajectory' around the Moon.",
+      "image_prompt": "Main engine firing in deep space, Earth shrinking rapidly in the background, starfield visible, vertical 1080x1920",
+      "duration": 5,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "They will fly 4,600 miles past the lunar far side, reaching the farthest point humans have ever traveled into the cosmos.",
+      "image_prompt": "Orion spacecraft silhouetted against the massive, cratered lunar far side, cinematic lighting, vertical 1080x1920",
+      "duration": 5,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "This mission validates Orion’s communication, navigation, and radiation shielding in the harsh deep-space environment.",
+      "image_prompt": "Interior view of the crew monitoring complex 3D lunar maps and telemetry data on glowing glass screens, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "On the return, the heat shield must survive five thousand degrees Fahrenheit—half the temperature of the sun.",
+      "image_prompt": "Extreme close-up of the Orion heat shield glowing incandescent orange during atmospheric entry, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Using a 'skip entry' technique, Orion will dip into the atmosphere, pop back out, and then make a final precision descent.",
+      "image_prompt": "Diagram animation of the spacecraft skipping off the atmosphere like a stone on water, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 9,
+      "narration": "Eleven parachutes deploy in sequence, slowing the craft from Mach 32 to a gentle 20 miles per hour.",
+      "image_prompt": "The sequence of pilot, drogue, and main parachutes inflating over the Pacific, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "With splashdown, the path to the Artemis III lunar landing is officially paved. We are going back to stay.",
+      "image_prompt": "The charred Orion capsule safely upright in the ocean as Navy divers approach, epic scale, vertical 1080x1920",
+      "duration": 5,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
