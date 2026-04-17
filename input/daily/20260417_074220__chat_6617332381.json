@@ -1,0 +1,79 @@
+{
+  "title": "The Long Night: The Creation of the White Walkers #got #shorts",
+  "description": "The White Walkers were not always monsters—they were created. This is the dark origin of the Others and the mistake that changed the world forever. #ASOIAF #WhiteWalkers #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The White Walkers were not born in darkness—they were created by those trying to survive it.",
+      "image_prompt": "ancient ritual site deep in forest under dark sky, eerie atmosphere, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "As the war with the First Men grew worse, the Children of the Forest searched for a way to end it.",
+      "image_prompt": "Children of the Forest watching destruction from hidden forest, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "They turned to ancient magic—older than memory, and far more dangerous than they understood.",
+      "image_prompt": "glowing runes and symbols forming in dark ritual space, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "A human was taken, bound to the roots of a weirwood tree.",
+      "image_prompt": "human figure tied to weirwood roots surrounded by ritual circle, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "A blade of dragonglass was driven into his heart, channeling the magic into his body.",
+      "image_prompt": "obsidian dagger glowing as it pierces chest, intense ritual moment, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "In that moment, something changed—the first of the Others was born.",
+      "image_prompt": "transformation into icy being with glowing blue eyes, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 7,
+      "narration": "What was meant to be a weapon became something far more powerful—and impossible to control.",
+      "image_prompt": "newly formed White Walker standing in silence with cold aura spreading, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 8,
+      "narration": "The Children realized too late that they had created a force that did not obey them.",
+      "image_prompt": "Children retreating in fear as icy presence expands, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 9,
+      "narration": "The war did not end—it evolved into something far more dangerous.",
+      "image_prompt": "White Walkers beginning to gather in frozen landscape, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because in trying to end one war, they created a threat that would haunt the world forever.",
+      "image_prompt": "endless icy army forming under dark sky, ominous cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
