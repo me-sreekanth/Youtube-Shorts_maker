@@ -1,0 +1,79 @@
+{
+  "title": "The Long Night: The First Long Night #got #shorts",
+  "description": "The Long Night was not just winter—it was the near end of the world. Darkness covered the land, and survival became the only goal. #ASOIAF #LongNight #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The Long Night was not a season—it was a darkness that seemed like it would never end.",
+      "image_prompt": "world covered in darkness with faint icy glow spreading, apocalyptic fantasy, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Winter came without warning, stretching beyond days, beyond months… into years.",
+      "image_prompt": "endless snowstorm covering villages and forests, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "The sun disappeared, and the world was left in cold, fading light.",
+      "image_prompt": "dim sky with no sun, pale frozen landscape, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "The Others moved through the darkness, bringing death with every step.",
+      "image_prompt": "White Walkers advancing silently through blizzard, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Entire regions fell, their people lost to cold, hunger, and something far worse.",
+      "image_prompt": "abandoned frozen village with signs of destruction, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "The dead did not stay dead—rising again to join the growing army of ice.",
+      "image_prompt": "fallen bodies reanimating under icy glow, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 7,
+      "narration": "Hope faded as survivors struggled to endure a world that no longer felt alive.",
+      "image_prompt": "small group of survivors around faint fire in frozen wasteland, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 8,
+      "narration": "The balance of the world was broken—and it seemed nothing could restore it.",
+      "image_prompt": "fire being overwhelmed by advancing ice forces, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 9,
+      "narration": "The Long Night became more than a disaster—it became the end of everything people knew.",
+      "image_prompt": "world map fading into darkness and ice, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tr_bl"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because when the night lasts forever, the question is not who wins—but who survives.",
+      "image_prompt": "single flame flickering in endless darkness, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
