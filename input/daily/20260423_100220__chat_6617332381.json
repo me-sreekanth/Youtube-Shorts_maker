@@ -1,0 +1,72 @@
+{
+  "title": "The Immortal's Curse: Ashwatthama #mythology #comic #shorts",
+  "description": "Condemned to walk the earth forever with an unhealing wound. The terrifying curse of Ashwatthama. #Mahabharata #Lore #GraphicNovel",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "Immortality is usually a gift. For him, it was the ultimate punishment.",
+      "image_prompt": "Close up of a shadowy warrior's glowing, rage-filled eyes, a glowing gem embedded in his forehead, dark fantasy graphic novel style, heavy ink shadows, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "At the end of a devastating war, Ashwatthama committed an unforgivable crime in the dead of night.",
+      "image_prompt": "Silhouette of a warrior standing over a burning camp, holding a bloodied sword, comic book panel art, stark red and black contrast, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_up"
+    },
+    {
+      "scene_number": 3,
+      "narration": "In retaliation, he unleashed an apocalyptic weapon, threatening to destroy all future generations.",
+      "image_prompt": "A massive, blinding beam of divine energy descending from the sky, stylized explosive comic art, dynamic lines, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 4,
+      "narration": "But he was stopped by a god. And the judgment delivered was merciless.",
+      "image_prompt": "A glowing, majestic divine figure pointing a commanding finger at a kneeling, defeated warrior, dramatic lighting, graphic novel illustration, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 5,
+      "narration": "The sacred gem of protection was torn from his forehead, leaving a wound that would never heal.",
+      "image_prompt": "Close up of the gem being ripped from the forehead, raw stylized blood, heavy shadows, visceral comic art style, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "He was cursed to wander the earth for three thousand years.",
+      "image_prompt": "A lone, cloaked figure walking through a desolate, barren wasteland, harsh wind, dark comic aesthetic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 7,
+      "narration": "No one would offer him food. No one would offer him shelter. He would carry the stench of blood and decay forever.",
+      "image_prompt": "Villagers turning their backs and closing doors on a wretched, diseased beggar in shadows, moody cel-shaded illustration, vertical 1080x1920",
+      "duration": 5,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Some claim that deep in the forests, an abnormally tall man with a bleeding forehead still wanders today.",
+      "image_prompt": "Modern dense forest at night, a towering, shadowy figure with a glowing, bleeding mark on his head partially hidden behind trees, creepy comic book art, vertical 1080x1920",
+      "duration": 5,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 9,
+      "scene_type": "final",
+      "narration": "Waiting for the end of time. Waiting for release.",
+      "image_prompt": "The warrior looking up at a starry night sky, rain falling on his cursed wound, tragic and dark comic style, fade to black, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 38
+}
