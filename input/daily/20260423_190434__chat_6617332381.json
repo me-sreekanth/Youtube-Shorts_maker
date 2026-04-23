@@ -1,0 +1,72 @@
+{
+  "title": "The Ultimate Sacrifice: Karna’s Golden Armor #mahabharata #mythology #comic #shorts",
+  "description": "Born with divine armor fused to his skin, Karna was invincible. But a single act of charity would change the course of the Great War. #IndianMythology #Karna #Lore #GraphicNovel #History",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "He was born to be the greatest warrior, protected by a divine armor that was literally part of his skin.",
+      "image_prompt": "A powerful Indian warrior with golden armor and earrings fused into his skin, glowing with celestial light, dark fantasy graphic novel style, heavy ink shadows, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "Karna, the son of the Sun God, was invincible as long as he wore his Kavach and Kundal.",
+      "image_prompt": "Karna standing tall on a battlefield, arrows bouncing off his golden chest plate, traditional Indian comic book art, rich warm colors, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_up"
+    },
+    {
+      "scene_number": 3,
+      "narration": "But Karna had one weakness: he could never refuse a beggar during his morning prayers.",
+      "image_prompt": "Karna standing in a river, offering water to the sun, a humble silhouette in the background, stylized comic panel, dramatic morning light, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Knowing this, Lord Indra descended from the heavens disguised as an old, frail priest.",
+      "image_prompt": "A thin, elderly Brahmin priest with a walking stick, shadows hiding his divine eyes, traditional Indian graphic novel style, heavy textures, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "The priest asked for the impossible: he wanted the very armor Karna was born with.",
+      "image_prompt": "Close up of the old priest's face, a subtle, cunning smile in the shadows, dynamic comic book lighting, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Karna knew it was a trap. He knew that without his armor, he would surely die in battle.",
+      "image_prompt": "Close up of Karna’s face, eyes filled with realization and sorrow, heavy ink lines, classical Indian features, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 7,
+      "narration": "But his word was his life. With a steady hand, he took a knife and began to cut the armor from his own body.",
+      "image_prompt": "Visceral comic art, Karna using a dagger to peel the golden armor from his chest, blood mixed with golden light, dramatic and tragic aesthetic, vertical 1080x1920",
+      "duration": 5,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Blood soaked the ground as he handed over his invincibility to the disguised god.",
+      "image_prompt": "Karna kneeling, holding out the bloodied golden armor, the priest's shadow looming over him, dark comic book panel, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 9,
+      "scene_type": "final",
+      "narration": "He lost his protection, but he gained immortality as the greatest giver in history. The Tragic Hero, Karna.",
+      "image_prompt": "Karna standing weak but proud against a setting sun, a scarred chest where the armor once was, epic and emotional final comic panel, fade to black, vertical 1080x1920",
+      "duration": 5,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 37
+}
