@@ -1,0 +1,79 @@
+{
+  "title": "The Long Night: The First Hero #got #shorts",
+  "description": "During the Long Night, one figure emerged from the darkness—a legend known as the First Hero. This is the story of how hope returned to a dying world. #ASOIAF #LongNight #Shorts",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "When the world was lost to darkness, one figure chose to walk into it.",
+      "image_prompt": "lone warrior stepping into frozen wasteland with faint light ahead, dark fantasy cinematic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "They would later call him the First Hero—but his journey began in a world already broken.",
+      "image_prompt": "ruined world with lone traveler moving through snow, vertical 1080x1920",
+      "duration": 4,
+      "effect": "ken_burns_in"
+    },
+    {
+      "scene_number": 3,
+      "narration": "With only a sword, a horse, and a few companions, he set out into the endless night.",
+      "image_prompt": "small group traveling through blizzard, survival journey, vertical 1080x1920",
+      "duration": 4,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 4,
+      "narration": "One by one, his companions fell—to cold, hunger, and the creatures that hunted them.",
+      "image_prompt": "fallen companions in snow as hero continues alone, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Still, he continued, driven by a single purpose—to find a way to end the darkness.",
+      "image_prompt": "hero pushing forward alone through storm, determined silhouette, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pulse"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Legends say he sought the Children of the Forest, hoping their magic could help save the world.",
+      "image_prompt": "ancient forest glowing faintly with hidden figures watching, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 7,
+      "narration": "After a long and impossible journey, he found them—and a fragile alliance was formed.",
+      "image_prompt": "human and Children meeting cautiously in glowing forest, vertical 1080x1920",
+      "duration": 4,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Together, they began to push back against the darkness, step by step.",
+      "image_prompt": "combined forces moving against icy threat, symbolic resistance, vertical 1080x1920",
+      "duration": 4,
+      "effect": "diagonal_tl_br"
+    },
+    {
+      "scene_number": 9,
+      "narration": "His story became more than survival—it became hope in a world that had none.",
+      "image_prompt": "light breaking through dark sky as hero stands strong, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_center"
+    },
+    {
+      "scene_number": 10,
+      "scene_type": "final",
+      "narration": "Because sometimes, the world is not saved by armies—but by the courage of one who refuses to give up.",
+      "image_prompt": "hero standing against fading darkness with dawn beginning, cinematic ending, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 44
+}
