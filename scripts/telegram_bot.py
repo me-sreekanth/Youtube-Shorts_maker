@@ -265,19 +265,39 @@ def enforce_strict_json_structure(json_data):
 async def receive_json(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Validate JSON or generate it from topic, and save it to context."""
     text = update.message.text
+    
+    # Use context buffer if we are currently accumulating a split message
+    combined_text = context.user_data.get('json_buffer', '') + text
+    
     try:
-        # If it looks like JSON, parse it as JSON
-        if text.strip().startswith('{') or text.strip().startswith('['):
-            json_data = json.loads(text)
+        # If it looks like JSON, attempt to parse it
+        stripped_text = combined_text.strip()
+        if stripped_text.startswith('{') or stripped_text.startswith('['):
+            try:
+                json_data = json.loads(combined_text)
+                
+                # If we reach here, it successfully parsed! Clear any buffer
+                context.user_data.pop('json_buffer', None)
+                
+            except json.JSONDecodeError:
+                # If it fails, the JSON was likely split into multiple pieces by Telegram
+                context.user_data['json_buffer'] = combined_text
+                await update.message.reply_text(
+                    f"⏳ Partial JSON received ({len(combined_text)} chars).\n"
+                    "Waiting for you to paste the rest of the script... (Or type /cancel to abort)"
+                )
+                return WAITING_FOR_JSON
             
             # Super simple check to ensure it at least strongly resembles our expected structure
             if "title" not in json_data and "scenes" not in json_data:
                 await update.message.reply_text("⚠️ This doesn't look like a valid Shorts script (missing 'title' or 'scenes'). \n\nPlease send the correct JSON format.")
                 return WAITING_FOR_JSON
                 
-            context.user_data['json_content'] = text
-            await update.message.reply_text("✅ Valid JSON received.\n")
+            context.user_data['json_content'] = combined_text
+            await update.message.reply_text("✅ Valid JSON fully received.\n")
         else:
+            # Clear buffer if the user is sending a normal text topic instead of finishing a broken JSON
+            context.user_data.pop('json_buffer', None)
             # Treat as text topic or Youtube URL
             import asyncio
             
@@ -414,6 +434,46 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         else:
             await query.message.reply_text("❌ No script found in current session.")
 
+
+async def clear_queue(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Clear all pending JSONs from input/daily on GitHub."""
+    await update.message.reply_text("⏳ Scanning GitHub for pending scripts in `input/daily/`...")
+    
+    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/input/daily"
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    
+    response = requests.get(url, headers=headers)
+    if response.status_code == 404:
+        await update.message.reply_text("✅ No pending scripts found in the queue.")
+        return
+    elif response.status_code != 200:
+        await update.message.reply_text(f"❌ Failed to access GitHub: {response.status_code}\n{response.text}")
+        return
+        
+    files = response.json()
+    if not isinstance(files, list) or not files:
+        await update.message.reply_text("✅ No pending scripts found in the queue.")
+        return
+        
+    deleted_count = 0
+    for file in files:
+        if file.get('type') == 'file' and file.get('name', '').endswith('.json'):
+            # The 'url' property returned points directly to the API endpoint for this file
+            delete_url = file['url']
+            data = {
+                "message": f"bot: Clear script via /clear command: {file['name']}",
+                "sha": file['sha'],
+                "branch": "main"
+            }
+            del_resp = requests.delete(delete_url, headers=headers, json=data)
+            if del_resp.status_code in [200, 204]:
+                deleted_count += 1
+                
+    await update.message.reply_text(f"🗑️ Successfully deleted {deleted_count} pending script(s) from the GitHub queue.")
+
 class DummyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -464,6 +524,7 @@ def main() -> None:
 
     application.add_handler(conv_handler)
     application.add_handler(CallbackQueryHandler(button_callback))
+    application.add_handler(CommandHandler("clear", clear_queue))
     
     print("🤖 YouTube Shorts Telegram Bot is successfully listening...")
     
