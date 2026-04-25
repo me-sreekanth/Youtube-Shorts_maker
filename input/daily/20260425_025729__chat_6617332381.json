@@ -1,0 +1,71 @@
+{
+  "title": "The Severed Thumb: Ekalavya’s Dark Sacrifice #mahabharata #mythology #comic #shorts",
+  "description": "He was a self-taught master, greater than any royal prince. But his loyalty cost him his future. The tragic tale of Ekalavya. #IndianMythology #Lore #GraphicNovel #Ekalavya",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_type": "hook",
+      "narration": "The royal princes thought they were the best warriors on earth, until they found a dog in the forest perfectly silenced by seven arrows.",
+      "image_prompt": "A wild dog standing in a dark forest, its mouth held open by seven arrows precisely shot in a circle without drawing blood, dark fantasy graphic novel style, heavy ink shadows, vertical 1080x1920",
+      "duration": 5,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 2,
+      "narration": "The arrows were fired with impossible speed and accuracy. The princes tracked the shooter and found a young tribal boy named Ekalavya.",
+      "image_prompt": "Ekalavya, a rugged but noble tribal youth in ancient Indian forest attire, holding a simple wooden bow, standing confidently among giant trees, traditional Indian comic book art, vertical 1080x1920",
+      "duration": 5,
+      "effect": "pan_up"
+    },
+    {
+      "scene_number": 3,
+      "narration": "He had been rejected by the royal teacher, Drona, because of his low birth. So, he built a clay statue of the master and taught himself.",
+      "image_prompt": "A beautifully detailed, slightly weathered clay idol of Guru Drona sitting beneath a banyan tree, Ekalavya kneeling before it in deep devotion, moody comic panel lighting, vertical 1080x1920",
+      "duration": 5,
+      "effect": "drift_right"
+    },
+    {
+      "scene_number": 4,
+      "narration": "Through pure devotion and relentless practice in the shadows, Ekalavya had surpassed even Arjuna, the royal favorite.",
+      "image_prompt": "Dynamic split panel: One side showing Arjuna practicing in a pristine royal courtyard, the other showing Ekalavya firing arrows blindly into a torrential forest storm, stark contrast, graphic novel style, vertical 1080x1920",
+      "duration": 5,
+      "effect": "zoom_rapid"
+    },
+    {
+      "scene_number": 5,
+      "narration": "Drona was bound by an oath to make Arjuna the greatest archer in the world. Ekalavya’s mere existence broke that promise.",
+      "image_prompt": "Close up of Guru Drona’s face, etched with guilt and stern resolve, heavy shadows covering half his face, classical Indian features, vertical 1080x1920",
+      "duration": 4,
+      "effect": "breathe"
+    },
+    {
+      "scene_number": 6,
+      "narration": "Approaching the boy, the master coldly demanded his 'Gurudakshina'—the traditional fee owed to a teacher.",
+      "image_prompt": "Drona standing tall and imposing over the kneeling tribal boy, the clay statue looming in the background, tense and dramatic comic composition, vertical 1080x1920",
+      "duration": 5,
+      "effect": "parallax_up"
+    },
+    {
+      "scene_number": 7,
+      "narration": "Ekalavya joyfully offered anything in the world. Drona looked at his bow hand and asked for his right thumb.",
+      "image_prompt": "Visceral comic art, close up of Drona’s finger pointing directly at Ekalavya’s right thumb holding the bow string, dark and tragic aesthetic, vertical 1080x1920",
+      "duration": 4,
+      "effect": "zoom_in"
+    },
+    {
+      "scene_number": 8,
+      "narration": "Without a single second of hesitation, the boy drew his hunting knife.",
+      "image_prompt": "Ekalavya raising a crude, sharp hunting knife over his own hand, his expression entirely calm and devoted, harsh rim lighting, heavy comic textures, vertical 1080x1920",
+      "duration": 4,
+      "effect": "pan_left"
+    },
+    {
+      "scene_number": 9,"scene_type": "final",
+      "narration": "He laid his severed thumb at his master's feet, destroying his own future to honor a teacher who never wanted him.",
+      "image_prompt": "A bloody thumb resting on a green leaf at the base of the clay statue, Ekalavya’s silhouette walking away into the dark woods, tragic and epic final comic panel, fade to black, vertical 1080x1920",
+      "duration": 5,
+      "effect": "zoom_out"
+    }
+  ],
+  "total_duration": 42
+}
